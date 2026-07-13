@@ -1,6 +1,6 @@
 /**
- * Forensic Ember shell: dossier-like navigation, sharp geometry, and restrained
- * Evidence Ember accents frame every page with institutional clarity.
+ * Forensic Ember shell: dossier-like navigation, sharp geometry, and the official
+ * Evidence Aperture mark frame every page with institutional clarity.
  */
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
@@ -11,9 +11,11 @@ function Brand() {
   return (
     <Link href="/" className="brand-lockup" aria-label="Brightember home">
       <span className="brand-mark-wrap">
-        <span className="brand-bracket left" />
-        <span className="brand-ember-shard" />
-        <span className="brand-bracket right" />
+        <img
+          src="/manus-storage/brightember-evidence-aperture-web_21ec70d8.png"
+          alt=""
+          className="brand-mark"
+        />
       </span>
       <span className="brand-wordmark">
         BRIGHT<span>EMBER</span>

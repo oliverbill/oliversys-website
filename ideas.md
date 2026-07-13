@@ -73,7 +73,7 @@ Example CTA: **“Put the target under review.”**
 
 ### Wordmark & Logo
 
-The wordmark pairs a custom, narrow **BRIGHT** construction with a warmer, slightly expanded **EMBER** ending. The graphic mark is a bold abstract **B** built from two opposing brackets around a single ember shard, suggesting both technical containment and a finding brought to light. The symbol must remain recognizable at favicon size and never rely on text.
+The wordmark pairs a custom, narrow **BRIGHT** construction with a warmer, slightly expanded **EMBER** ending. The official graphic mark is **Evidence Aperture**: two opposing charcoal brackets define the scope of review while an Evidence Ember wedge penetrates the central uncertainty and surfaces a material finding. The symbol suggests technical containment, focused investigation, and an actionable opening in the evidence. It must remain recognizable at favicon size and never rely on text.
 
 ### Signature Brand Color
 
@@ -86,3 +86,5 @@ The wordmark pairs a custom, narrow **BRIGHT** construction with a warmer, sligh
 **Every major page contains one page-specific evidence artifact.** Registers, dossier panels, annotated traces, case rails, and finding maps change with the mandate rather than repeating one generic editorial hero.
 
 **The Brightember mark is a recognizable bracketed-B containment symbol at small size.** BRIGHT remains narrow and controlled while EMBER is warmer and wider, making the lockup feel authored rather than typographic.
+
+**Evidence Aperture is the official Brightember symbol.** Its square white field, opposing charcoal brackets, and right-to-left Evidence Ember wedge should remain intact across website, LinkedIn, and favicon applications.

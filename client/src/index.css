@@ -1,7 +1,8 @@
 /*
  * FORENSIC EMBER DESIGN SYSTEM
- * Editorial modernism, dossier geometry, carbon/parchment contrast, and a single
- * controlled Evidence Ember signal guide every layout and interaction choice.
+ * Editorial modernism, dossier geometry, the Evidence Aperture mark,
+ * carbon/parchment contrast, and a controlled Evidence Ember signal guide every
+ * layout and interaction choice.
  */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -117,11 +118,8 @@
   .site-header.is-scrolled { height: 4.5rem; background: rgba(23,24,21,.94); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
   .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   .brand-lockup { display: inline-flex; align-items: center; gap: .8rem; color: inherit; text-decoration: none; }
-  .brand-mark-wrap { position: relative; display: block; width: 2.15rem; height: 2.15rem; background: #f3eee3; }
-  .brand-bracket { position: absolute; top: .38rem; bottom: .38rem; width: .48rem; border-block: 2px solid #171815; }
-  .brand-bracket.left { left: .4rem; border-left: 2px solid #171815; }
-  .brand-bracket.right { right: .4rem; border-right: 2px solid #171815; }
-  .brand-ember-shard { position: absolute; left: .9rem; top: .62rem; width: .44rem; height: .9rem; background: #f05a32; clip-path: polygon(0 50%,100% 0,100% 100%); }
+  .brand-mark-wrap { display: block; width: 2.35rem; height: 2.35rem; flex: 0 0 auto; background: #fff; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(23,24,21,.12); }
+  .brand-mark { display: block; width: 100%; height: 100%; object-fit: cover; }
   .brand-wordmark { font-size: .84rem; letter-spacing: .12em; font-weight: 700; }
   .brand-wordmark span { display: inline-block; margin-left: .08em; color: #f05a32; letter-spacing: .17em; transform: scaleX(1.08); transform-origin: left; }
   .desktop-nav { display: flex; align-items: center; gap: 2rem; }
@@ -394,7 +392,7 @@
 @media (max-width: 680px) {
   .site-header { height: 4.5rem; }
   .brand-wordmark { font-size: .79rem; }
-  .brand-mark-wrap { width: 2rem; height: 2rem; }
+  .brand-mark-wrap { width: 2.1rem; height: 2.1rem; }
   .hero { min-height: 47rem; padding-top: 8rem; }
   .hero-image { inset: 0; width: 100%; opacity: .42; }
   .hero-shade { background: linear-gradient(0deg,#171815 10%,rgba(23,24,21,.82) 75%,rgba(23,24,21,.65)); }
