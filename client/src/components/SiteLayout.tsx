@@ -2,7 +2,7 @@
  * Forensic Ember shell: dossier-like navigation, sharp geometry, and the official
  * Evidence Aperture mark frame every page with institutional clarity.
  */
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, Mail, Menu, MessageCircle, X } from "lucide-react";
 import { site } from "@/lib/site";
@@ -14,6 +14,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function Brand() {
   return (
@@ -41,8 +44,96 @@ export function BookCallLink({
   className?: string;
   children?: ReactNode;
 }) {
+  const [open, setOpen] = useState(false);
+  const [view, setView] = useState<"options" | "email-form" | "success">("options");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const resetDialogState = () => {
+    setView("options");
+    setEmail("");
+    setError(null);
+    setSubmitting(false);
+  };
+
+  const handleOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen);
+    if (!nextOpen) {
+      resetDialogState();
+    }
+  };
+
+  const handleEmailOptionClick = () => {
+    setError(null);
+    setEmail("");
+    setView("email-form");
+  };
+
+  const handleBack = () => {
+    setError(null);
+    setEmail("");
+    setView("options");
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    resetDialogState();
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (submitting) return;
+    const trimmed = email.trim();
+    if (!EMAIL_REGEX.test(trimmed)) {
+      setError("Please enter a valid email address.");
+      const el = document.getElementById("review-email");
+      if (el instanceof HTMLInputElement) el.focus();
+      return;
+    }
+    setError(null);
+    setSubmitting(true);
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/reviews@oliversoft.tech",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "Review Request",
+            _captcha: "false",
+            _template: "box",
+            message: `${trimmed} requested a review!`,
+          }),
+        },
+      );
+      if (!response.ok) {
+        throw new Error(`FormSubmit responded ${response.status}`);
+      }
+      const data = (await response.json()) as { success?: string };
+      if (data.success !== "true") {
+        throw new Error("FormSubmit did not confirm success");
+      }
+      setSubmitting(false);
+      setView("success");
+    } catch {
+      setSubmitting(false);
+      setError("Couldn't send — please try again or use WhatsApp.");
+    }
+  };
+
+  useEffect(() => {
+    if (view === "success") {
+      closeButtonRef.current?.focus();
+    }
+  }, [view]);
+
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <button type="button" className={className}>
           <span>{children}</span>
@@ -56,26 +147,87 @@ export function BookCallLink({
             Choose the channel that suits you—both go directly to Brightember.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <a
-            href="mailto:reviews@oliversoft.tech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button-primary flex-1"
-          >
-            <Mail size={17} aria-hidden="true" />
-            <span>Email us</span>
-          </a>
-          <a
-            href="https://wa.me/351931313593"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button-primary flex-1"
-          >
-            <MessageCircle size={17} aria-hidden="true" />
-            <span>WhatsApp</span>
-          </a>
-        </div>
+        {view === "options" ? (
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={handleEmailOptionClick}
+              className="button-primary flex-1"
+            >
+              <Mail size={17} aria-hidden="true" />
+              <span>Email me</span>
+            </button>
+            <a
+              href="https://wa.me/351931313593"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary flex-1"
+            >
+              <MessageCircle size={17} aria-hidden="true" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        ) : view === "email-form" ? (
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
+            <label htmlFor="review-email" className="sr-only">
+              Your email
+            </label>
+            <Input
+              id="review-email"
+              type="email"
+              autoComplete="email"
+              autoFocus
+              placeholder="Your email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+                if (error) setError(null);
+              }}
+              disabled={submitting}
+              aria-invalid={error ? true : undefined}
+              aria-describedby="review-email-error"
+            />
+            <p
+              id="review-email-error"
+              role="alert"
+              aria-live="polite"
+              className="min-h-5 text-sm text-destructive"
+            >
+              {error ?? ""}
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={handleBack}
+                disabled={submitting}
+                className="button-small flex-1"
+              >
+                <span>Back</span>
+              </button>
+              <button
+                type="submit"
+                disabled={submitting}
+                aria-busy={submitting || undefined}
+                className="button-primary flex-1"
+              >
+                <Mail size={17} aria-hidden="true" />
+                <span>{submitting ? "Sending…" : "Send"}</span>
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div className="flex flex-col gap-3">
+            <p className="text-sm">Thanks — we'll be in touch.</p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={handleClose}
+              className="button-primary"
+            >
+              <span>Close</span>
+            </button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
