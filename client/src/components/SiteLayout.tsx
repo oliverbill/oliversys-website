@@ -4,8 +4,16 @@
  */
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, Menu, X } from "lucide-react";
-import { site, bookingHref } from "@/lib/site";
+import { ArrowUpRight, Mail, Menu, MessageCircle, X } from "lucide-react";
+import { site } from "@/lib/site";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 function Brand() {
   return (
@@ -25,7 +33,7 @@ function Brand() {
 }
 
 export function BookCallLink({
-  context,
+  context: _context,
   className = "button-primary",
   children = "Book a confidential call",
 }: {
@@ -34,10 +42,42 @@ export function BookCallLink({
   children?: ReactNode;
 }) {
   return (
-    <a href={bookingHref(context)} className={className}>
-      <span>{children}</span>
-      <ArrowUpRight size={17} aria-hidden="true" />
-    </a>
+    <Dialog>
+      <DialogTrigger asChild>
+        <button type="button" className={className}>
+          <span>{children}</span>
+          <ArrowUpRight size={17} aria-hidden="true" />
+        </button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Reach the founder</DialogTitle>
+          <DialogDescription>
+            Choose the channel that suits you—both go directly to Brightember.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <a
+            href="mailto:reviews@oliversoft.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-primary flex-1"
+          >
+            <Mail size={17} aria-hidden="true" />
+            <span>Email us</span>
+          </a>
+          <a
+            href="https://wa.me/351931313593"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button-primary flex-1"
+          >
+            <MessageCircle size={17} aria-hidden="true" />
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
