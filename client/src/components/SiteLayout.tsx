@@ -2,7 +2,7 @@
  * Forensic Ember shell: dossier-like navigation, sharp geometry, and the official
  * Evidence Aperture mark frame every page with institutional clarity.
  */
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
 import { ArrowUpRight, Mail, Menu, MessageCircle, X } from "lucide-react";
 import { site } from "@/lib/site";
@@ -45,14 +45,17 @@ export function BookCallLink({
   children?: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
-  const [view, setView] = useState<"options" | "email-form">("options");
+  const [view, setView] = useState<"options" | "email-form" | "success">("options");
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const resetDialogState = () => {
     setView("options");
     setEmail("");
     setError(null);
+    setSubmitting(false);
   };
 
   const handleOpenChange = (nextOpen: boolean) => {
@@ -74,8 +77,14 @@ export function BookCallLink({
     setView("options");
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleClose = () => {
+    setOpen(false);
+    resetDialogState();
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (submitting) return;
     const trimmed = email.trim();
     if (!EMAIL_REGEX.test(trimmed)) {
       setError("Please enter a valid email address.");
@@ -83,12 +92,45 @@ export function BookCallLink({
       if (el instanceof HTMLInputElement) el.focus();
       return;
     }
-    const subject = encodeURIComponent(`Review request from ${trimmed}`);
-    const body = encodeURIComponent(`Please reach me at ${trimmed}.\n\n`);
-    window.location.href = `mailto:reviews@oliversoft.tech?subject=${subject}&body=${body}`;
-    setOpen(false);
-    resetDialogState();
+    setError(null);
+    setSubmitting(true);
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/reviews@oliversoft.tech",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "Review Request",
+            _captcha: "false",
+            _template: "box",
+            message: `${trimmed} requested a review!`,
+          }),
+        },
+      );
+      if (!response.ok) {
+        throw new Error(`FormSubmit responded ${response.status}`);
+      }
+      const data = (await response.json()) as { success?: string };
+      if (data.success !== "true") {
+        throw new Error("FormSubmit did not confirm success");
+      }
+      setSubmitting(false);
+      setView("success");
+    } catch {
+      setSubmitting(false);
+      setError("Couldn't send — please try again or use WhatsApp.");
+    }
   };
+
+  useEffect(() => {
+    if (view === "success") {
+      closeButtonRef.current?.focus();
+    }
+  }, [view]);
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -125,7 +167,7 @@ export function BookCallLink({
               <span>WhatsApp</span>
             </a>
           </div>
-        ) : (
+        ) : view === "email-form" ? (
           <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
             <label htmlFor="review-email" className="sr-only">
               Your email
@@ -141,6 +183,7 @@ export function BookCallLink({
                 setEmail(event.target.value);
                 if (error) setError(null);
               }}
+              disabled={submitting}
               aria-invalid={error ? true : undefined}
               aria-describedby="review-email-error"
             />
@@ -156,16 +199,34 @@ export function BookCallLink({
               <button
                 type="button"
                 onClick={handleBack}
+                disabled={submitting}
                 className="button-small flex-1"
               >
                 <span>Back</span>
               </button>
-              <button type="submit" className="button-primary flex-1">
+              <button
+                type="submit"
+                disabled={submitting}
+                aria-busy={submitting || undefined}
+                className="button-primary flex-1"
+              >
                 <Mail size={17} aria-hidden="true" />
-                <span>Send</span>
+                <span>{submitting ? "Sending…" : "Send"}</span>
               </button>
             </div>
           </form>
+        ) : (
+          <div className="flex flex-col gap-3">
+            <p className="text-sm">Thanks — we'll be in touch.</p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={handleClose}
+              className="button-primary"
+            >
+              <span>Close</span>
+            </button>
+          </div>
         )}
       </DialogContent>
     </Dialog>
