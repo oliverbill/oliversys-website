@@ -23,7 +23,7 @@ function Brand() {
     <Link href="/" className="brand-lockup" aria-label="Brightember home">
       <span className="brand-mark-wrap">
         <img
-          src="/manus-storage/brightember-evidence-aperture-web_21ec70d8.png"
+          src="/brightember-logo.png"
           alt=""
           className="brand-mark"
         />
