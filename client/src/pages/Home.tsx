@@ -17,7 +17,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="container hero-grid">
           <div className="hero-copy reveal">
-            <p className="eyebrow ember">Independent technical due diligence</p>
+            <p className="eyebrow ember">Independent Software Due Diligence</p>
             <h1>
               Technical conviction before transaction <em>exposure.</em>
             </h1>

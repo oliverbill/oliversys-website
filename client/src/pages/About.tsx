@@ -7,7 +7,7 @@ import { CallSection, EvidenceArtifact, PageIntro } from "@/components/SharedSec
 export default function About() {
   return (
     <>
-      <PageIntro eyebrow="About Brightember" title="Independent by design. Accountable to the" italic="evidence." copy="Brightember is a Portugal-focused, Europe-wide technical due diligence practice for venture investors and M&A deal teams." index="04" artifact="about" />
+      <PageIntro eyebrow="About Brightember" title="Independent by design. Accountable to the" italic="evidence." copy="Brightember is a Portugal-focused, Europe-wide Software Due Diligence practice for venture investors and M&A deal teams." index="04" artifact="about" />
       <section className="about-story paper-section">
         <div className="container about-story-grid">
           <div className="about-image cut-corner"><EvidenceArtifact variant="independence" /><span>BRIGHTEMBER / PORTUGAL · EUROPE</span></div>
