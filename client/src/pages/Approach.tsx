@@ -57,7 +57,7 @@ export default function Approach() {
           <Link href="/investors" className="text-link light">See the investor mandate <ArrowRight size={17} /></Link>
         </div>
       </section>
-      <CallSection context="a technical due diligence mandate" buttonText="Define the review scope" />
+      <CallSection context="a Software Due Diligence mandate" buttonText="Define the review scope" />
     </>
   );
 }
