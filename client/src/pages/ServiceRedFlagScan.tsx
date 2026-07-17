@@ -76,7 +76,7 @@ const timeline = [
 
 export default function ServiceRedFlagScan() {
   return (
-    <>
+    <div className="service-page">
       {/* Hero */}
       <section className="page-intro carbon-section">
         <div className="container page-intro-grid">
@@ -196,7 +196,7 @@ export default function ServiceRedFlagScan() {
       {/* Timeline */}
       <section className="paper-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
-          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}>
+          <div className="section-kicker-row">
             <p className="eyebrow">Estimated timeline</p>
             <span>
               <Clock size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }} />
@@ -332,6 +332,6 @@ export default function ServiceRedFlagScan() {
         context="a Tier 1 Red Flag Scan"
         buttonText="Request an engagement scope call"
       />
-    </>
+    </div>
   );
 }
