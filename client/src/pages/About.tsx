@@ -23,10 +23,10 @@ export default function About() {
         <div className="container">
           <div className="section-kicker-row light-row"><p className="eyebrow ember">Operating principles</p><span>HOW WE WORK</span></div>
           <div className="principles-grid">
-            <article><span>01</span><h3>Material over exhaustive</h3><p>Depth follows decision relevance. We do not confuse a longer checklist with a better diligence outcome.</p></article>
-            <article><span>02</span><h3>Direct over dramatic</h3><p>Technical risk is stated clearly, with proportion and context. No fear-based findings. No false comfort.</p></article>
-            <article><span>03</span><h3>Evidence over instinct</h3><p>Views are traceable to what was inspected, discussed, and tested—and explicit about remaining uncertainty.</p></article>
-            <article><span>04</span><h3>Discreet by default</h3><p>Information access, communication, and reporting are treated with the care expected in a live transaction.</p></article>
+            <article><h3>Material over exhaustive</h3><p>Depth follows decision relevance. We do not confuse a longer checklist with a better diligence outcome.</p></article>
+            <article><h3>Direct over dramatic</h3><p>Technical risk is stated clearly, with proportion and context. No fear-based findings. No false comfort.</p></article>
+            <article><h3>Evidence over instinct</h3><p>Views are traceable to what was inspected, discussed, and tested—and explicit about remaining uncertainty.</p></article>
+            <article><h3>Discreet by default</h3><p>Information access, communication, and reporting are treated with the care expected in a live transaction.</p></article>
           </div>
         </div>
       </section>
