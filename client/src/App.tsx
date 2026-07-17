@@ -1,6 +1,7 @@
 /**
  * Forensic Ember routing: a focused editorial journey separates investor,
  * counsel, approach, and firm narratives while preserving one brand system.
+ * Blog routes added 2026-07-17.
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +14,8 @@ import Approach from "./pages/Approach";
 import Investors from "./pages/Investors";
 import Counsel from "./pages/Counsel";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import SiteLayout from "./components/SiteLayout";
 
 
@@ -25,6 +28,8 @@ function Router() {
         <Route path={"/investors"} component={Investors} />
         <Route path={"/counsel"} component={Counsel} />
         <Route path={"/about"} component={About} />
+        <Route path={"/blog"} component={Blog} />
+        <Route path={"/blog/:slug"} component={BlogPost} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>

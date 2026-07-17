@@ -355,6 +355,46 @@
   .not-found p:not(.eyebrow) { max-width: 38rem; color: #aaa9a3; line-height: 1.7; }
   .not-found .button-primary { margin-top: 1.2rem; }
 
+  /* ── Blog index ─────────────────────────────────────────────── */
+  .blog-index { padding: 5rem 0 8rem; }
+  .blog-index-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .blog-card { border-top: 1px solid #bbb6aa; border-right: 1px solid #bbb6aa; }
+  .blog-card:nth-child(2n) { border-right: 0; }
+  .blog-card-inner { display: flex; flex-direction: column; gap: .9rem; padding: 2rem 2rem 2rem 0; text-decoration: none; color: inherit; transition: background 180ms ease; }
+  .blog-card:nth-child(2n) .blog-card-inner { padding-left: 2rem; }
+  .blog-card-inner:hover { background: #ebe4d7; }
+  .blog-card-header { display: flex; align-items: center; gap: 1rem; }
+  .blog-pillar-tag { font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f05a32; padding: .28rem .55rem; border: 1px solid #f05a32; }
+  .blog-date { font-size: .6rem; letter-spacing: .07em; color: #77786f; }
+  .blog-card-title { margin: 0; font-family: "Fraunces", serif; font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 500; line-height: 1.12; letter-spacing: -.025em; }
+  .blog-card-desc { margin: 0; color: #5e605a; font-size: .82rem; line-height: 1.68; }
+  .blog-card-cta { display: inline-flex; align-items: center; gap: .45rem; margin-top: .4rem; font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #20211e; border-bottom: 1px solid #a8a79f; padding-bottom: .2rem; transition: color 160ms ease, border-color 160ms ease; }
+  .blog-card-inner:hover .blog-card-cta { color: #f05a32; border-color: #f05a32; }
+
+  /* ── Blog post ──────────────────────────────────────────────── */
+  .blog-back-link { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 3rem; color: #bbb9b0; font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; transition: color 160ms ease; }
+  .blog-back-link:hover { color: #f05a32; }
+  .blog-post-header { max-width: 52rem; }
+  .blog-post-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.4rem; }
+  .blog-post-meta time { font-size: .62rem; letter-spacing: .07em; color: #bbb9b0; }
+  .blog-post-header h1 { max-width: 48rem; margin: 0 0 1.2rem; font-size: clamp(2.8rem, 5vw, 5.4rem); line-height: .95; }
+  .blog-post-lede { max-width: 42rem; margin: 0; color: #bbb9b0; font-size: clamp(.95rem, 1.4vw, 1.1rem); line-height: 1.78; }
+  .blog-post { padding: 6rem 0 8rem; }
+  .blog-post-body { max-width: 44rem; }
+  .blog-post-body > p { margin: 0 0 1.6rem; color: #44473f; line-height: 1.85; font-size: clamp(.88rem, 1.1vw, 1rem); }
+  .blog-post-body > h2 { margin: 3.2rem 0 1rem; font-size: clamp(1.7rem, 2.8vw, 2.6rem); line-height: 1.06; letter-spacing: -.03em; }
+  .blog-post-body > h3 { margin: 2rem 0 .7rem; font-size: clamp(1.2rem, 1.8vw, 1.7rem); }
+  .blog-post-body > h2 + p, .blog-post-body > h3 + p { margin-top: 0; }
+  .blog-post-body strong { font-weight: 700; color: #20211e; }
+  .blog-post-body code { font-family: "Fira Code", "Consolas", monospace; font-size: .82em; background: #e8e2d6; padding: .18em .38em; color: #20211e; }
+  .blog-code-block { margin: 1.8rem 0; padding: 1.4rem 1.6rem; background: #1a1c19; overflow-x: auto; border-left: 2px solid #f05a32; }
+  .blog-code-block code { font-family: "Fira Code", "Consolas", monospace; font-size: .78rem; color: #c9c5bb; background: none; padding: 0; line-height: 1.7; white-space: pre; }
+  .blog-post-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #bbb6aa; }
+  .blog-post-footer p { margin: 0; color: #5e605a; font-size: .88rem; line-height: 1.7; }
+  .blog-post-footer a { color: #f05a32; text-decoration: none; border-bottom: 1px solid rgba(240,90,50,.4); }
+  .blog-post-footer a:hover { border-color: #f05a32; }
+  .blog-back-section { padding: 3rem 0 5rem; }
+
   @media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
   @media (min-width: 1024px) { .container { max-width: 1280px; padding-inline: 2rem; } }
 }
@@ -381,6 +421,9 @@
   .hero-dossier { max-width: 26rem; }
   .scroll-cue { display: none; }
   .exposure-grid, .visual-grid, .evidence-grid, .page-intro-grid, .scope-grid, .deliverable-grid, .investor-problem-grid, .mandate-grid, .counsel-value-grid, .counsel-use-grid, .about-story-grid, .position-grid, .call-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .blog-index-grid { grid-template-columns: 1fr; }
+  .blog-card { border-right: 0; }
+  .blog-card:nth-child(2n) .blog-card-inner { padding-left: 0; }
   .question-grid, .principles-grid { grid-template-columns: repeat(2,1fr); }
   .partner-principles { grid-template-columns: 1fr; }
   .partner-principles article { border-left: 0; border-top: 1px solid #b9b4a8; }
