@@ -360,6 +360,8 @@ function Footer() {
           <Link href="/investors">Venture investors</Link>
           <Link href="/counsel">M&amp;A counsel</Link>
           <Link href="/approach">Diligence approach</Link>
+          <Link href="/services/red-flag-scan/">Red Flag Scan (Tier 1)</Link>
+          <Link href="/services/full-technical-due-diligence/">Full TDD (Tier 2)</Link>
           <Link href="/blog">Blog</Link>
         </div>
         <div>

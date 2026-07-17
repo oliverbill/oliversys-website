@@ -215,6 +215,8 @@ const STATIC_PAGES = [
   { path: "/investors", priority: "0.9", changefreq: "monthly" },
   { path: "/counsel", priority: "0.9", changefreq: "monthly" },
   { path: "/approach", priority: "0.9", changefreq: "monthly" },
+  { path: "/services/red-flag-scan/", priority: "0.9", changefreq: "monthly" },
+  { path: "/services/full-technical-due-diligence/", priority: "0.9", changefreq: "monthly" },
   { path: "/about", priority: "0.8", changefreq: "monthly" },
   { path: "/blog", priority: "0.9", changefreq: "weekly" },
 ];

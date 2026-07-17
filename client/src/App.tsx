@@ -16,6 +16,8 @@ import Counsel from "./pages/Counsel";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import ServiceRedFlagScan from "./pages/ServiceRedFlagScan";
+import ServiceFullTDD from "./pages/ServiceFullTDD";
 import SiteLayout from "./components/SiteLayout";
 
 
@@ -30,6 +32,10 @@ function Router() {
         <Route path={"/about"} component={About} />
         <Route path={"/blog"} component={Blog} />
         <Route path={"/blog/:slug"} component={BlogPost} />
+        <Route path={"/services/red-flag-scan"} component={ServiceRedFlagScan} />
+        <Route path={"/services/red-flag-scan/"} component={ServiceRedFlagScan} />
+        <Route path={"/services/full-technical-due-diligence"} component={ServiceFullTDD} />
+        <Route path={"/services/full-technical-due-diligence/"} component={ServiceFullTDD} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
