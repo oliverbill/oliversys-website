@@ -48,13 +48,13 @@ while IFS= read -r -d '' src_file; do
   if [[ ! -f "${dest_file}" ]]; then
     cp "${src_file}" "${dest_file}"
     echo "  added:   ${filename}"
-    ((added++))
+    added=$((added+1))
   elif ! cmp -s "${src_file}" "${dest_file}"; then
     cp "${src_file}" "${dest_file}"
     echo "  updated: ${filename}"
-    ((updated++))
+    updated=$((updated+1))
   else
-    ((unchanged++))
+    unchanged=$((unchanged+1))
   fi
 done < <(find "${SOURCE_DIR}" -maxdepth 1 -name "*.md" -print0 | sort -z)
 
@@ -65,7 +65,7 @@ while IFS= read -r -d '' dest_file; do
   if [[ ! -f "${src_file}" ]]; then
     rm "${dest_file}"
     echo "  deleted: ${filename}"
-    ((deleted++))
+    deleted=$((deleted+1))
   fi
 done < <(find "${DEST_DIR}" -maxdepth 1 -name "*.md" -print0 | sort -z)
 
