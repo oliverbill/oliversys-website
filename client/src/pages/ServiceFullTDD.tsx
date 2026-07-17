@@ -228,7 +228,7 @@ export default function ServiceFullTDD() {
       {/* Timeline */}
       <section className="paper-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
-          <div className="section-kicker-row">
+          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}>
             <p className="eyebrow">Estimated timeline</p>
             <span>
               <Clock
