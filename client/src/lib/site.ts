@@ -12,6 +12,8 @@ export const site = {
     { label: "Approach", href: "/approach" },
     { label: "For investors", href: "/investors" },
     { label: "For counsel", href: "/counsel" },
+    { label: "Red Flag Scan", href: "/services/red-flag-scan/" },
+    { label: "Full TDD", href: "/services/full-technical-due-diligence/" },
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
   ],
