@@ -203,7 +203,86 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+// =============================================================================
+// Sitemap generator — runs at build time, writes client/public/sitemap.xml.
+// Reads .md frontmatter from client/src/content/blog/ to get slug + publishDate.
+// =============================================================================
+
+const BASE_URL = "https://brightember.tech";
+
+const STATIC_PAGES = [
+  { path: "/", priority: "1.0", changefreq: "weekly" },
+  { path: "/investors", priority: "0.9", changefreq: "monthly" },
+  { path: "/counsel", priority: "0.9", changefreq: "monthly" },
+  { path: "/approach", priority: "0.9", changefreq: "monthly" },
+  { path: "/about", priority: "0.8", changefreq: "monthly" },
+  { path: "/blog", priority: "0.9", changefreq: "weekly" },
+];
+
+function parseFrontmatterForSitemap(raw: string): { slug?: string; publishDate?: string } {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return {};
+  const yaml = match[1];
+  const canonicalMatch = yaml.match(/^canonicalTopic:\s*(.+)$/m);
+  const dateMatch = yaml.match(/^publishDate:\s*(.+)$/m);
+  return {
+    slug: canonicalMatch?.[1]?.trim().replace(/^['"]|['"]$/g, ""),
+    publishDate: dateMatch?.[1]?.trim().replace(/^['"]|['"]$/g, ""),
+  };
+}
+
+function vitePluginSitemap(): Plugin {
+  return {
+    name: "brightember-sitemap",
+    apply: "build",
+    closeBundle() {
+      const blogDir = path.join(PROJECT_ROOT, "client", "src", "content", "blog");
+      const outDir = path.join(PROJECT_ROOT, "dist", "public");
+
+      const today = new Date().toISOString().slice(0, 10);
+
+      const articleEntries: string[] = [];
+      if (fs.existsSync(blogDir)) {
+        for (const file of fs.readdirSync(blogDir)) {
+          if (!file.endsWith(".md")) continue;
+          const raw = fs.readFileSync(path.join(blogDir, file), "utf-8");
+          const { slug, publishDate } = parseFrontmatterForSitemap(raw);
+          if (!slug) continue;
+          const lastmod = publishDate ?? today;
+          articleEntries.push(
+            `  <url>\n    <loc>${BASE_URL}/blog/${slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+          );
+        }
+      }
+
+      // Sort articles by lastmod descending
+      articleEntries.sort((a, b) => {
+        const da = a.match(/<lastmod>([^<]+)/)?.[1] ?? "";
+        const db = b.match(/<lastmod>([^<]+)/)?.[1] ?? "";
+        return db.localeCompare(da);
+      });
+
+      const staticEntries = STATIC_PAGES.map(
+        (p) =>
+          `  <url>\n    <loc>${BASE_URL}${p.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`,
+      );
+
+      const xml = [
+        `<?xml version="1.0" encoding="UTF-8"?>`,
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+        ...staticEntries,
+        ...articleEntries,
+        `</urlset>`,
+      ].join("\n");
+
+      if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), xml, "utf-8");
+      console.log(`[brightember-sitemap] wrote sitemap.xml (${staticEntries.length} pages + ${articleEntries.length} articles)`);
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginSitemap()];
 
 export default defineConfig({
   plugins,
