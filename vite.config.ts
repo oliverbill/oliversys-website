@@ -284,7 +284,28 @@ function vitePluginSitemap(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginSitemap()];
+/**
+ * GitHub Pages SPA fallback — copies index.html → 404.html after each build.
+ * GitHub Pages serves 404.html for any path it cannot resolve as a static file,
+ * so the React router (wouter) handles the path client-side on direct URL access.
+ */
+function vitePluginGhPagesSpaFallback(): Plugin {
+  return {
+    name: "brightember-gh-pages-spa-fallback",
+    apply: "build",
+    closeBundle() {
+      const outDir = path.join(PROJECT_ROOT, "dist", "public");
+      const src = path.join(outDir, "index.html");
+      const dest = path.join(outDir, "404.html");
+      if (fs.existsSync(src)) {
+        fs.copyFileSync(src, dest);
+        console.log("[brightember-gh-pages-spa-fallback] copied index.html → 404.html");
+      }
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginSitemap(), vitePluginGhPagesSpaFallback()];
 
 export default defineConfig({
   plugins,
