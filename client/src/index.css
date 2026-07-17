@@ -357,6 +357,9 @@
 
   /* ── Blog index ─────────────────────────────────────────────── */
   .blog-index { padding: 5rem 0 8rem; }
+  .blog-rss-link { grid-column: 1 / -1; margin: 0 0 1.5rem; font-size: .72rem; letter-spacing: .04em; color: #5e605a; }
+  .blog-rss-link a { color: #5e605a; text-decoration: underline; text-underline-offset: .2em; }
+  .blog-rss-link a:hover { color: #f05a32; }
   .blog-index-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
   .blog-card { border-top: 1px solid #bbb6aa; border-right: 1px solid #bbb6aa; }
   .blog-card:nth-child(2n) { border-right: 0; }
