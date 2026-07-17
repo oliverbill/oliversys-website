@@ -283,10 +283,11 @@
   .scope-columns svg { color: #f05a32; flex: 0 0 auto; }
   .deliverable-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; }
   .deliverable-grid h2 { margin: 0; font-size: clamp(2.8rem,4.4vw,5rem); line-height: .98; }
+  .deliverable-list { color: #f05a32; }
   .deliverable-list > div { display: grid; grid-template-columns: 2.5rem 1fr; padding: 1.3rem 0; border-top: 1px solid #42443f; }
-  .deliverable-list span { grid-row: span 2; color: #f05a32; font-size: .6rem; }
-  .deliverable-list strong { font-size: .86rem; }
-  .deliverable-list p { color: #989a93; font-size: .78rem; }
+  .deliverable-list span { grid-row: span 2; color: #f05a32; font-size: .9rem; }
+  .deliverable-list strong { font-size: 1.29rem; }
+  .deliverable-list p { color: #989a93; font-size: 1.17rem; }
   .deliverable-grid > .text-link { grid-column: 2; justify-self: start; }
 
   .investor-problem-grid, .counsel-value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
