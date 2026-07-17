@@ -4,7 +4,7 @@
  */
 export const site = {
   name: "Brightember",
-  email: "contact@brightember.pt",
+  email: "reviews@oliversoft.tech",
   location: "Portugal · Europe-wide",
   bookingSubject: "Confidential introductory call",
   nav: [

@@ -101,7 +101,7 @@ export function BookCallLink({
     setSubmitting(true);
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/contact@brightember.pt",
+        "https://formsubmit.co/ajax/reviews@oliversoft.tech",
         {
           method: "POST",
           headers: {
