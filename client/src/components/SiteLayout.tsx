@@ -320,7 +320,7 @@ function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          <BookCallLink className="button-small">Open a review</BookCallLink>
+          <BookCallLink className="button-small">Request a Tech Review</BookCallLink>
           <button
             type="button"
             className="menu-toggle"
