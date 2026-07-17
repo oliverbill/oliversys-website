@@ -46,6 +46,8 @@ export function BookCallLink({
 }) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<"options" | "email-form" | "success">("options");
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -54,6 +56,8 @@ export function BookCallLink({
 
   const resetDialogState = () => {
     setView("options");
+    setName("");
+    setCompany("");
     setEmail("");
     setMessage("");
     setError(null);
@@ -69,6 +73,8 @@ export function BookCallLink({
 
   const handleEmailOptionClick = () => {
     setError(null);
+    setName("");
+    setCompany("");
     setEmail("");
     setMessage("");
     setView("email-form");
@@ -76,6 +82,8 @@ export function BookCallLink({
 
   const handleBack = () => {
     setError(null);
+    setName("");
+    setCompany("");
     setEmail("");
     setMessage("");
     setView("options");
@@ -89,6 +97,8 @@ export function BookCallLink({
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (submitting) return;
+    const trimmedName = name.trim();
+    const trimmedCompany = company.trim();
     const trimmedEmail = email.trim();
     const trimmedMessage = message.trim();
     if (!EMAIL_REGEX.test(trimmedEmail)) {
@@ -112,6 +122,8 @@ export function BookCallLink({
             _subject: "Brightember — contact form",
             _captcha: "false",
             _template: "box",
+            name: trimmedName,
+            company: trimmedCompany,
             email: trimmedEmail,
             message: trimmedMessage || "(no message)",
           }),
@@ -175,6 +187,33 @@ export function BookCallLink({
           </div>
         ) : view === "email-form" ? (
           <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
+            <label htmlFor="review-name" className="sr-only">
+              Your name
+            </label>
+            <Input
+              id="review-name"
+              type="text"
+              autoComplete="name"
+              autoFocus
+              required
+              placeholder="Your name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              disabled={submitting}
+            />
+            <label htmlFor="review-company" className="sr-only">
+              Company name
+            </label>
+            <Input
+              id="review-company"
+              type="text"
+              autoComplete="organization"
+              required
+              placeholder="Company name"
+              value={company}
+              onChange={(event) => setCompany(event.target.value)}
+              disabled={submitting}
+            />
             <label htmlFor="review-email" className="sr-only">
               Your email
             </label>
@@ -182,7 +221,7 @@ export function BookCallLink({
               id="review-email"
               type="email"
               autoComplete="email"
-              autoFocus
+              required
               placeholder="Your email"
               value={email}
               onChange={(event) => {
