@@ -12,7 +12,7 @@ export default function Blog() {
       <section className="page-intro carbon-section">
         <div className="container page-intro-grid">
           <div>
-            <p className="eyebrow ember">Field notes</p>
+            <p className="eyebrow ember">Blog</p>
             <h1>
               Technical evidence from the{" "}
               <em>review floor.</em>

@@ -12,7 +12,7 @@ export const site = {
     { label: "For investors", href: "/investors" },
     { label: "For counsel", href: "/counsel" },
     { label: "About", href: "/about" },
-    { label: "Field notes", href: "/blog" },
+    { label: "Blog", href: "/blog" },
   ],
 };
 
