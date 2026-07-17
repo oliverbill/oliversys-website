@@ -268,10 +268,10 @@
 
   .phase-list { margin-top: 3rem; }
   .phase-list article { display: grid; grid-template-columns: .25fr 1fr .9fr .55fr; gap: 4%; align-items: start; padding: 2.2rem 0; border-top: 1px solid #bbb6aa; }
-  .phase-number { color: #f05a32; font-size: .63rem; }
+  .phase-number { color: #f05a32; font-size: .95rem; }
   .phase-list h2 { margin: 0; font-size: clamp(1.9rem, 3vw, 3.1rem); }
-  .phase-list p { margin: .3rem 0 0; color: #5d5f57; line-height: 1.7; font-size: .88rem; }
-  .phase-list small { color: #777970; font-size: .57rem; letter-spacing: .08em; text-transform: uppercase; }
+  .phase-list p { margin: .3rem 0 0; color: #5d5f57; line-height: 1.7; font-size: 1.32rem; }
+  .phase-list small { color: #777970; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase; }
   .scope-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; align-items: center; }
   .scope-image { position: relative; height: 35rem; overflow: hidden; }
   .scope-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -299,7 +299,7 @@
   .mandate-image img { width: 100%; height: 100%; object-fit: cover; }
   .mandate-section p:not(.eyebrow) { color: #aaa9a3; line-height: 1.7; }
   .check-list { padding: 0; list-style: none; }
-  .check-list li { display: flex; align-items: flex-start; gap: .8rem; padding: .9rem 0; border-top: 1px solid #41433e; color: #c7c5bd; font-size: .8rem; line-height: 1.5; }
+  .check-list li { display: flex; align-items: flex-start; gap: .8rem; padding: .9rem 0; border-top: 1px solid #41433e; color: #c7c5bd; font-size: 1.2rem; line-height: 1.5; }
   .check-list svg { width: 17px; color: #f05a32; flex: 0 0 auto; }
   .question-grid { display: grid; grid-template-columns: repeat(4,1fr); margin: 3rem 0; border-top: 1px solid #b6b9b1; }
   .question-grid article { min-height: 18rem; padding: 1.5rem 1.4rem 1.5rem 0; border-right: 1px solid #b6b9b1; }

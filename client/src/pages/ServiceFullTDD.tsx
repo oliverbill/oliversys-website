@@ -194,7 +194,7 @@ export default function ServiceFullTDD() {
                       style={{
                         display: "block",
                         marginBottom: "0.25rem",
-                        fontSize: "0.9rem",
+                        fontSize: "1.35rem",
                         letterSpacing: "0.03em",
                       }}
                     >
@@ -203,7 +203,7 @@ export default function ServiceFullTDD() {
                     <p
                       style={{
                         margin: 0,
-                        fontSize: "0.875rem",
+                        fontSize: "1.31rem",
                         opacity: 0.75,
                         lineHeight: 1.6,
                       }}
@@ -215,7 +215,7 @@ export default function ServiceFullTDD() {
               </div>
             ))}
           </div>
-          <p style={{ marginTop: "2rem", opacity: 0.6, fontSize: "0.875rem" }}>
+          <p style={{ marginTop: "2rem", opacity: 0.6, fontSize: "1.31rem" }}>
             For the full list of base pipeline skills, see the{" "}
             <Link href="/services/red-flag-scan/" style={{ color: "#f05a32", textDecoration: "underline" }}>
               Tier 1 Red Flag Scan page
@@ -299,7 +299,7 @@ export default function ServiceFullTDD() {
                     gap: "0.5rem",
                   }}
                 >
-                  <strong style={{ fontSize: "0.9rem" }}>{interview.role}</strong>
+                  <strong style={{ fontSize: "1.35rem" }}>{interview.role}</strong>
                   <span
                     style={{
                       fontSize: "0.7rem",
@@ -317,14 +317,14 @@ export default function ServiceFullTDD() {
                     {interview.required ? "REQUIRED" : "OPTIONAL"}
                   </span>
                 </div>
-                <p style={{ margin: "0 0 0.5rem", fontSize: "0.875rem", opacity: 0.75 }}>
+                <p style={{ margin: "0 0 0.5rem", fontSize: "1.31rem", opacity: 0.75 }}>
                   {interview.focus}
                 </p>
-                <small style={{ opacity: 0.5, fontSize: "0.8rem" }}>{interview.duration}</small>
+                <small style={{ opacity: 0.5, fontSize: "1.2rem" }}>{interview.duration}</small>
               </div>
             ))}
           </div>
-          <p style={{ marginTop: "1.5rem", fontSize: "0.875rem", opacity: 0.65 }}>
+          <p style={{ marginTop: "1.5rem", fontSize: "1.31rem", opacity: 0.65 }}>
             All interviews are conducted by video call, recorded with each interviewee's consent for note-taking accuracy.
           </p>
         </div>

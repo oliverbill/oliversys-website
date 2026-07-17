@@ -179,10 +179,10 @@ export default function ServiceRedFlagScan() {
                     style={{ color: "#f05a32", flexShrink: 0, marginTop: "0.2rem" }}
                   />
                   <div>
-                    <strong style={{ display: "block", marginBottom: "0.25rem", fontSize: "0.9rem", letterSpacing: "0.03em" }}>
+                    <strong style={{ display: "block", marginBottom: "0.25rem", fontSize: "1.35rem", letterSpacing: "0.03em" }}>
                       {item.label}
                     </strong>
-                    <p style={{ margin: 0, fontSize: "0.875rem", opacity: 0.75, lineHeight: 1.6 }}>
+                    <p style={{ margin: 0, fontSize: "1.31rem", opacity: 0.75, lineHeight: 1.6 }}>
                       {item.detail}
                     </p>
                   </div>
