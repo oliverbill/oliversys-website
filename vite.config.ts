@@ -284,6 +284,110 @@ function vitePluginSitemap(): Plugin {
   };
 }
 
+// =============================================================================
+// RSS feed generator — runs at build time, writes dist/public/rss.xml.
+// Includes all blog articles: title, description, publishDate, canonical URL.
+// Uses the same frontmatter parser as the sitemap plugin.
+// =============================================================================
+
+interface RssArticle {
+  slug: string;
+  title: string;
+  description: string;
+  publishDate: string;
+}
+
+function parseFrontmatterForRss(raw: string): RssArticle | null {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return null;
+  const yaml = match[1];
+
+  const get = (key: string) =>
+    yaml.match(new RegExp(`^${key}:\\s*(.+)$`, "m"))?.[1]?.trim().replace(/^['"]|['"]$/g, "") ?? "";
+
+  const slug = get("canonicalTopic");
+  const title = get("title");
+  const description = get("description");
+  const publishDate = get("publishDate");
+
+  if (!slug || !title) return null;
+  return { slug, title, description, publishDate };
+}
+
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function toRfc822(dateStr: string): string {
+  // dateStr is YYYY-MM-DD; publish at noon UTC to avoid off-by-one timezone issues
+  const d = new Date(`${dateStr}T12:00:00Z`);
+  return d.toUTCString();
+}
+
+function vitePluginRss(): Plugin {
+  return {
+    name: "brightember-rss",
+    apply: "build",
+    closeBundle() {
+      const blogDir = path.join(PROJECT_ROOT, "client", "src", "content", "blog");
+      const outDir = path.join(PROJECT_ROOT, "dist", "public");
+
+      const articles: RssArticle[] = [];
+      if (fs.existsSync(blogDir)) {
+        for (const file of fs.readdirSync(blogDir)) {
+          if (!file.endsWith(".md")) continue;
+          const raw = fs.readFileSync(path.join(blogDir, file), "utf-8");
+          const article = parseFrontmatterForRss(raw);
+          if (article) articles.push(article);
+        }
+      }
+
+      // Sort newest first
+      articles.sort((a, b) => b.publishDate.localeCompare(a.publishDate));
+
+      const buildDate = new Date().toUTCString();
+
+      const items = articles.map((a) => {
+        const link = `${BASE_URL}/blog/${escapeXml(a.slug)}`;
+        const pubDate = a.publishDate ? toRfc822(a.publishDate) : buildDate;
+        return [
+          `    <item>`,
+          `      <title>${escapeXml(a.title)}</title>`,
+          `      <link>${link}</link>`,
+          `      <description>${escapeXml(a.description)}</description>`,
+          `      <pubDate>${pubDate}</pubDate>`,
+          `      <guid isPermaLink="true">${link}</guid>`,
+          `    </item>`,
+        ].join("\n");
+      });
+
+      const xml = [
+        `<?xml version="1.0" encoding="UTF-8"?>`,
+        `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">`,
+        `  <channel>`,
+        `    <title>Brightember — Technical Due Diligence</title>`,
+        `    <link>${BASE_URL}/blog</link>`,
+        `    <description>Long-form writing on technical due diligence practice: what the tools catch, what the human catches, and what the Iberian deal market misses.</description>`,
+        `    <language>en-gb</language>`,
+        `    <lastBuildDate>${buildDate}</lastBuildDate>`,
+        `    <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>`,
+        ...items,
+        `  </channel>`,
+        `</rss>`,
+      ].join("\n");
+
+      if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+      fs.writeFileSync(path.join(outDir, "rss.xml"), xml, "utf-8");
+      console.log(`[brightember-rss] wrote rss.xml (${articles.length} articles)`);
+    },
+  };
+}
+
 /**
  * GitHub Pages SPA fallback — copies index.html → 404.html after each build.
  * GitHub Pages serves 404.html for any path it cannot resolve as a static file,
@@ -305,7 +409,7 @@ function vitePluginGhPagesSpaFallback(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginSitemap(), vitePluginGhPagesSpaFallback()];
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), vitePluginSitemap(), vitePluginRss(), vitePluginGhPagesSpaFallback()];
 
 export default defineConfig({
   plugins,
