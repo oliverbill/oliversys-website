@@ -75,7 +75,7 @@ const interviews = [
 
 export default function ServiceFullTDD() {
   return (
-    <>
+    <div className="service-page">
       {/* Hero */}
       <section className="page-intro carbon-section">
         <div className="container page-intro-grid">
@@ -228,7 +228,7 @@ export default function ServiceFullTDD() {
       {/* Timeline */}
       <section className="paper-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
-          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}>
+          <div className="section-kicker-row">
             <p className="eyebrow">Estimated timeline</p>
             <span>
               <Clock
@@ -415,6 +415,6 @@ export default function ServiceFullTDD() {
         context="a Tier 2 Full Technical Due Diligence engagement"
         buttonText="Request an engagement scope call"
       />
-    </>
+    </div>
   );
 }
