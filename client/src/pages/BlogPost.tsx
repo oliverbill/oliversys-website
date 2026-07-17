@@ -34,7 +34,7 @@ export default function BlogPost() {
       <section className="page-intro carbon-section">
         <div className="container">
           <Link href="/blog" className="blog-back-link">
-            <ArrowLeft size={15} aria-hidden="true" /> Field notes
+            <ArrowLeft size={15} aria-hidden="true" /> Blog
           </Link>
           <div className="blog-post-header">
             <div className="blog-post-meta">
@@ -76,7 +76,7 @@ export default function BlogPost() {
       <section className="blog-back-section paper-section">
         <div className="container">
           <Link href="/blog" className="text-link">
-            <ArrowLeft size={15} /> All field notes
+            <ArrowLeft size={15} /> All posts
           </Link>
         </div>
       </section>

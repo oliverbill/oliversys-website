@@ -360,7 +360,7 @@ function Footer() {
           <Link href="/investors">Venture investors</Link>
           <Link href="/counsel">M&amp;A counsel</Link>
           <Link href="/approach">Diligence approach</Link>
-          <Link href="/blog">Field notes</Link>
+          <Link href="/blog">Blog</Link>
         </div>
         <div>
           <p className="footer-label">Contact</p>
