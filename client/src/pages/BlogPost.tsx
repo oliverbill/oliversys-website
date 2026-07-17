@@ -7,6 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link, useParams } from "wouter";
 import { getArticleBySlug, formatDate, PILLAR_LABELS } from "@/lib/blog";
 import { renderMarkdown } from "@/lib/renderMarkdown";
+import { site } from "@/lib/site";
 import NotFound from "./NotFound";
 
 export default function BlogPost() {
@@ -60,7 +61,7 @@ export default function BlogPost() {
                 I do senior-engineer tech due diligence for Iberian seed and
                 Series A. If you have a repo on the desk this week,{" "}
                 <a
-                  href="https://www.linkedin.com/in/williamoliveira/"
+                  href={site.linkedinPersonal}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
