@@ -337,8 +337,7 @@
   .principles-grid article { min-height: 20rem; padding: 1.5rem; border-right: 1px solid #41433e; }
   .principles-grid article:first-child { padding-left: 0; }
   .principles-grid article:last-child { border-right: 0; }
-  .principles-grid span { color: #f05a32; font-size: .59rem; }
-  .principles-grid h3 { margin-top: 5rem; font-size: 1.65rem; }
+  .principles-grid h3 { margin-top: 1.2rem; font-size: 1.65rem; }
   .principles-grid p { color: #999b94; line-height: 1.65; font-size: .78rem; }
   .position-grid { display: grid; grid-template-columns: .3fr 1.2fr .5fr; gap: 7%; align-items: start; }
   .position-grid blockquote { margin: 0; font-size: clamp(2.5rem,4.5vw,5.2rem); line-height: 1; }
@@ -462,7 +461,7 @@
   .engagement-flow > div, .engagement-flow > div + div { min-height: auto; padding: 1.6rem 0; border-right: 0; border-bottom: 1px solid #41433e; }
   .engagement-flow h3 { margin-top: 2rem; }
   .principles-grid article, .principles-grid article:first-child { min-height: auto; padding: 1.5rem 0; border-right: 0; border-bottom: 1px solid #41433e; }
-  .principles-grid h3 { margin-top: 2.5rem; }
+  .principles-grid h3 { margin-top: 0.6rem; }
   .partner-principles { margin-top: 1rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
