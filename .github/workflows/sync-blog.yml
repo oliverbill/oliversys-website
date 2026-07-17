@@ -1,0 +1,58 @@
+name: Sync blog articles from DD repo
+
+# Trigger: manual dispatch, or daily at 06:00 UTC.
+# NOT triggered on push — the deploy workflow covers that.
+# After editing an article in the DD repo, run this via:
+#   gh workflow run sync-blog.yml --repo oliverbill/brightember
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SYNC_PAT }}
+
+      - name: Checkout DD repo (private)
+        uses: actions/checkout@v4
+        with:
+          repository: oliverbill/tech-due-diligence-report
+          token: ${{ secrets.SYNC_PAT }}
+          path: _dd-repo
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run sync
+        env:
+          BLOG_SOURCE_DIR: ${{ github.workspace }}/_dd-repo/content/articles
+        run: pnpm sync-blog
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add client/src/content/blog/
+          if git diff --cached --quiet; then
+            echo "No blog changes — nothing to commit."
+          else
+            git commit -m "chore(blog): sync articles from DD repo"
+            git push
+          fi

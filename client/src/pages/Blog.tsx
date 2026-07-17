@@ -31,6 +31,9 @@ export default function Blog() {
 
       <section className="blog-index paper-section">
         <div className="container blog-index-grid">
+          <p className="blog-rss-link">
+            <a href="/rss.xml" aria-label="Subscribe via RSS">Subscribe via RSS</a>
+          </p>
           {articles.map((article) => (
             <article key={article.slug} className="blog-card">
               <Link href={`/blog/${article.slug}`} className="blog-card-inner">
