@@ -7,7 +7,7 @@ export const site = {
   email: "reviews@oliversoft.tech",
   location: "Portugal · Europe-wide",
   bookingSubject: "Confidential introductory call",
-  linkedinPersonal: "https://www.linkedin.com/in/williamoliveira/",
+  linkedinPersonal: "https://www.linkedin.com/in/walvesbill/",
   nav: [
     { label: "Approach", href: "/approach" },
     { label: "For investors", href: "/investors" },
