@@ -360,11 +360,8 @@
   .blog-rss-link { grid-column: 1 / -1; margin: 0 0 1.5rem; font-size: .72rem; letter-spacing: .04em; color: #5e605a; }
   .blog-rss-link a { color: #5e605a; text-decoration: underline; text-underline-offset: .2em; }
   .blog-rss-link a:hover { color: #f05a32; }
-  .blog-index-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
-  .blog-card { border-top: 1px solid #bbb6aa; border-right: 1px solid #bbb6aa; }
-  .blog-card:nth-child(2n) { border-right: 0; }
-  .blog-card-inner { display: flex; flex-direction: column; gap: .9rem; padding: 2rem 2rem 2rem 0; text-decoration: none; color: inherit; transition: background 180ms ease; }
-  .blog-card:nth-child(2n) .blog-card-inner { padding-left: 2rem; }
+  .blog-index-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .blog-card-inner { display: flex; flex-direction: column; gap: .9rem; padding: 2rem; text-decoration: none; color: inherit; transition: background 180ms ease; }
   .blog-card-inner:hover { background: #ebe4d7; }
   .blog-card-header { display: flex; align-items: center; gap: 1rem; }
   .blog-pillar-tag { font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #f05a32; padding: .28rem .55rem; border: 1px solid #f05a32; }
@@ -425,8 +422,6 @@
   .scroll-cue { display: none; }
   .exposure-grid, .visual-grid, .evidence-grid, .page-intro-grid, .scope-grid, .deliverable-grid, .investor-problem-grid, .mandate-grid, .counsel-value-grid, .counsel-use-grid, .about-story-grid, .position-grid, .call-grid { grid-template-columns: 1fr; gap: 3.5rem; }
   .blog-index-grid { grid-template-columns: 1fr; }
-  .blog-card { border-right: 0; }
-  .blog-card:nth-child(2n) .blog-card-inner { padding-left: 0; }
   .question-grid, .principles-grid { grid-template-columns: repeat(2,1fr); }
   .partner-principles { grid-template-columns: 1fr; }
   .partner-principles article { border-left: 0; border-top: 1px solid #b9b4a8; }
