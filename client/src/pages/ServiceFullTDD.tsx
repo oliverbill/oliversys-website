@@ -378,7 +378,7 @@ export default function ServiceFullTDD() {
             <div>
               <p className="eyebrow">When Tier 2 fits</p>
               <h2 style={{ marginBottom: "1rem" }}>Series B and later — or when multiple technical claims must be simultaneously true.</h2>
-              <p style={{ lineHeight: 1.7 }}>
+              <p style={{ lineHeight: 1.7, fontSize: "1.31rem" }}>
                 Series B and later rounds where the investment thesis depends on multiple
                 technical claims being simultaneously true. Corporate mergers and
                 acquisitions where a bad-fit target is a fund-wounding event. Search-fund

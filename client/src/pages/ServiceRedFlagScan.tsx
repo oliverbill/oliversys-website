@@ -235,7 +235,7 @@ export default function ServiceRedFlagScan() {
             </span>
           </div>
           <div style={{ maxWidth: "40rem", marginTop: "2rem" }}>
-            <ul className="check-list">
+            <ul className="check-list" style={{ color: "#797a72" }}>
               <li>
                 <CheckCircle2 />
                 <strong>Required role:</strong> target's Founder or Chief Technology Officer — someone who can speak to both architecture decisions and hiring plans.
