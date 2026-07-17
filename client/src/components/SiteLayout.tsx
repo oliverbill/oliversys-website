@@ -47,6 +47,7 @@ export function BookCallLink({
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<"options" | "email-form" | "success">("options");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -54,6 +55,7 @@ export function BookCallLink({
   const resetDialogState = () => {
     setView("options");
     setEmail("");
+    setMessage("");
     setError(null);
     setSubmitting(false);
   };
@@ -68,12 +70,14 @@ export function BookCallLink({
   const handleEmailOptionClick = () => {
     setError(null);
     setEmail("");
+    setMessage("");
     setView("email-form");
   };
 
   const handleBack = () => {
     setError(null);
     setEmail("");
+    setMessage("");
     setView("options");
   };
 
@@ -85,8 +89,9 @@ export function BookCallLink({
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (submitting) return;
-    const trimmed = email.trim();
-    if (!EMAIL_REGEX.test(trimmed)) {
+    const trimmedEmail = email.trim();
+    const trimmedMessage = message.trim();
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
       setError("Please enter a valid email address.");
       const el = document.getElementById("review-email");
       if (el instanceof HTMLInputElement) el.focus();
@@ -96,7 +101,7 @@ export function BookCallLink({
     setSubmitting(true);
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/reviews@oliversoft.tech",
+        "https://formsubmit.co/ajax/contact@brightember.pt",
         {
           method: "POST",
           headers: {
@@ -104,10 +109,11 @@ export function BookCallLink({
             Accept: "application/json",
           },
           body: JSON.stringify({
-            _subject: "Review Request",
+            _subject: "Brightember — contact form",
             _captcha: "false",
             _template: "box",
-            message: `${trimmed} requested a review!`,
+            email: trimmedEmail,
+            message: trimmedMessage || "(no message)",
           }),
         },
       );
@@ -186,6 +192,18 @@ export function BookCallLink({
               disabled={submitting}
               aria-invalid={error ? true : undefined}
               aria-describedby="review-email-error"
+            />
+            <label htmlFor="review-message" className="sr-only">
+              Message (optional)
+            </label>
+            <textarea
+              id="review-message"
+              placeholder="Brief context (optional)"
+              value={message}
+              onChange={(event) => setMessage(event.target.value)}
+              disabled={submitting}
+              rows={3}
+              className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
             />
             <p
               id="review-email-error"
