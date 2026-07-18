@@ -227,14 +227,14 @@ export default function ServiceRedFlagScan() {
       {/* Interviews */}
       <section className="mist-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
-          <div className="section-kicker-row">
-            <p className="eyebrow">Interviews</p>
-            <span>
+          <div className="section-kicker-row" style={{ color: "#000000" }}>
+            <p className="eyebrow" style={{ color: "#000000" }}>Interviews</p>
+            <span style={{ color: "#000000" }}>
               <Users size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }} />
               ONE 90-MINUTE SESSION
             </span>
           </div>
-          <div style={{ maxWidth: "40rem", marginTop: "2rem" }}>
+          <div style={{ maxWidth: "40rem", marginTop: "2rem", color: "#000000" }}>
             <ul className="check-list" style={{ color: "#000000" }}>
               <li>
                 <CheckCircle2 />
