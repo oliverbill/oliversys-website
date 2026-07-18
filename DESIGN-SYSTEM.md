@@ -1,4 +1,4 @@
-# Brightember Design System
+# Oliversys Design System
 
 > Reverse-engineered from source on 2026-07-15.
 > Single source of truth: `client/src/index.css`.
@@ -338,7 +338,7 @@ The ember accent border (`border-left: 2px solid #f05a32` or `border-left: 3px s
       <h1>{title} <em>{italic}</em></h1>
     </div>
     <div class="intro-aside">
-      <span class="section-index">{index} / BRIGHTEMBER</span>
+      <span class="section-index">{index} / OLIVERSYS</span>
       <p>{copy}</p>
       <HeroArtifact variant={artifact} />
     </div>

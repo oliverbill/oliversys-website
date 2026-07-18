@@ -1,5 +1,5 @@
 /**
- * Minimal markdown renderer for Brightember blog articles.
+ * Minimal markdown renderer for Oliversys blog articles.
  * Handles the exact subset used in content/articles/:
  *   - ## headings (h2), ### (h3)
  *   - Fenced code blocks (```...```)

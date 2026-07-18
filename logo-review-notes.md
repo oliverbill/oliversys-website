@@ -1,4 +1,4 @@
-# Avaliação dos novos logos Brightember
+# Avaliação dos novos logos Oliversys
 
 ## V6 — Evidence Aperture
 
@@ -14,7 +14,7 @@ Fundo branco correto. Duas massas pretas espelhadas aproximam-se como lados de u
 
 ## V9 — BE Monogram
 
-Fundo branco correto. Monograma angular que integra as letras B e E, cortado por um eixo ember-laranja. É a alternativa mais explicitamente ligada ao nome Brightember, tem boa presença institucional e combina identidade verbal com a linguagem de análise transversal.
+Fundo branco correto. Monograma angular que integra as letras B e E, cortado por um eixo ember-laranja. É a alternativa mais explicitamente ligada ao nome Oliversys, tem boa presença institucional e combina identidade verbal com a linguagem de análise transversal.
 
 ## V10 — Proof Axis
 

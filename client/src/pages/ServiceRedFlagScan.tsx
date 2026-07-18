@@ -88,7 +88,7 @@ export default function ServiceRedFlagScan() {
             </h1>
           </div>
           <div className="intro-aside">
-            <span className="section-index">TIER 1 / BRIGHTEMBER</span>
+            <span className="section-index">TIER 1 / OLIVERSYS</span>
             <p>
               Single-repository, single-interview analysis. A 10–15 page signed
               report plus a Go / Caution / No-Go recommendation. Designed for
@@ -328,7 +328,7 @@ export default function ServiceRedFlagScan() {
 
       <CallSection
         title="Scope a Red Flag Scan."
-        copy="Share the target, the thesis, and the decision date. Brightember will confirm scope, intake, and turnaround within one business day."
+        copy="Share the target, the thesis, and the decision date. Oliversys will confirm scope, intake, and turnaround within one business day."
         context="a Tier 1 Red Flag Scan"
         buttonText="Request an engagement scope call"
       />

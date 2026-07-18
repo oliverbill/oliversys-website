@@ -27,7 +27,7 @@ export default function Investors() {
         <div className="container mandate-grid">
           <div className="mandate-image cut-corner"><EvidenceArtifact variant="architecture" /></div>
           <div>
-            <p className="eyebrow ember">The Brightember mandate</p>
+            <p className="eyebrow ember">The Oliversys mandate</p>
             <h2>An extension of the deal team—without adding a permanent function.</h2>
             <p>We interrogate the technical assumptions beneath the investment case and turn the result into a decision-ready view.</p>
             <ul className="check-list">
@@ -50,7 +50,7 @@ export default function Investors() {
           <Link href="/approach" className="text-link">See how the evidence is built <ArrowRight size={17} /></Link>
         </div>
       </section>
-      <CallSection title="Bring technical conviction to the IC." copy="Share the thesis, the stage, and where uncertainty sits. Brightember will define a proportionate diligence scope around the decision." context="a seed or Series A investment" buttonText="Challenge the technical thesis" />
+      <CallSection title="Bring technical conviction to the IC." copy="Share the thesis, the stage, and where uncertainty sits. Oliversys will define a proportionate diligence scope around the decision." context="a seed or Series A investment" buttonText="Challenge the technical thesis" />
     </>
   );
 }

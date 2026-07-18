@@ -370,7 +370,7 @@ function vitePluginRss(): Plugin {
         `<?xml version="1.0" encoding="UTF-8"?>`,
         `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">`,
         `  <channel>`,
-        `    <title>Brightember — Technical Due Diligence</title>`,
+        `    <title>Oliversys — Technical Due Diligence</title>`,
         `    <link>${BASE_URL}/blog</link>`,
         `    <description>Long-form writing on technical due diligence practice: what the tools catch, what the human catches, and what the Iberian deal market misses.</description>`,
         `    <language>en-gb</language>`,

@@ -19,7 +19,7 @@ export default function Blog() {
             </h1>
           </div>
           <div className="intro-aside">
-            <span className="section-index">05 / BRIGHTEMBER</span>
+            <span className="section-index">05 / OLIVERSYS</span>
             <p>
               Long-form writing on technical due diligence practice: what the
               tools catch, what the human catches, and what the Iberian deal

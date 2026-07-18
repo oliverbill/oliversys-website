@@ -7,15 +7,15 @@ import { CallSection, EvidenceArtifact, PageIntro } from "@/components/SharedSec
 export default function About() {
   return (
     <>
-      <PageIntro eyebrow="About Brightember" title="Independent by design. Accountable to the" italic="evidence." copy="Brightember is a Portugal-focused, Europe-wide Software Due Diligence practice for venture investors and M&A deal teams." index="04" artifact="about" />
+      <PageIntro eyebrow="About Oliversys" title="Independent by design. Accountable to the" italic="evidence." copy="Oliversys is a Portugal-focused, Europe-wide Software Due Diligence practice for venture investors and M&A deal teams." index="04" artifact="about" />
       <section className="about-story paper-section">
         <div className="container about-story-grid">
-          <div className="about-image cut-corner"><EvidenceArtifact variant="independence" /><span>BRIGHTEMBER / PORTUGAL · EUROPE</span></div>
+          <div className="about-image cut-corner"><EvidenceArtifact variant="independence" /><span>OLIVERSYS / PORTUGAL · EUROPE</span></div>
           <div className="about-copy">
-            <p className="eyebrow">Why Brightember</p>
+            <p className="eyebrow">Why Oliversys</p>
             <h2>A clear technical view, built outside the momentum of the deal.</h2>
             <p className="lead-paragraph">Transactions create their own gravity. Conviction builds, timelines compress, and technical questions can be treated as confirmatory when they should remain investigative.</p>
-            <p>Brightember exists to keep that work independent. We examine what supports the thesis, what may constrain it, and what the deal team should do with the evidence.</p>
+            <p>Oliversys exists to keep that work independent. We examine what supports the thesis, what may constrain it, and what the deal team should do with the evidence.</p>
           </div>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function About() {
           <p>Independent technical evidence for investors making early-stage decisions and counsel managing technology-led transactions across Europe.</p>
         </div>
       </section>
-      <CallSection title="Start with the decision in front of you." context="a potential Brightember mandate" buttonText="Frame the decision" />
+      <CallSection title="Start with the decision in front of you." context="a potential Oliversys mandate" buttonText="Frame the decision" />
     </>
   );
 }
