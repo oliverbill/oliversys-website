@@ -20,7 +20,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function Brand() {
   return (
-    <Link href="/" className="brand-lockup" aria-label="Brightember home">
+    <Link href="/" className="brand-lockup" aria-label="Oliversys home">
       <span className="brand-mark-wrap">
         <img
           src="/brightember-logo.png"
@@ -29,7 +29,7 @@ function Brand() {
         />
       </span>
       <span className="brand-wordmark">
-        BRIGHT<span>EMBER</span>
+        OLIVER<span>SYS</span>
       </span>
     </Link>
   );
@@ -119,7 +119,7 @@ export function BookCallLink({
             Accept: "application/json",
           },
           body: JSON.stringify({
-            _subject: "Brightember — contact form",
+            _subject: "Oliversys — contact form",
             _captcha: "false",
             _template: "box",
             name: trimmedName,
@@ -162,7 +162,7 @@ export function BookCallLink({
         <DialogHeader>
           <DialogTitle>Reach the founder</DialogTitle>
           <DialogDescription>
-            Choose the channel that suits you—both go directly to Brightember.
+            Choose the channel that suits you—both go directly to Oliversys.
           </DialogDescription>
         </DialogHeader>
         {view === "options" ? (
@@ -371,7 +371,7 @@ function Footer() {
         </div>
       </div>
       <div className="container footer-base">
-        <p>© {new Date().getFullYear()} Brightember. Confidential by default.</p>
+        <p>© {new Date().getFullYear()} Oliversys. Confidential by default.</p>
         <p>Technical diligence · M&amp;A · Venture capital</p>
       </div>
     </footer>

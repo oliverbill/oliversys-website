@@ -18,7 +18,7 @@ export default function BlogPost() {
     return <NotFound />;
   }
 
-  const ogTitle = `${article.title} — Brightember`;
+  const ogTitle = `${article.title} — Oliversys`;
   const ogDesc = article.description;
   const canonicalUrl = `https://brightember.tech/blog/${article.slug}`;
 

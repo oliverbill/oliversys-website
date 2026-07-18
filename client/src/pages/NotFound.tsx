@@ -11,7 +11,7 @@ export default function NotFound() {
         <p className="eyebrow ember">File not found / 404</p>
         <h1>This evidence trail ends here.</h1>
         <p>The page may have moved, but the route back to a clearer technical decision is intact.</p>
-        <Link href="/" className="button-primary">Return to Brightember</Link>
+        <Link href="/" className="button-primary">Return to Oliversys</Link>
       </div>
     </section>
   );

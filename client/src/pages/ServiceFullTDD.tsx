@@ -87,7 +87,7 @@ export default function ServiceFullTDD() {
             </h1>
           </div>
           <div className="intro-aside">
-            <span className="section-index">TIER 2 / BRIGHTEMBER</span>
+            <span className="section-index">TIER 2 / OLIVERSYS</span>
             <p>
               Multi-repository scope. Verified AI claims. Full architecture trace.
               Scalability and infrastructure cost analysis. Roadmap feasibility
@@ -411,7 +411,7 @@ export default function ServiceFullTDD() {
 
       <CallSection
         title="Scope a Full Technical Due Diligence engagement."
-        copy="Share the target, the number of repositories, the deal thesis, and the decision date. Brightember will confirm scope, intake, and turnaround within one business day."
+        copy="Share the target, the number of repositories, the deal thesis, and the decision date. Oliversys will confirm scope, intake, and turnaround within one business day."
         context="a Tier 2 Full Technical Due Diligence engagement"
         buttonText="Request an engagement scope call"
       />

@@ -16,7 +16,7 @@ const phases = [
 export default function Approach() {
   return (
     <>
-      <PageIntro eyebrow="Diligence approach" title="Follow the evidence to the" italic="decision." copy="A Brightember review is scoped around materiality. Technical depth is not the endpoint; a defensible transaction view is." index="01" artifact="approach" />
+      <PageIntro eyebrow="Diligence approach" title="Follow the evidence to the" italic="decision." copy="An Oliversys review is scoped around materiality. Technical depth is not the endpoint; a defensible transaction view is." index="01" artifact="approach" />
       <section className="approach-phases paper-section">
         <div className="container">
           <div className="section-kicker-row"><p className="eyebrow">A decision-led review</p><span>MANDATE / 04 PHASES</span></div>

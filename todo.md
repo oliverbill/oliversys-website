@@ -1,4 +1,4 @@
-# Nova ronda de logos Brightember
+# Nova ronda de logos Oliversys
 
 - [ ] Analisar o logo atual do site e preservar a linguagem visual relevante.
 - [ ] Definir cinco conceitos proprietários mais elaborados, evitando símbolos genéricos.
@@ -8,7 +8,7 @@
 
 # Alteração da página LinkedIn
 
-- [ ] Rever os dados preenchidos na página da Brightember.
+- [ ] Rever os dados preenchidos na página da Oliversys.
 - [ ] Submeter a alteração autorizada pelo utilizador.
 - [ ] Confirmar que o LinkedIn guardou a alteração corretamente.
 
@@ -28,6 +28,6 @@
 - [x] Executar a verificação TypeScript e a compilação de produção.
 - [x] Verificar visualmente o website em desktop e mobile.
 - [ ] Guardar um novo checkpoint do website atualizado.
-- [ ] Atualizar a imagem de perfil da página Brightember no LinkedIn.
+- [ ] Atualizar a imagem de perfil da página Oliversys no LinkedIn.
 - [ ] Atualizar a capa do LinkedIn para incorporar o novo símbolo.
 - [ ] Confirmar que as alterações foram guardadas corretamente no LinkedIn.

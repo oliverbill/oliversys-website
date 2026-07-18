@@ -3,7 +3,7 @@
  * discreet, and easy to update without diluting the editorial brand direction.
  */
 export const site = {
-  name: "Brightember",
+  name: "Oliversys",
   email: "reviews@oliversoft.tech",
   location: "Portugal · Europe-wide",
   bookingSubject: "Confidential introductory call",
@@ -20,9 +20,9 @@ export const site = {
 };
 
 export function bookingHref(context = "a potential transaction") {
-  const subject = encodeURIComponent(`Brightember — ${site.bookingSubject}`);
+  const subject = encodeURIComponent(`Oliversys — ${site.bookingSubject}`);
   const body = encodeURIComponent(
-    `Hello Brightember,\n\nI would like to arrange a confidential introductory call regarding ${context}.\n\nFirm:\nRole:\nTransaction stage:\nPreferred timing:\n\nRegards,\n`,
+    `Hello Oliversys,\n\nI would like to arrange a confidential introductory call regarding ${context}.\n\nFirm:\nRole:\nTransaction stage:\nPreferred timing:\n\nRegards,\n`,
   );
   return `mailto:${site.email}?subject=${subject}&body=${body}`;
 }

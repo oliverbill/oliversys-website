@@ -22,7 +22,7 @@ export default function Home() {
               Technical conviction before transaction <em>exposure.</em>
             </h1>
             <p className="hero-lede">
-              Brightember turns complex product, engineering, and architecture evidence into a clear deal view—for European investors and M&amp;A counsel.
+              Oliversys turns complex product, engineering, and architecture evidence into a clear deal view—for European investors and M&amp;A counsel.
             </p>
             <div className="hero-actions">
               <BookCallLink context="an upcoming investment or M&A transaction" />
@@ -60,7 +60,7 @@ export default function Home() {
               When a fund has no in-house technical capability, product and engineering diligence can become an extra workstream for the deal team. The questions are specialized. The consequences are not.
             </p>
             <p>
-              Brightember supplies an independent view that is specific enough for operators and clear enough for an investment committee or legal deal team.
+              Oliversys supplies an independent view that is specific enough for operators and clear enough for an investment committee or legal deal team.
             </p>
           </div>
           <div className="risk-ledger">
@@ -84,7 +84,7 @@ export default function Home() {
             <span className="image-caption">FIG. 01 · HIDDEN LOAD-BEARING RISK</span>
           </div>
           <div className="visual-copy">
-            <p className="eyebrow ember">What Brightember changes</p>
+            <p className="eyebrow ember">What Oliversys changes</p>
             <h2>Not more technical detail. A better deal decision.</h2>
             <div className="outcome-list">
               {[

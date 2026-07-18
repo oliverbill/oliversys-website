@@ -31,7 +31,7 @@ export function PageIntro({
           <h1>{title} {italic && <em>{italic}</em>}</h1>
         </div>
         <div className="intro-aside">
-          <span className="section-index">{index} / BRIGHTEMBER</span>
+          <span className="section-index">{index} / OLIVERSYS</span>
           <p>{copy}</p>
           <HeroArtifact variant={artifact} />
         </div>

@@ -1,4 +1,4 @@
-# Brightember Website Design Direction
+# Oliversys Website Design Direction
 
 ## Exploratory Directions
 
@@ -35,7 +35,7 @@
 
 ### Color Philosophy
 
-The primary environment is **carbon charcoal**, representing discretion and technical depth, balanced by a **warm parchment** that makes detailed information feel readable and human. **Brightember orange** is used only for decisive moments—risk flags, key evidence, and calls to action—so it behaves like a signal rather than a decorative brand wash. A restrained slate blue supports institutional trust without falling into generic corporate blue.
+The primary environment is **carbon charcoal**, representing discretion and technical depth, balanced by a **warm parchment** that makes detailed information feel readable and human. **Oliversys orange** is used only for decisive moments—risk flags, key evidence, and calls to action—so it behaves like a signal rather than a decorative brand wash. A restrained slate blue supports institutional trust without falling into generic corporate blue.
 
 ### Layout Paradigm
 
@@ -61,7 +61,7 @@ Entrance motion uses restrained opacity and 12–20 pixel vertical translation, 
 
 ### Brand Essence
 
-**Brightember gives European investors and deal counsel independent technical evidence before conviction becomes exposure.** Personality: **incisive, discreet, accountable**.
+**Oliversys gives European investors and deal counsel independent technical evidence before conviction becomes exposure.** Personality: **incisive, discreet, accountable**.
 
 ### Brand Voice
 
@@ -85,6 +85,6 @@ The wordmark pairs a custom, narrow **BRIGHT** construction with a warmer, sligh
 
 **Every major page contains one page-specific evidence artifact.** Registers, dossier panels, annotated traces, case rails, and finding maps change with the mandate rather than repeating one generic editorial hero.
 
-**The Brightember mark is a recognizable bracketed-B containment symbol at small size.** BRIGHT remains narrow and controlled while EMBER is warmer and wider, making the lockup feel authored rather than typographic.
+**The Oliversys mark is a recognizable bracketed-B containment symbol at small size.** BRIGHT remains narrow and controlled while EMBER is warmer and wider, making the lockup feel authored rather than typographic.
 
-**Evidence Aperture is the official Brightember symbol.** Its square white field, opposing charcoal brackets, and right-to-left Evidence Ember wedge should remain intact across website, LinkedIn, and favicon applications.
+**Evidence Aperture is the official Oliversys symbol.** Its square white field, opposing charcoal brackets, and right-to-left Evidence Ember wedge should remain intact across website, LinkedIn, and favicon applications.
