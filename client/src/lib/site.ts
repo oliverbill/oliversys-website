@@ -4,7 +4,7 @@
  */
 export const site = {
   name: "Oliversys",
-  email: "reviews@oliversoft.tech",
+  email: "reviews@oliversys.tech",
   location: "Portugal · Europe-wide",
   bookingSubject: "Confidential introductory call",
   linkedinPersonal: "https://www.linkedin.com/in/walvesbill/",
