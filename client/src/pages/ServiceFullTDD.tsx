@@ -124,7 +124,7 @@ export default function ServiceFullTDD() {
                 complete the picture.
               </p>
             </div>
-            <div className="deliverable-list">
+            <div className="deliverable-list deliverable-list--no-icon">
               <div>
                 <strong>Phase 1 — Pipeline execution (day 1–3)</strong>
                 <p>

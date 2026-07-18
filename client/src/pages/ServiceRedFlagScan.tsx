@@ -124,7 +124,7 @@ export default function ServiceRedFlagScan() {
                 signature is part of the deliverable, not a formality.
               </p>
             </div>
-            <div className="deliverable-list">
+            <div className="deliverable-list deliverable-list--no-icon">
               <div>
                 <strong>Phase 1 — Pipeline execution (day 1–2)</strong>
                 <p>
