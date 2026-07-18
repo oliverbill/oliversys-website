@@ -429,7 +429,7 @@ Variants: `architecture` (planes skewed −8°), `network` (planes smaller, trac
 
 Email form uses shadcn `Input` components plus a raw `<textarea>` with Tailwind utility classes. The textarea class is a raw Tailwind recipe (not a named component class) — a minor inconsistency.
 
-**Form relay:** FormSubmit (`https://formsubmit.co/ajax/reviews@oliversoft.tech`). No backend required.
+**Form relay:** FormSubmit (`https://formsubmit.co/ajax/reviews@oliversys.tech`). No backend required.
 
 **GDPR note:** No inline GDPR notice text is displayed in the modal. The modal collects name, company, email, and optional message.
 
