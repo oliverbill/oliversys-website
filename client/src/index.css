@@ -127,6 +127,20 @@
   .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -.65rem; height: 1px; background: #f05a32; transition: right 200ms cubic-bezier(.23,1,.32,1); }
   .desktop-nav a:hover, .desktop-nav a.active { color: #fff9ef; }
   .desktop-nav a:hover::after, .desktop-nav a.active::after { right: 0; }
+
+  /* Services dropdown */
+  .nav-dropdown-wrap { position: relative; }
+  .nav-dropdown-trigger { position: relative; display: inline-flex; align-items: center; gap: .35rem; color: #c6c3ba; background: transparent; border: 0; padding: 0; font-size: .71rem; font-weight: 600; letter-spacing: inherit; font-family: inherit; cursor: pointer; }
+  .nav-dropdown-trigger::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -.65rem; height: 1px; background: #f05a32; transition: right 200ms cubic-bezier(.23,1,.32,1); }
+  .nav-dropdown-trigger:hover, .nav-dropdown-trigger.active { color: #fff9ef; }
+  .nav-dropdown-trigger:hover::after, .nav-dropdown-trigger.active::after { right: 0; }
+  .nav-chevron { transition: transform 180ms ease; flex-shrink: 0; }
+  .nav-chevron.is-open { transform: rotate(180deg); }
+  .nav-dropdown-panel { position: absolute; top: calc(100% + 1.2rem); right: 0; min-width: 14rem; background: rgba(23,24,21,.97); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,.45); display: flex; flex-direction: column; }
+  .nav-dropdown-panel a { display: block; padding: .75rem 1rem; color: #c6c3ba; text-decoration: none; font-size: .71rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,.07); white-space: nowrap; transition: color 140ms ease, background 140ms ease; }
+  .nav-dropdown-panel a:last-child { border-bottom: 0; }
+  .nav-dropdown-panel a:hover, .nav-dropdown-panel a.active { color: #fff9ef; background: rgba(240,90,50,.08); }
+
   .header-actions { display: flex; align-items: center; gap: 1rem; }
   .menu-toggle { display: none; color: #fff; background: transparent; border: 0; }
   .mobile-panel { display: none; }
