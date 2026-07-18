@@ -379,9 +379,14 @@ function Footer() {
 }
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
+  const [location] = useLocation();
+
   useEffect(() => {
+    // Skip scroll reset when navigating to a hash anchor — let the browser
+    // handle scrolling to the target element naturally.
+    if (window.location.hash) return;
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [children]);
+  }, [location]);
 
   return (
     <div className="site-shell">
