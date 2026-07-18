@@ -41,7 +41,7 @@ export default function Investors() {
       </section>
       <section className="questions-section mist-section">
         <div className="container">
-          <div className="section-kicker-row"><p className="eyebrow">Questions the review should resolve</p><span>IC / TECHNICAL VIEW</span></div>
+          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}><p className="eyebrow">Questions the review should resolve</p><span>IC / TECHNICAL VIEW</span></div>
           <div className="question-grid">
             {[
               "Can the current platform support the next stage of the plan?", "What technical cost is missing from the model?", "Where does execution depend on one person or one provider?", "What should change in price, protection, or the first 100 days?",
