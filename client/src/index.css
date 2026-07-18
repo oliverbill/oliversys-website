@@ -268,7 +268,7 @@
   .evidence-artifact.independence .artifact-trace { left: 50%; right: auto; top: 18%; width: 2px; height: 64%; transform: none; }
 
   .phase-list { margin-top: 3rem; }
-  .phase-list article { display: grid; grid-template-columns: auto 1fr .9fr .55fr; gap: 4%; align-items: start; padding: 2.2rem 0; border-top: 1px solid #bbb6aa; }
+  .phase-list article { display: grid; grid-template-columns: auto 1fr; gap: 4%; align-items: start; padding: 2.2rem 0; border-top: 1px solid #bbb6aa; }
   .phase-list h2 { margin: 0; font-size: clamp(1.9rem, 3vw, 3.1rem); }
   .phase-list p { margin: .3rem 0 0; color: #5d5f57; line-height: 1.7; font-size: 1.32rem; }
   .phase-list small { color: #777970; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -306,8 +306,7 @@
   .question-grid article { min-height: 18rem; padding: 1.5rem 1.4rem 1.5rem 0; border-right: 1px solid #b6b9b1; }
   .question-grid article + article { padding-left: 1.4rem; }
   .question-grid article:last-child { border-right: 0; }
-  .question-grid span { color: #f05a32; font-size: .58rem; }
-  .question-grid h3 { margin-top: 5rem; font-size: 1.6rem; line-height: 1.12; }
+  .question-grid h3 { margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.12; }
 
   .partner-principles { display: grid; grid-template-columns: repeat(3,1fr); }
   .partner-principles article { padding: 1.4rem; border-left: 1px solid #b9b4a8; }

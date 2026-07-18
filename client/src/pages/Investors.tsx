@@ -45,7 +45,7 @@ export default function Investors() {
           <div className="question-grid">
             {[
               "Can the current platform support the next stage of the plan?", "What technical cost is missing from the model?", "Where does execution depend on one person or one provider?", "What should change in price, protection, or the first 100 days?",
-            ].map((question, i) => <article key={question}><span>0{i + 1}</span><h3>{question}</h3></article>)}
+            ].map((question) => <article key={question}><h3>{question}</h3></article>)}
           </div>
           <Link href="/approach" className="text-link">See how the evidence is built <ArrowRight size={17} /></Link>
         </div>
