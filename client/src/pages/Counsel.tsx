@@ -24,9 +24,9 @@ export default function Counsel() {
         <div className="container">
           <div className="section-kicker-row light-row"><p className="eyebrow ember">Partnership model</p><span>COUNSEL / CLIENT / OLIVERSYS</span></div>
           <div className="engagement-flow">
-            <div><span>01</span><h3>Align</h3><p>Confirm transaction context, privilege considerations, interfaces, and escalation routes with counsel.</p></div>
-            <div><span>02</span><h3>Review</h3><p>Run the agreed technical workstream with controlled access and concise progress communication.</p></div>
-            <div><span>03</span><h3>Connect</h3><p>Relate findings to deal mechanics, warranties, remediation, or post-close priorities for counsel to assess.</p></div>
+            <div><h3>Align</h3><p>Confirm transaction context, privilege considerations, interfaces, and escalation routes with counsel.</p></div>
+            <div><h3>Review</h3><p>Run the agreed technical workstream with controlled access and concise progress communication.</p></div>
+            <div><h3>Connect</h3><p>Relate findings to deal mechanics, warranties, remediation, or post-close priorities for counsel to assess.</p></div>
           </div>
         </div>
       </section>
@@ -34,10 +34,10 @@ export default function Counsel() {
         <div className="container counsel-use-grid">
           <div><p className="eyebrow">Where Oliversys fits</p><h2>Bring us in where the target’s technology is material to value or execution.</h2></div>
           <div className="use-list">
-            <p><span>01</span>Software-led acquisitions and investments</p>
-            <p><span>02</span>Technology carve-outs and integration planning</p>
-            <p><span>03</span>Platform, data, security, or scalability concerns</p>
-            <p><span>04</span>Founder-dependent engineering organizations</p>
+            <p>Software-led acquisitions and investments</p>
+            <p>Technology carve-outs and integration planning</p>
+            <p>Platform, data, security, or scalability concerns</p>
+            <p>Founder-dependent engineering organizations</p>
           </div>
           <Link href="/approach" className="text-link">Review the diligence method <ArrowRight size={17} /></Link>
         </div>

@@ -126,7 +126,6 @@ export default function ServiceFullTDD() {
             </div>
             <div className="deliverable-list">
               <div>
-                <span>01</span>
                 <strong>Phase 1 — Pipeline execution (day 1–3)</strong>
                 <p>
                   The 13-skill analysis pipeline runs against every repository named in
@@ -135,7 +134,6 @@ export default function ServiceFullTDD() {
                 </p>
               </div>
               <div>
-                <span>02</span>
                 <strong>Phase 2 — Interviews (day 4–6)</strong>
                 <p>
                   Two to three interviews with the target's engineering leadership,
@@ -144,7 +142,6 @@ export default function ServiceFullTDD() {
                 </p>
               </div>
               <div>
-                <span>03</span>
                 <strong>Phase 3 — Synthesis and IC readout (day 7–10)</strong>
                 <p>
                   Full architecture trace, AI-claims cross-reference, scalability cost
@@ -241,7 +238,7 @@ export default function ServiceFullTDD() {
           <div className="phase-list" style={{ marginTop: "2rem" }}>
             {timeline.map((row) => (
               <article key={row.day}>
-                <span className="phase-number">{row.day}</span>
+                <strong style={{ whiteSpace: "nowrap" }}>{row.day}</strong>
                 <p style={{ margin: 0, lineHeight: 1.65 }}>{row.action}</p>
               </article>
             ))}

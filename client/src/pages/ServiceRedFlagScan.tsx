@@ -126,7 +126,6 @@ export default function ServiceRedFlagScan() {
             </div>
             <div className="deliverable-list">
               <div>
-                <span>01</span>
                 <strong>Phase 1 — Pipeline execution (day 1–2)</strong>
                 <p>
                   A 13-skill analysis pipeline runs against the target repository
@@ -136,7 +135,6 @@ export default function ServiceRedFlagScan() {
                 </p>
               </div>
               <div>
-                <span>02</span>
                 <strong>Phase 2 — Interview and synthesis (day 3–5)</strong>
                 <p>
                   One 90-minute interview with the target's Founder or CTO, with
@@ -206,7 +204,7 @@ export default function ServiceRedFlagScan() {
           <div className="phase-list" style={{ marginTop: "2rem" }}>
             {timeline.map((row) => (
               <article key={row.day}>
-                <span className="phase-number">{row.day}</span>
+                <strong style={{ whiteSpace: "nowrap" }}>{row.day}</strong>
                 <p style={{ margin: 0, lineHeight: 1.65 }}>{row.action}</p>
               </article>
             ))}
@@ -234,19 +232,19 @@ export default function ServiceRedFlagScan() {
               ONE 90-MINUTE SESSION
             </span>
           </div>
-          <div style={{ maxWidth: "40rem", marginTop: "2rem", color: "#000000" }}>
-            <ul className="check-list" style={{ color: "#000000" }}>
-              <li>
+          <div style={{ maxWidth: "40rem", marginTop: "2rem" }}>
+            <ul className="check-list">
+              <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <strong>Required role:</strong> target's Founder or Chief Technology Officer — someone who can speak to both architecture decisions and hiring plans.
+                <span><strong style={{ color: "#000000" }}>Required role:</strong> target's Founder or Chief Technology Officer — someone who can speak to both architecture decisions and hiring plans.</span>
               </li>
-              <li>
+              <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <strong>Format:</strong> video call, recorded with the interviewee's consent for note-taking accuracy.
+                <span><strong style={{ color: "#000000" }}>Format:</strong> video call, recorded with the interviewee's consent for note-taking accuracy.</span>
               </li>
-              <li>
+              <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <strong>Duration:</strong> 90 minutes, with questions generated from pipeline findings — not a generic checklist.
+                <span><strong style={{ color: "#000000" }}>Duration:</strong> 90 minutes, with questions generated from pipeline findings — not a generic checklist.</span>
               </li>
             </ul>
           </div>
