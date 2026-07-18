@@ -20,7 +20,7 @@ export default function BlogPost() {
 
   const ogTitle = `${article.title} — Oliversys`;
   const ogDesc = article.description;
-  const canonicalUrl = `https://brightember.tech/blog/${article.slug}`;
+  const canonicalUrl = `https://oliversys.tech/blog/${article.slug}`;
 
   return (
     <>

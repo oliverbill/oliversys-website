@@ -208,7 +208,7 @@ function vitePluginStorageProxy(): Plugin {
 // Reads .md frontmatter from client/src/content/blog/ to get slug + publishDate.
 // =============================================================================
 
-const BASE_URL = "https://brightember.tech";
+const BASE_URL = "https://oliversys.tech";
 
 const STATIC_PAGES = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
