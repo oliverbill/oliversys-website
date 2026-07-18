@@ -23,7 +23,7 @@ function Brand() {
     <Link href="/" className="brand-lockup" aria-label="Oliversys home">
       <span className="brand-mark-wrap">
         <img
-          src="/brightember-logo.png"
+          src="/oliversys-logo.png"
           alt=""
           className="brand-mark"
         />

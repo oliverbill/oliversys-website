@@ -539,8 +539,8 @@ The easing `cubic-bezier(.23,1,.32,1)` (an "ease-out expo" approximation) is the
 
 | Asset | Path | Notes |
 |---|---|---|
-| Logo / brand mark | `client/public/brightember-logo.png` | Square PNG, white background. Displayed in `<img>` inside `.brand-mark-wrap` (white square container, 2.35 rem × 2.35 rem, `overflow: hidden`). |
-| Hero image | `client/public/brightember-hero.webp` | Full-bleed positioned right 73% width in hero, `opacity: .86`. Also used as `og:image`. |
+| Logo / brand mark | `client/public/oliversys-logo.png` | Square PNG, white background. Displayed in `<img>` inside `.brand-mark-wrap` (white square container, 2.35 rem × 2.35 rem, `overflow: hidden`). |
+| Hero image | `client/public/oliversys-hero.webp` | Full-bleed positioned right 73% width in hero, `opacity: .86`. Also used as `og:image`. |
 | Favicon (bitmap) | `client/public/favicon.ico` | Referenced in `<link rel="icon">`. |
 | Favicon (vector) | `client/public/favicon.svg` | Present but not linked in `index.html` — unused. |
 | CNAME | `client/public/CNAME` | `brightember.tech` |
