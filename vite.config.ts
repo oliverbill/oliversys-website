@@ -392,7 +392,18 @@ function vitePluginRss(): Plugin {
  * GitHub Pages SPA fallback — copies index.html → 404.html after each build.
  * GitHub Pages serves 404.html for any path it cannot resolve as a static file,
  * so the React router (wouter) handles the path client-side on direct URL access.
+ *
+ * Also writes explicit index.html files for deep-linked service pages so that
+ * GitHub Pages returns HTTP 200 (not 404) when link-preview fetchers and SEO
+ * crawlers hit these paths directly. Without these files, GitHub Pages can only
+ * serve 404.html for unrecognised paths — technically correct content but a
+ * wrong HTTP status for the two contractual service URLs.
  */
+const SPA_STATIC_PATHS = [
+  "services/red-flag-scan",
+  "services/full-technical-due-diligence",
+];
+
 function vitePluginGhPagesSpaFallback(): Plugin {
   return {
     name: "brightember-gh-pages-spa-fallback",
@@ -400,10 +411,19 @@ function vitePluginGhPagesSpaFallback(): Plugin {
     closeBundle() {
       const outDir = path.join(PROJECT_ROOT, "dist", "public");
       const src = path.join(outDir, "index.html");
-      const dest = path.join(outDir, "404.html");
-      if (fs.existsSync(src)) {
-        fs.copyFileSync(src, dest);
-        console.log("[brightember-gh-pages-spa-fallback] copied index.html → 404.html");
+
+      if (!fs.existsSync(src)) return;
+
+      // 1. Standard 404.html fallback for any unrecognised path.
+      fs.copyFileSync(src, path.join(outDir, "404.html"));
+      console.log("[brightember-gh-pages-spa-fallback] copied index.html → 404.html");
+
+      // 2. Explicit index.html at each service path → HTTP 200 on direct access.
+      for (const slug of SPA_STATIC_PATHS) {
+        const dir = path.join(outDir, slug);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        fs.copyFileSync(src, path.join(dir, "index.html"));
+        console.log(`[brightember-gh-pages-spa-fallback] copied index.html → ${slug}/index.html`);
       }
     },
   };

@@ -4,7 +4,7 @@
  */
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, Mail, Menu, MessageCircle, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Mail, Menu, MessageCircle, X } from "lucide-react";
 import { site } from "@/lib/site";
 import {
   Dialog,
@@ -290,6 +290,70 @@ export function BookCallLink({
   );
 }
 
+// Items grouped under the "Services" dropdown in the desktop nav.
+const SERVICE_HREFS = ["/services/red-flag-scan/", "/services/full-technical-due-diligence/"];
+
+// Nav items that appear as flat links (not grouped into Services).
+const flatNavItems = site.nav.filter((item) => !SERVICE_HREFS.includes(item.href));
+// Nav items that appear inside the Services dropdown.
+const serviceNavItems = site.nav.filter((item) => SERVICE_HREFS.includes(item.href));
+
+function ServicesDropdown({ location }: { location: string }) {
+  const [dropOpen, setDropOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const isActive = SERVICE_HREFS.includes(location);
+
+  // Close on outside click or Escape key.
+  useEffect(() => {
+    const onPointerDown = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setDropOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDropOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  // Close when route changes.
+  useEffect(() => setDropOpen(false), [location]);
+
+  return (
+    <div ref={ref} className="nav-dropdown-wrap">
+      <button
+        type="button"
+        className={`nav-dropdown-trigger${isActive ? " active" : ""}`}
+        aria-haspopup="true"
+        aria-expanded={dropOpen}
+        onClick={() => setDropOpen((v) => !v)}
+      >
+        Services
+        <ChevronDown size={12} aria-hidden="true" className={`nav-chevron${dropOpen ? " is-open" : ""}`} />
+      </button>
+      {dropOpen && (
+        <div className="nav-dropdown-panel" role="menu">
+          {serviceNavItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              role="menuitem"
+              className={location === item.href ? "active" : ""}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Header() {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
@@ -309,7 +373,7 @@ function Header() {
       <div className="container header-inner">
         <Brand />
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {site.nav.map((item) => (
+          {flatNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -318,6 +382,7 @@ function Header() {
               {item.label}
             </Link>
           ))}
+          <ServicesDropdown location={location} />
         </nav>
         <div className="header-actions">
           <BookCallLink className="button-small">Request a Tech Review</BookCallLink>
