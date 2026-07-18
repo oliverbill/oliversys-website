@@ -83,7 +83,7 @@ export default function ServiceFullTDD() {
             <p className="eyebrow ember">Tier 2 · Technical Due Diligence</p>
             <h1>
               Full Technical Due Diligence — end-to-end scope,{" "}
-              <em>delivered in 7–10 business days.</em>
+              <em>delivered in 7–10 business days.<sup>*</sup></em>
             </h1>
           </div>
           <div className="intro-aside">
@@ -232,7 +232,7 @@ export default function ServiceFullTDD() {
                 size={14}
                 style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }}
               />
-              7–10 BUSINESS DAYS
+              7–10 BUSINESS DAYS<sup>*</sup>
             </span>
           </div>
           <div className="phase-list" style={{ marginTop: "2rem" }}>
@@ -252,6 +252,17 @@ export default function ServiceFullTDD() {
             }}
           >
             Delivery: signed 30–40 page PDF report + Investment Committee readout deck (20 slides), delivered directly to the fund.
+          </p>
+          <p
+            id="tier2-sla-note"
+            style={{
+              marginTop: "1.5rem",
+              fontSize: "1.1rem",
+              opacity: 0.55,
+              lineHeight: 1.6,
+            }}
+          >
+            <sup>*</sup> Aplicável a um agregado de até 5 repositórios, 500 mil linhas de código (excluindo comentários), 100 mil commits no histórico Git, 1.500 dependências agregadas e 5 linguagens primárias, com build reproduzível em máquina limpa em até 30 minutos. Alvos com forma diferente são orçamentados separadamente após scoping call.
           </p>
         </div>
       </section>
@@ -387,7 +398,7 @@ export default function ServiceFullTDD() {
             </div>
             <div>
               <p className="eyebrow">Looking for a lighter-scope read?</p>
-              <h2 style={{ marginBottom: "1rem" }}>Tier 1 covers a single repository in 3–5 business days.</h2>
+              <h2 style={{ marginBottom: "1rem" }}>Tier 1 covers a single repository in 3–5 business days.<sup>*</sup></h2>
               <p style={{ lineHeight: 1.7 }}>
                 For seed and Series A decisions where the target is a single repository
                 and the decision timeline is tight, the Red Flag Scan delivers a signed
@@ -401,6 +412,9 @@ export default function ServiceFullTDD() {
               >
                 See Tier 1 — Red Flag Scan <ArrowRight size={17} />
               </Link>
+              <p style={{ marginTop: "0.75rem", fontSize: "1.1rem", opacity: 0.55, lineHeight: 1.6 }}>
+                <sup>*</sup> Condicionado a limites de repositório. Ver nota na página do Tier 1.
+              </p>
             </div>
           </div>
         </div>
