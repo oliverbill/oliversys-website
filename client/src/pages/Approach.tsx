@@ -23,7 +23,6 @@ export default function Approach() {
           <div className="phase-list">
             {phases.map((phase) => (
               <article key={phase.n}>
-                <span className="phase-number">{phase.n}</span>
                 <h2>{phase.title}</h2>
                 <p>{phase.copy}</p>
                 <small>{phase.meta}</small>
@@ -49,10 +48,10 @@ export default function Approach() {
       <section className="deliverable-section carbon-section">
         <div className="container deliverable-grid">
           <div><p className="eyebrow ember">What reaches the room</p><h2>A report built to be used, not filed.</h2></div>
-          <div className="deliverable-list">
-            <div><span>01</span><strong>Executive deal view</strong><p>The most consequential technical facts, stated directly.</p></div>
-            <div><span>02</span><strong>Prioritized findings</strong><p>Severity, evidence, confidence, and practical implication.</p></div>
-            <div><span>03</span><strong>Action path</strong><p>Questions for the deal, protections to consider, and post-close priorities.</p></div>
+          <div className="deliverable-list deliverable-list--no-icon">
+            <div><strong>Executive deal view</strong><p>The most consequential technical facts, stated directly.</p></div>
+            <div><strong>Prioritized findings</strong><p>Severity, evidence, confidence, and practical implication.</p></div>
+            <div><strong>Action path</strong><p>Questions for the deal, protections to consider, and post-close priorities.</p></div>
           </div>
           <Link href="/investors" className="text-link light">See the investor mandate <ArrowRight size={17} /></Link>
         </div>
