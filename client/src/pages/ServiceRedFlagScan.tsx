@@ -84,7 +84,7 @@ export default function ServiceRedFlagScan() {
             <p className="eyebrow ember">Tier 1 · Technical Due Diligence</p>
             <h1>
               Red Flag Scan — a pre-transaction technical read,{" "}
-              <em>delivered in 3–5 business days.</em>
+              <em>delivered in 3–5 business days.<sup>*</sup></em>
             </h1>
           </div>
           <div className="intro-aside">
@@ -198,7 +198,7 @@ export default function ServiceRedFlagScan() {
             <p className="eyebrow">Estimated timeline</p>
             <span>
               <Clock size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }} />
-              3–5 BUSINESS DAYS
+              3–5 BUSINESS DAYS<sup>*</sup>
             </span>
           </div>
           <div className="phase-list" style={{ marginTop: "2rem" }}>
@@ -218,6 +218,17 @@ export default function ServiceRedFlagScan() {
             }}
           >
             Delivery: signed 10–15 page PDF report plus supporting artefacts, delivered directly to the fund.
+          </p>
+          <p
+            id="tier1-sla-note"
+            style={{
+              marginTop: "1.5rem",
+              fontSize: "1.1rem",
+              opacity: 0.55,
+              lineHeight: 1.6,
+            }}
+          >
+            <sup>*</sup> Aplicável a um repositório único com até 200 mil linhas de código (excluindo comentários), 20 mil commits no histórico Git, 500 dependências agregadas (directas + transitivas) e 4 linguagens primárias, com build reproduzível em máquina limpa em até 15 minutos. Alvos que excedam qualquer um destes limites são orçamentados separadamente após scoping call.
           </p>
         </div>
       </section>
