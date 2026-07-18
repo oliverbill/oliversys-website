@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { BookCallLink } from "@/components/SiteLayout";
 import { CallSection, CrossLink, EvidenceArtifact } from "@/components/SharedSections";
 
-const hero = "/brightember-hero.webp";
+const hero = "/oliversys-hero.webp";
 
 export default function Home() {
   return (
