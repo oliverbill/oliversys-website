@@ -19,7 +19,7 @@ export default function Approach() {
       <PageIntro eyebrow="Diligence approach" title="Follow the evidence to the" italic="decision." copy="An Oliversys review is scoped around materiality. Technical depth is not the endpoint; a defensible transaction view is." index="01" artifact="approach" />
       <section className="approach-phases paper-section">
         <div className="container">
-          <div className="section-kicker-row"><p className="eyebrow">A decision-led review</p><span>MANDATE / 04 PHASES</span></div>
+          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}><p className="eyebrow">A decision-led review</p><span>MANDATE / 04 PHASES</span></div>
           <div className="phase-list">
             {phases.map((phase) => (
               <article key={phase.n}>
