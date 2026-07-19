@@ -5,7 +5,7 @@
 export const site = {
   name: "Oliversys",
   email: "reviews@oliversys.tech",
-  location: "Portugal · Europe-wide",
+  location: "Portugal · Spain · Americas",
   bookingSubject: "Confidential introductory call",
   linkedinPersonal: "https://www.linkedin.com/in/walvesbill/",
   nav: [

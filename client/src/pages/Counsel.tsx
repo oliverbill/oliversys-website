@@ -12,7 +12,9 @@ export default function Counsel() {
       <PageIntro eyebrow="For M&A counsel" title="A technical workstream that strengthens the" italic="deal team." copy="Oliversys partners with law firms to surface technical risk, connect it to transaction consequence, and keep the workstream clear for counsel and client." index="03" artifact="counsel" />
       <section className="counsel-value paper-section">
         <div className="container counsel-value-grid">
-          <div><p className="eyebrow">A specialist partner</p><h2>Technical evidence that complements legal diligence.</h2><p className="lead-paragraph">Software, infrastructure, data, and engineering practices can create obligations and exposure that do not fit neatly inside a legal checklist.</p></div>
+          <div><p className="eyebrow">A specialist partner</p><h2>Technical evidence that complements legal diligence.</h2>
+          <br/>
+          <p className="lead-paragraph">Software, infrastructure, data, and engineering practices can create obligations and exposure that do not fit neatly inside a legal checklist.</p></div>
           <div className="partner-principles">
             <article><BriefcaseBusiness /><h3>Deal-aware</h3><p>Scope, reporting, and escalation align to the transaction timetable and materiality threshold.</p></article>
             <article><FileCheck2 /><h3>Traceable</h3><p>Findings show the supporting evidence, confidence level, and practical transaction relevance.</p></article>
