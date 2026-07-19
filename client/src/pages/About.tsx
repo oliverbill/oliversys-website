@@ -25,6 +25,7 @@ export default function About() {
             <p className="lead-paragraph">{a.whyLead}</p>
             <br/>
             <p>{a.whyBody}</p>
+            <p className="pricing-anchor">{a.pricingAnchor}</p>
           </div>
         </div>
       </section>
