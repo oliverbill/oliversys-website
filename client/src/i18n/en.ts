@@ -264,6 +264,8 @@ export const en = {
       "Oliversys is run by William Alves, a senior software engineer based in Coimbra, Portugal, through a Portuguese registered company. The practice exists to fill a gap that large due diligence firms cannot serve: a senior engineer\u2019s read on a target company\u2019s software, at a price and speed that works for seed and Series A deals.",
     whyBody:
       "We look at what supports the investment thesis, what may constrain it, and what the deal team should do with the evidence. Our job is to stay independent, stay plain, and stay useful.",
+    pricingAnchor:
+      "Incumbent technical due diligence firms start at \u20ac25k for this type of analysis. Oliversys delivers a comparable outcome for a fraction of that cost.",
     principlesEyebrow: "How we work",
     principlesKicker: "OPERATING PRINCIPLES",
     p1Title: "What matters over what is exhaustive",
@@ -347,12 +349,12 @@ export const en = {
     whatH1: "Up to 5 repositories. Two phases. Every finding cites its source.",
     phase1Title: "Phase 1 \u2014 Software review (day 1\u20132)",
     phase1Copy:
-      "We run a structured review across 13 dimensions of the target\u2019s software. Every finding cites its exact location. Findings are ranked by severity and linked to the buyer\u2019s stated concern.",
+      "We run a structured review of the target\u2019s software across security, legal, code health, team, and growth dimensions. Every finding cites its exact location. Findings are ranked by severity and linked to the buyer\u2019s stated concern.",
     phase2Title: "Phase 2 \u2014 Interview and report (day 3\u20135)",
     phase2Copy:
       "One 90-minute interview with the target\u2019s founder or technical lead, with questions drawn from what the review surfaced. The interview is synthesised into a written narrative naming the specific technology risks against the deal thesis.",
     assessedEyebrow: "What we assess",
-    assessedKicker: "13 DIMENSIONS",
+    assessedKicker: "SECURITY \u00b7 LEGAL \u00b7 CODE HEALTH \u00b7 TEAM \u00b7 GROWTH",
     skillRepoForensics: "Development history",
     skillRepoForensicsDetail:
       "How many people are actually building the product, whether key knowledge is concentrated in one person, how active development is, and where the most-changed parts of the codebase sit.",
@@ -393,7 +395,7 @@ export const en = {
       "Repository access, a short intake form (investment thesis, primary concern, decision date), specific version of the software locked for review.",
     tl12Day: "Day 1\u20132",
     tl12Action:
-      "Structured review across all 13 dimensions against the locked version. Every finding cites its exact source.",
+      "Structured review across security, legal, code health, team, and growth dimensions against the locked version. Every finding cites its exact source.",
     tl3Day: "Day 3",
     tl3Action: "90-minute interview with the target\u2019s founder or technical lead.",
     tl4Day: "Day 4",
@@ -456,7 +458,7 @@ export const en = {
       "The Full Technical Due Diligence engagement reviews every software repository named in scope, locked to a specific version. Two to three interviews with the target\u2019s engineering leadership are synthesised into a named section of the report. A full architecture review, artificial-intelligence claims verification, and a roadmap feasibility read complete the picture.",
     phase1Title: "Phase 1 \u2014 Software review (day 1\u20133)",
     phase1Copy:
-      "A structured review across 13 dimensions runs against every repository in scope, locked to specific versions. Every finding cites its exact source.",
+      "A structured review across security, legal, code health, team, and growth dimensions runs against every repository in scope, locked to specific versions. Every finding cites its exact source.",
     phase2Title: "Phase 2 \u2014 Interviews (day 4\u20136)",
     phase2Copy:
       "Two to three interviews with the target\u2019s technical leadership, shaped by what the review surfaced. Synthesised into a named narrative section of the report.",
@@ -466,7 +468,7 @@ export const en = {
     assessedEyebrow: "What we assess",
     assessedKicker: "EVERYTHING IN TIER 1, PLUS",
     assessedIntro:
-      "Tier 2 covers all 13 dimensions that run in a Tier 1 Red Flag Scan, and adds the following:",
+      "Tier 2 covers all the security, legal, code health, team, and growth dimensions that run in a Tier 1 Red Flag Scan, and adds the following:",
     add1Title: "How the system is actually built",
     add1Detail:
       "The analyst traces the architecture against a critical part of the product \u2014 the billing flow, the login system, or the feature the deal thesis depends on. We verify the documentation matches reality and name the risks where it does not. This cannot be automated.",
@@ -494,7 +496,7 @@ export const en = {
       "Repository access for every repo in scope, short intake form, specific versions locked for review.",
     tl13Day: "Day 1\u20133",
     tl13Action:
-      "Structured review across all 13 dimensions against all locked versions. Multi-repository scope handled end to end; all findings rolled into one deliverable.",
+      "Structured review across security, legal, code health, team, and growth dimensions against all locked versions. Multi-repository scope handled end to end; all findings rolled into one deliverable.",
     tl4Day: "Day 4",
     tl4Action: "First interview: target\u2019s founder or technical lead (90 minutes \u2014 architecture + roadmap).",
     tl5Day: "Day 5",
@@ -628,7 +630,7 @@ export const en = {
     escalateEyebrow: "Next steps if issues are found",
     escalateH2: "The Spot Check is the start of the review process, not the end.",
     escalateCopy:
-      "If the escalation signal is \u201cClarification required\u201d or \u201cIssues found \u2014 Full review advised,\u201d the top-questions list becomes the brief for the next engagement. The Red Flag Scan adds interviews, a full review across all 13 dimensions, and a Go / Caution / No-Go recommendation. The Full Technical Due Diligence adds a full architecture review, artificial-intelligence claims verification, and an Investment Committee readout.",
+      "If the escalation signal is \u201cClarification required\u201d or \u201cIssues found \u2014 Full review advised,\u201d the top-questions list becomes the brief for the next engagement. The Red Flag Scan adds interviews, a full review across security, legal, code health, team, and growth dimensions, and a Go / Caution / No-Go recommendation. The Full Technical Due Diligence adds a full architecture review, artificial-intelligence claims verification, and an Investment Committee readout.",
     seeRedFlagScan: "See Tier 1 \u2014 Red Flag Scan (3\u20135 days)",
     seeFullTDD: "See Tier 2 \u2014 Full Technical Due Diligence (7\u201310 days)",
     callTitle: "Book a 4h Spot Check.",

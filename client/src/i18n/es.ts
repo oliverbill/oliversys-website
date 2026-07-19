@@ -254,6 +254,8 @@ export const es: Translations = {
       "Oliversys es gestionado por William Alves, un ingeniero de software sénior con sede en Coimbra, Portugal, a través de una empresa portuguesa registrada. La práctica existe para llenar un vacío que las grandes firmas de due diligence no pueden cubrir: la lectura de un ingeniero sénior sobre el software de una empresa objetivo, a un precio y velocidad que funciona para operaciones de seed y Serie A.",
     whyBody:
       "Examinamos lo que sustenta la tesis de inversión, lo que puede condicionarla y lo que el equipo de transacción debe hacer con la evidencia. Nuestro trabajo es mantenernos independientes, claros y útiles.",
+    pricingAnchor:
+      "Las grandes firmas de due diligence técnico cobran a partir de \u20ac25k por este tipo de análisis. Oliversys entrega un resultado comparable por una fracción de ese valor.",
     principlesEyebrow: "Cómo trabajamos",
     principlesKicker: "PRINCIPIOS OPERATIVOS",
     p1Title: "Lo que importa sobre lo exhaustivo",
@@ -336,12 +338,12 @@ export const es: Translations = {
     whatH1: "Hasta 5 repositorios. Dos fases. Cada hallazgo cita su fuente.",
     phase1Title: "Fase 1 \u2014 Revisión del software (día 1\u20132)",
     phase1Copy:
-      "Ejecutamos una revisión estructurada en 13 dimensiones del software del objetivo. Cada hallazgo cita su ubicación exacta. Los hallazgos se clasifican por gravedad y se vinculan a la preocupación declarada por el comprador.",
+      "Ejecutamos una revisión estructurada del software del objetivo en las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento. Cada hallazgo cita su ubicación exacta. Los hallazgos se clasifican por gravedad y se vinculan a la preocupación declarada por el comprador.",
     phase2Title: "Fase 2 \u2014 Entrevista e informe (día 3\u20135)",
     phase2Copy:
       "Una entrevista de 90 minutos con el fundador o responsable técnico del objetivo, con preguntas basadas en lo que la revisión reveló. La entrevista se sintetiza en una narrativa escrita que identifica los riesgos tecnológicos específicos frente a la tesis de la operación.",
     assessedEyebrow: "Qué evaluamos",
-    assessedKicker: "13 DIMENSIONES",
+    assessedKicker: "SEGURIDAD \u00b7 LEGAL \u00b7 C\u00d3DIGO \u00b7 EQUIPO \u00b7 CRECIMIENTO",
     skillRepoForensics: "Historial de desarrollo",
     skillRepoForensicsDetail:
       "Cuántas personas están realmente construyendo el producto, si el conocimiento crítico está concentrado en una persona, el nivel de actividad de desarrollo y dónde están las partes más modificadas del código.",
@@ -382,7 +384,7 @@ export const es: Translations = {
       "Acceso al repositorio, un formulario de intake breve (tesis de inversión, preocupación principal, fecha de decisión), versión específica del software bloqueada para revisión.",
     tl12Day: "Día 1\u20132",
     tl12Action:
-      "Revisión estructurada en las 13 dimensiones contra la versión bloqueada. Cada hallazgo cita su fuente exacta.",
+      "Revisión estructurada en las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento, contra la versión bloqueada. Cada hallazgo cita su fuente exacta.",
     tl3Day: "Día 3",
     tl3Action: "Entrevista de 90 minutos con el fundador o responsable técnico del objetivo.",
     tl4Day: "Día 4",
@@ -444,7 +446,7 @@ export const es: Translations = {
       "El compromiso de Full Technical Due Diligence revisa todos los repositorios de software definidos en el alcance, bloqueados a una versión específica. Dos a tres entrevistas con el liderazgo técnico del objetivo se sintetizan en una sección nominativa del informe. Una revisión completa de la arquitectura, verificación de afirmaciones sobre inteligencia artificial y una lectura de viabilidad del roadmap completan el cuadro.",
     phase1Title: "Fase 1 \u2014 Revisión del software (día 1\u20133)",
     phase1Copy:
-      "Una revisión estructurada en 13 dimensiones se ejecuta contra todos los repositorios en alcance, bloqueados a versiones específicas. Cada hallazgo cita su fuente exacta.",
+      "Una revisión estructurada en las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento se ejecuta contra todos los repositorios en alcance, bloqueados a versiones específicas. Cada hallazgo cita su fuente exacta.",
     phase2Title: "Fase 2 \u2014 Entrevistas (día 4\u20136)",
     phase2Copy:
       "Dos a tres entrevistas con el liderazgo técnico del objetivo, moldeadas por lo que la revisión reveló. Sintetizadas en una sección nominativa del informe.",
@@ -454,7 +456,7 @@ export const es: Translations = {
     assessedEyebrow: "Qué evaluamos",
     assessedKicker: "TODO LO DEL TIER 1, MÁS",
     assessedIntro:
-      "El Tier 2 cubre las 13 dimensiones del Tier 1 Red Flag Scan, y añade lo siguiente:",
+      "El Tier 2 cubre todas las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento del Tier 1 Red Flag Scan, y añade lo siguiente:",
     add1Title: "Cómo está realmente construido el sistema",
     add1Detail:
       "El analista traza la arquitectura contra una parte crítica del producto — el flujo de facturación, el sistema de autenticación, o la funcionalidad de la que depende la tesis de la operación. Verificamos que la documentación coincide con la realidad e identificamos los riesgos donde no coincide. Esto no puede automatizarse.",
@@ -482,7 +484,7 @@ export const es: Translations = {
       "Acceso al repositorio para todos los repos en alcance, formulario de intake breve, versiones específicas bloqueadas para revisión.",
     tl13Day: "Día 1\u20133",
     tl13Action:
-      "Revisión estructurada en las 13 dimensiones contra todas las versiones bloqueadas. Alcance multi-repositorio gestionado de extremo a extremo; todos los hallazgos consolidados en un único entregable.",
+      "Revisión estructurada en las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento, contra todas las versiones bloqueadas. Alcance multi-repositorio gestionado de extremo a extremo; todos los hallazgos consolidados en un único entregable.",
     tl4Day: "Día 4",
     tl4Action:
       "Primera entrevista: fundador o responsable técnico del objetivo (90 minutos — arquitectura + roadmap).",
@@ -616,7 +618,7 @@ export const es: Translations = {
     escalateEyebrow: "Próximos pasos si se encuentran problemas",
     escalateH2: "El Spot Check es el inicio del proceso de revisión, no el final.",
     escalateCopy:
-      "Si la señal de escalado es \u201cAclaración requerida\u201d o \u201cProblemas encontrados \u2014 Revisión completa recomendada\u201d, la lista de principales preguntas se convierte en el briefing para el siguiente compromiso. El Red Flag Scan añade entrevistas, una revisión completa en las 13 dimensiones y una recomendación Go / Caution / No-Go. El Full Technical Due Diligence añade una revisión completa de la arquitectura, verificación de afirmaciones sobre inteligencia artificial y una presentación al Investment Committee.",
+      "Si la señal de escalado es \u201cAclaración requerida\u201d o \u201cProblemas encontrados \u2014 Revisión completa recomendada\u201d, la lista de principales preguntas se convierte en el briefing para el siguiente compromiso. El Red Flag Scan añade entrevistas, una revisión completa en las dimensiones de seguridad, exposición legal, salud del código, equipo y crecimiento, y una recomendación Go / Caution / No-Go. El Full Technical Due Diligence añade una revisión completa de la arquitectura, verificación de afirmaciones sobre inteligencia artificial y una presentación al Investment Committee.",
     seeRedFlagScan: "Ver Tier 1 \u2014 Red Flag Scan (3\u20135 días)",
     seeFullTDD: "Ver Tier 2 \u2014 Full Technical Due Diligence (7\u201310 días)",
     callTitle: "Reservar un Spot Check de 4h.",
