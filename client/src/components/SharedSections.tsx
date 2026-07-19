@@ -1,10 +1,12 @@
 /**
  * Forensic Ember shared sections: decision-oriented copy, dossier numbering,
  * page-specific evidence artifacts, and restrained conversion prompts.
+ * i18n: all user-visible strings use useLocale().t.
  */
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { BookCallLink } from "./SiteLayout";
+import { useLocale } from "@/i18n/LocaleContext";
 
 type ArtifactVariant = "approach" | "investor" | "counsel" | "about";
 
@@ -41,27 +43,34 @@ export function PageIntro({
 }
 
 export function CallSection({
-  title = "Put the target under review.",
-  copy = "Bring us in before technical uncertainty becomes transaction exposure. We will scope the decision, the evidence required, and the right level of review.",
+  title,
+  copy,
   context,
-  buttonText = "Open a confidential review",
+  buttonText,
 }: {
   title?: string;
   copy?: string;
   context?: string;
   buttonText?: string;
 }) {
+  const { t } = useLocale();
+  const resolvedTitle = title ?? t.shared.callDefaultTitle;
+  const resolvedCopy = copy ?? t.shared.callDefaultCopy;
+  const resolvedButton = buttonText ?? t.shared.callDefaultButton;
+
   return (
     <section className="call-section" id="contact">
       <div className="container call-grid">
         <div>
-          <p className="eyebrow">Confidential introduction</p>
-          <h2>{title}</h2>
+          <p className="eyebrow">{t.shared.confidentialIntroEyebrow}</p>
+          <h2>{resolvedTitle}</h2>
         </div>
         <div className="call-copy">
-          <p>{copy}</p>
-          <BookCallLink context={context}>{buttonText}</BookCallLink>
-          <span className="confidential-note"><ShieldCheck size={15} /> Scope and timing agreed around your deal.</span>
+          <p>{resolvedCopy}</p>
+          <BookCallLink context={context}>{resolvedButton}</BookCallLink>
+          <span className="confidential-note">
+            <ShieldCheck size={15} /> {t.shared.confidentialNote}
+          </span>
         </div>
       </div>
     </section>

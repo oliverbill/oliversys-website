@@ -1,6 +1,7 @@
 /**
  * Forensic Ember shell: dossier-like navigation, sharp geometry, and the official
  * Evidence Aperture mark frame every page with institutional clarity.
+ * i18n: language switcher in top-right; <html lang> updated per locale.
  */
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
@@ -15,12 +16,21 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { useLocale, type Locale, localePath, stripLocalePath } from "@/i18n/LocaleContext";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Map locale to html lang attribute value.
+const HTML_LANG: Record<Locale, string> = {
+  en: "en",
+  pt: "pt-PT",
+  es: "es",
+};
+
 function Brand() {
+  const { localePath: lp } = useLocale();
   return (
-    <Link href="/" className="brand-lockup" aria-label="Oliversys home">
+    <Link href={lp("/")} className="brand-lockup" aria-label="Oliversys home">
       <span className="brand-mark-wrap">
         <img
           src="/oliversys-logo.png"
@@ -38,12 +48,13 @@ function Brand() {
 export function BookCallLink({
   context: _context,
   className = "button-primary",
-  children = "Book a confidential call",
+  children,
 }: {
   context?: string;
   className?: string;
   children?: ReactNode;
 }) {
+  const { t } = useLocale();
   const [open, setOpen] = useState(false);
   const [view, setView] = useState<"options" | "email-form" | "success">("options");
   const [name, setName] = useState("");
@@ -53,6 +64,8 @@ export function BookCallLink({
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const label = children ?? t.contact.triggerDefault;
 
   const resetDialogState = () => {
     setView("options");
@@ -102,7 +115,7 @@ export function BookCallLink({
     const trimmedEmail = email.trim();
     const trimmedMessage = message.trim();
     if (!EMAIL_REGEX.test(trimmedEmail)) {
-      setError("Please enter a valid email address.");
+      setError(t.contact.errorInvalidEmail);
       const el = document.getElementById("review-email");
       if (el instanceof HTMLInputElement) el.focus();
       return;
@@ -140,7 +153,7 @@ export function BookCallLink({
       setView("success");
     } catch {
       setSubmitting(false);
-      setError("Couldn't send — please try again or use WhatsApp.");
+      setError(t.contact.errorSendFailed);
     }
   };
 
@@ -154,15 +167,15 @@ export function BookCallLink({
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <button type="button" className={className}>
-          <span>{children}</span>
+          <span>{label}</span>
           <ArrowUpRight size={17} aria-hidden="true" />
         </button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Reach the founder</DialogTitle>
+          <DialogTitle>{t.contact.dialogTitle}</DialogTitle>
           <DialogDescription>
-            Choose the channel that suits you—both go directly to Oliversys.
+            {t.contact.dialogDescription}
           </DialogDescription>
         </DialogHeader>
         {view === "options" ? (
@@ -173,7 +186,7 @@ export function BookCallLink({
               className="button-primary flex-1"
             >
               <Mail size={17} aria-hidden="true" />
-              <span>Email me</span>
+              <span>{t.contact.emailButton}</span>
             </button>
             <a
               href="https://wa.me/351931313593"
@@ -182,13 +195,13 @@ export function BookCallLink({
               className="button-primary flex-1"
             >
               <MessageCircle size={17} aria-hidden="true" />
-              <span>WhatsApp</span>
+              <span>{t.contact.whatsappButton}</span>
             </a>
           </div>
         ) : view === "email-form" ? (
           <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
             <label htmlFor="review-name" className="sr-only">
-              Your name
+              {t.contact.nameLabel}
             </label>
             <Input
               id="review-name"
@@ -196,33 +209,33 @@ export function BookCallLink({
               autoComplete="name"
               autoFocus
               required
-              placeholder="Your name"
+              placeholder={t.contact.namePlaceholder}
               value={name}
               onChange={(event) => setName(event.target.value)}
               disabled={submitting}
             />
             <label htmlFor="review-company" className="sr-only">
-              Company name
+              {t.contact.companyLabel}
             </label>
             <Input
               id="review-company"
               type="text"
               autoComplete="organization"
               required
-              placeholder="Company name"
+              placeholder={t.contact.companyPlaceholder}
               value={company}
               onChange={(event) => setCompany(event.target.value)}
               disabled={submitting}
             />
             <label htmlFor="review-email" className="sr-only">
-              Your email
+              {t.contact.emailLabel}
             </label>
             <Input
               id="review-email"
               type="email"
               autoComplete="email"
               required
-              placeholder="Your email"
+              placeholder={t.contact.emailPlaceholder}
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
@@ -233,11 +246,11 @@ export function BookCallLink({
               aria-describedby="review-email-error"
             />
             <label htmlFor="review-message" className="sr-only">
-              Message (optional)
+              {t.contact.messageLabel}
             </label>
             <textarea
               id="review-message"
-              placeholder="Brief context (optional)"
+              placeholder={t.contact.messagePlaceholder}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               disabled={submitting}
@@ -259,7 +272,7 @@ export function BookCallLink({
                 disabled={submitting}
                 className="button-small flex-1"
               >
-                <span>Back</span>
+                <span>{t.contact.backButton}</span>
               </button>
               <button
                 type="submit"
@@ -268,20 +281,20 @@ export function BookCallLink({
                 className="button-primary flex-1"
               >
                 <Mail size={17} aria-hidden="true" />
-                <span>{submitting ? "Sending…" : "Send"}</span>
+                <span>{submitting ? t.contact.sendingButton : t.contact.sendButton}</span>
               </button>
             </div>
           </form>
         ) : (
           <div className="flex flex-col gap-3">
-            <p className="text-sm">Thanks — we'll be in touch.</p>
+            <p className="text-sm">{t.contact.successMessage}</p>
             <button
               ref={closeButtonRef}
               type="button"
               onClick={handleClose}
               className="button-primary"
             >
-              <span>Close</span>
+              <span>{t.contact.closeButton}</span>
             </button>
           </div>
         )}
@@ -291,19 +304,14 @@ export function BookCallLink({
 }
 
 // Items grouped under the "Services" dropdown in the desktop nav.
-const SERVICE_HREFS = ["/services/red-flag-scan/", "/services/full-technical-due-diligence/"];
+const SERVICE_BARE_PATHS = ["/services/red-flag-scan/", "/services/full-technical-due-diligence/"];
 
-// Nav items that appear as flat links (not grouped into Services).
-const flatNavItems = site.nav.filter((item) => !SERVICE_HREFS.includes(item.href));
-// Nav items that appear inside the Services dropdown.
-const serviceNavItems = site.nav.filter((item) => SERVICE_HREFS.includes(item.href));
-
-function ServicesDropdown({ location }: { location: string }) {
+function ServicesDropdown({ barePath }: { barePath: string }) {
+  const { t, localePath: lp } = useLocale();
   const [dropOpen, setDropOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const isActive = SERVICE_HREFS.includes(location);
+  const isActive = SERVICE_BARE_PATHS.includes(barePath) || SERVICE_BARE_PATHS.includes(barePath + "/");
 
-  // Close on outside click or Escape key.
   useEffect(() => {
     const onPointerDown = (e: PointerEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
@@ -321,8 +329,12 @@ function ServicesDropdown({ location }: { location: string }) {
     };
   }, []);
 
-  // Close when route changes.
-  useEffect(() => setDropOpen(false), [location]);
+  useEffect(() => setDropOpen(false), [barePath]);
+
+  const serviceNavItems = [
+    { label: t.nav.redFlagScan, href: lp("/services/red-flag-scan/") },
+    { label: t.nav.fullTDD, href: lp("/services/full-technical-due-diligence/") },
+  ];
 
   return (
     <div ref={ref} className="nav-dropdown-wrap">
@@ -333,7 +345,7 @@ function ServicesDropdown({ location }: { location: string }) {
         aria-expanded={dropOpen}
         onClick={() => setDropOpen((v) => !v)}
       >
-        Services
+        {t.nav.services}
         <ChevronDown size={12} aria-hidden="true" className={`nav-chevron${dropOpen ? " is-open" : ""}`} />
       </button>
       {dropOpen && (
@@ -343,7 +355,8 @@ function ServicesDropdown({ location }: { location: string }) {
               key={item.href}
               href={item.href}
               role="menuitem"
-              className={location === item.href ? "active" : ""}
+              className={barePath === "/services/red-flag-scan/" && item.href.includes("red-flag") ? "active" :
+                         barePath === "/services/full-technical-due-diligence/" && item.href.includes("full") ? "active" : ""}
             >
               {item.label}
             </Link>
@@ -354,8 +367,39 @@ function ServicesDropdown({ location }: { location: string }) {
   );
 }
 
+/** Minimal language switcher — text labels only, no emoji flags. */
+function LanguageSwitcher() {
+  const { locale, t } = useLocale();
+  const [rawLocation] = useLocation();
+  const barePath = stripLocalePath(rawLocation);
+
+  const locales: Locale[] = ["en", "pt", "es"];
+
+  return (
+    <nav className="lang-switcher" aria-label={t.langSwitcher.label}>
+      {locales.map((loc, i) => {
+        const href = localePath(barePath, loc);
+        const label = t.langSwitcher[loc];
+        const isActive = locale === loc;
+        return (
+          <span key={loc}>
+            {isActive ? (
+              <span className="lang-active" aria-current="true">{label}</span>
+            ) : (
+              <Link href={href} className="lang-link">{label}</Link>
+            )}
+            {i < locales.length - 1 && <span className="lang-sep" aria-hidden="true"> | </span>}
+          </span>
+        );
+      })}
+    </nav>
+  );
+}
+
 function Header() {
-  const [location] = useLocation();
+  const { t, localePath: lp } = useLocale();
+  const [rawLocation] = useLocation();
+  const barePath = stripLocalePath(rawLocation);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -366,30 +410,49 @@ function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location]);
+  useEffect(() => setOpen(false), [rawLocation]);
+
+  const flatNavItems = [
+    { label: t.nav.approach, href: lp("/approach") },
+    { label: t.nav.forInvestors, href: lp("/investors") },
+    { label: t.nav.forCounsel, href: lp("/counsel") },
+    { label: t.nav.about, href: lp("/about") },
+    { label: t.nav.blog, href: lp("/blog") },
+  ];
+
+  const allMobileNavItems = [
+    { label: t.nav.approach, href: lp("/approach") },
+    { label: t.nav.forInvestors, href: lp("/investors") },
+    { label: t.nav.forCounsel, href: lp("/counsel") },
+    { label: t.nav.redFlagScan, href: lp("/services/red-flag-scan/") },
+    { label: t.nav.fullTDD, href: lp("/services/full-technical-due-diligence/") },
+    { label: t.nav.about, href: lp("/about") },
+    { label: t.nav.blog, href: lp("/blog") },
+  ];
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container header-inner">
         <Brand />
-        <nav className="desktop-nav" aria-label="Primary navigation">
+        <nav className="desktop-nav" aria-label={t.nav.primaryNav}>
           {flatNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={location === item.href ? "active" : ""}
+              className={barePath === item.href.replace(/^\/pt|^\/es/, "") ? "active" : ""}
             >
               {item.label}
             </Link>
           ))}
-          <ServicesDropdown location={location} />
+          <ServicesDropdown barePath={barePath} />
         </nav>
         <div className="header-actions">
-          <BookCallLink className="button-small">Request a Tech Review</BookCallLink>
+          <LanguageSwitcher />
+          <BookCallLink className="button-small">{t.nav.requestReview}</BookCallLink>
           <button
             type="button"
             className="menu-toggle"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
@@ -398,14 +461,14 @@ function Header() {
         </div>
       </div>
       <div className={`mobile-panel ${open ? "is-open" : ""}`}>
-        <nav className="container mobile-nav" aria-label="Mobile navigation">
-          {site.nav.map((item, index) => (
+        <nav className="container mobile-nav" aria-label={t.nav.mobileNav}>
+          {allMobileNavItems.map((item, index) => (
             <Link key={item.href} href={item.href}>
               <span>0{index + 1}</span>
               {item.label}
             </Link>
           ))}
-          <BookCallLink className="button-primary">Open a confidential review</BookCallLink>
+          <BookCallLink className="button-primary">{t.nav.openReview}</BookCallLink>
         </nav>
       </div>
     </header>
@@ -413,48 +476,83 @@ function Header() {
 }
 
 function Footer() {
+  const { t, localePath: lp } = useLocale();
+  const year = new Date().getFullYear();
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
           <Brand />
-          <p>Independent technical evidence for consequential deal decisions.</p>
+          <p>{t.footer.tagline}</p>
         </div>
         <div>
-          <p className="footer-label">Scope</p>
-          <Link href="/investors">Venture investors</Link>
-          <Link href="/counsel">M&amp;A counsel</Link>
-          <Link href="/approach">Diligence approach</Link>
-          <Link href="/services/red-flag-scan/">Red Flag Scan (Tier 1)</Link>
-          <Link href="/services/full-technical-due-diligence/">Full TDD (Tier 2)</Link>
-          <Link href="/blog">Blog</Link>
+          <p className="footer-label">{t.footer.scopeLabel}</p>
+          <Link href={lp("/investors")}>{t.footer.ventureInvestors}</Link>
+          <Link href={lp("/counsel")}>{t.footer.maCounsel}</Link>
+          <Link href={lp("/approach")}>{t.footer.diligenceApproach}</Link>
+          <Link href={lp("/services/red-flag-scan/")}>{t.footer.redFlagScanFull}</Link>
+          <Link href={lp("/services/full-technical-due-diligence/")}>{t.footer.fullTDDFull}</Link>
+          <Link href={lp("/blog")}>{t.nav.blog}</Link>
         </div>
         <div>
-          <p className="footer-label">Contact</p>
+          <p className="footer-label">{t.footer.contactLabel}</p>
           <a href={`mailto:${site.email}`}>{site.email}</a>
           <p>{site.location}</p>
         </div>
       </div>
       <div className="container footer-base">
-        <p>© {new Date().getFullYear()} Oliversys. Confidential by default.</p>
-        <p>Technical diligence · M&amp;A · Venture capital</p>
+        <p>{t.footer.copyright.replace("{year}", String(year))}</p>
+        <p>{t.footer.tagline2}</p>
       </div>
     </footer>
   );
 }
 
-export default function SiteLayout({ children }: { children: ReactNode }) {
-  const [location] = useLocation();
+/** Updates <html lang> and injects hreflang <link> tags on every route change. */
+function HeadManager() {
+  const { locale } = useLocale();
+  const [rawLocation] = useLocation();
+  const barePath = stripLocalePath(rawLocation);
 
   useEffect(() => {
-    // Skip scroll reset when navigating to a hash anchor — let the browser
-    // handle scrolling to the target element naturally.
+    // Update html lang attribute.
+    document.documentElement.lang = HTML_LANG[locale];
+
+    // Remove existing hreflang links.
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
+
+    const base = "https://oliversys.tech";
+    const hreflangs: Array<{ hreflang: string; href: string }> = [
+      { hreflang: "x-default", href: `${base}${barePath}` },
+      { hreflang: "en", href: `${base}${barePath}` },
+      { hreflang: "pt-PT", href: `${base}/pt${barePath === "/" ? "/" : barePath}` },
+      { hreflang: "es", href: `${base}/es${barePath === "/" ? "/" : barePath}` },
+    ];
+
+    const head = document.head;
+    hreflangs.forEach(({ hreflang, href }) => {
+      const link = document.createElement("link");
+      link.rel = "alternate";
+      link.setAttribute("hreflang", hreflang);
+      link.href = href;
+      head.appendChild(link);
+    });
+  }, [locale, barePath]);
+
+  return null;
+}
+
+export default function SiteLayout({ children }: { children: ReactNode }) {
+  const [rawLocation] = useLocation();
+
+  useEffect(() => {
     if (window.location.hash) return;
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [location]);
+  }, [rawLocation]);
 
   return (
     <div className="site-shell">
+      <HeadManager />
       <Header />
       <main>{children}</main>
       <Footer />
