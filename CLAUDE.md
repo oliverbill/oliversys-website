@@ -38,7 +38,6 @@ client/src/content/blog/YYYY-MM-DD-slug.es.md     ← ES (required for new/edite
 The blog loader (`client/src/lib/blog.ts`) and `BlogPost.tsx` page support locale-aware article selection — pass the current locale from `useLocale()` to `getArticleBySlug()` to get the right variant. If no locale variant file exists, the EN canonical is served as fallback.
 
 **Product names, proper nouns, and code snippets are never translated** — use the EN original in PT and ES files.
-
 ## Register notes
 
 - PT: European register — "utilizador" not "usuário", "ecrã" not "tela", "gestão" not "gerência".

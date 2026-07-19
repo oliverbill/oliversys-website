@@ -1,18 +1,23 @@
 /**
  * Forensic Ember blog index — dossier-style article listing.
  * Articles are ordered newest first. Pillar tag gives quick scan of content type.
+ * i18n: nav/UI strings translated; article titles/descriptions stay in English.
  */
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { articles, formatDate, PILLAR_LABELS } from "@/lib/blog";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function Blog() {
+  const { t, localePath: lp } = useLocale();
+  const b = t.blog;
+
   return (
     <>
       <section className="page-intro carbon-section">
         <div className="container page-intro-grid">
           <div>
-            <p className="eyebrow ember">Blog</p>
+            <p className="eyebrow ember">{b.eyebrow}</p>
             <h1>
               Technical evidence from the{" "}
               <em>review floor.</em>
@@ -34,9 +39,10 @@ export default function Blog() {
           <p className="blog-rss-link">
             <a href="/rss.xml" aria-label="Subscribe via RSS">Subscribe via RSS</a>
           </p>
+          {articles.length === 0 && <p>{b.noPosts}</p>}
           {articles.map((article) => (
             <article key={article.slug} className="blog-card">
-              <Link href={`/blog/${article.slug}`} className="blog-card-inner">
+              <Link href={lp(`/blog/${article.slug}`)} className="blog-card-inner">
                 <header className="blog-card-header">
                   <span className="blog-pillar-tag">
                     {PILLAR_LABELS[article.pillar]}
@@ -48,7 +54,7 @@ export default function Blog() {
                 <h2 className="blog-card-title">{article.title}</h2>
                 <p className="blog-card-desc">{article.description}</p>
                 <span className="blog-card-cta">
-                  Read <ArrowRight size={15} aria-hidden="true" />
+                  {b.readPost} <ArrowRight size={15} aria-hidden="true" />
                 </span>
               </Link>
             </article>

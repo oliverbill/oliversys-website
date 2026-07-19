@@ -9,9 +9,11 @@ import { getArticleBySlug, formatDate, PILLAR_LABELS } from "@/lib/blog";
 import { renderMarkdown } from "@/lib/renderMarkdown";
 import { site } from "@/lib/site";
 import NotFound from "./NotFound";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
+  const { localePath: lp } = useLocale();
   const article = getArticleBySlug(slug ?? "");
 
   if (!article) {
@@ -34,7 +36,7 @@ export default function BlogPost() {
 
       <section className="page-intro carbon-section">
         <div className="container">
-          <Link href="/blog" className="blog-back-link">
+          <Link href={lp("/blog")} className="blog-back-link">
             <ArrowLeft size={15} aria-hidden="true" /> Blog
           </Link>
           <div className="blog-post-header">
@@ -76,7 +78,7 @@ export default function BlogPost() {
 
       <section className="blog-back-section paper-section">
         <div className="container">
-          <Link href="/blog" className="text-link">
+          <Link href={lp("/blog")} className="text-link">
             <ArrowLeft size={15} /> All posts
           </Link>
         </div>
