@@ -402,6 +402,23 @@ function vitePluginRss(): Plugin {
 const SPA_STATIC_PATHS = [
   "services/red-flag-scan",
   "services/full-technical-due-diligence",
+  // Locale-prefixed equivalents — GitHub Pages needs explicit index.html for HTTP 200.
+  "pt",
+  "pt/approach",
+  "pt/investors",
+  "pt/counsel",
+  "pt/about",
+  "pt/blog",
+  "pt/services/red-flag-scan",
+  "pt/services/full-technical-due-diligence",
+  "es",
+  "es/approach",
+  "es/investors",
+  "es/counsel",
+  "es/about",
+  "es/blog",
+  "es/services/red-flag-scan",
+  "es/services/full-technical-due-diligence",
 ];
 
 function vitePluginGhPagesSpaFallback(): Plugin {

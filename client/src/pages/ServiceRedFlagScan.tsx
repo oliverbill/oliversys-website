@@ -3,99 +3,55 @@
  * Audience: seed / Series A investment committee members and principals arriving
  * from a spot-check report link. Answers what they get, how long it takes, who
  * must be available, and why to trust this over a friend-of-fund CTO on a call.
+ * i18n: all user-visible strings use useLocale().t.tier1.
  */
 import { ArrowRight, CheckCircle2, Clock, FileText, Users } from "lucide-react";
 import { Link } from "wouter";
 import { CallSection } from "@/components/SharedSections";
-
-const assessmentItems = [
-  {
-    label: "Repository forensics",
-    detail:
-      "Bus factor, top contributor share, velocity trend, dormancy classification, per-file hotspot analysis.",
-  },
-  {
-    label: "Test posture",
-    detail:
-      "Real coverage execution (not heuristic), assertion density, testing framework detection, continuous-integration configuration.",
-  },
-  {
-    label: "Code quality",
-    detail:
-      "Total lines of code by language, aggregate complexity, TODO / FIXME density.",
-  },
-  {
-    label: "Maintainability",
-    detail:
-      "Per-function cyclomatic complexity, code duplication ratio (via PMD Copy/Paste Detector), synthetic technical-debt ratio, top hotspot functions with file and line.",
-  },
-  {
-    label: "Scalability posture",
-    detail:
-      "Presence of async patterns, distributed caching, queue systems, rate limiting, autoscaling configuration, load-test artefacts.",
-  },
-  {
-    label: "Artificial-intelligence surface",
-    detail:
-      "Provider client libraries, model call sites, vector stores, prompt assets, evaluation harness presence — the single strongest signal separating real machine-learning products from AI-washing.",
-  },
-  {
-    label: "Operational readiness",
-    detail:
-      "API specifications, deployment declarations, infrastructure-as-code, monitoring integration, health-check endpoints, runbooks.",
-  },
-  {
-    label: "Dependency risk",
-    detail:
-      "Known vulnerabilities via Trivy against a database refreshed within 48 hours, misconfigurations, top exploitable items.",
-  },
-  {
-    label: "Credentials",
-    detail:
-      "Pattern scan via Gitleaks + live verification via Trufflehog — verified positives distinguished from documentation examples and expired tokens.",
-  },
-  {
-    label: "License exposure",
-    detail:
-      "Full Software Bill of Materials via Syft, classification into permissive / weak-copyleft / strong-copyleft / commercial-restricted categories, viral-license landmines named.",
-  },
-  {
-    label: "Static analysis",
-    detail:
-      "Semgrep against a language-appropriate rule set plus custom regional rule packs.",
-  },
-];
-
-const timeline = [
-  { day: "Day 0", action: "Repository access, three-field intake form (investment thesis, primary concern, decision date), pinned commit hash captured." },
-  { day: "Day 1–2", action: "Full 13-skill pipeline execution against pinned commit. Every finding cites file, line, and commit hash." },
-  { day: "Day 3", action: "90-minute interview with target's Founder or Chief Technology Officer." },
-  { day: "Day 4", action: "Analyst validation: read all high-severity findings, sample 20 % of medium-severity, read top 10 hotspot files by change frequency." },
-  { day: "Day 5", action: "Report finalisation, analyst signature, delivery to fund." },
-];
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function ServiceRedFlagScan() {
+  const { t, localePath: lp } = useLocale();
+  const s = t.tier1;
+
+  const assessmentItems = [
+    { label: s.skillRepoForensics, detail: s.skillRepoForensicsDetail },
+    { label: s.skillTestPosture, detail: s.skillTestPostureDetail },
+    { label: s.skillCodeQuality, detail: s.skillCodeQualityDetail },
+    { label: s.skillMaintainability, detail: s.skillMaintainabilityDetail },
+    { label: s.skillScalability, detail: s.skillScalabilityDetail },
+    { label: s.skillAI, detail: s.skillAIDetail },
+    { label: s.skillOps, detail: s.skillOpsDetail },
+    { label: s.skillDeps, detail: s.skillDepsDetail },
+    { label: s.skillCreds, detail: s.skillCredsDetail },
+    { label: s.skillLicense, detail: s.skillLicenseDetail },
+    { label: s.skillStatic, detail: s.skillStaticDetail },
+  ];
+
+  const timeline = [
+    { day: s.tl0Day, action: s.tl0Action },
+    { day: s.tl12Day, action: s.tl12Action },
+    { day: s.tl3Day, action: s.tl3Action },
+    { day: s.tl4Day, action: s.tl4Action },
+    { day: s.tl5Day, action: s.tl5Action },
+  ];
+
   return (
     <div className="service-page">
       {/* Hero */}
       <section className="page-intro carbon-section">
         <div className="container page-intro-grid">
           <div>
-            <p className="eyebrow ember">Tier 1 · Technical Due Diligence</p>
+            <p className="eyebrow ember">{s.heroEyebrow}</p>
             <h1 style={{ lineHeight: 1.15 }}>
-              Red Flag Scan — a pre-transaction technical read,
+              {s.heroH1a}
               <br/>
-              <em>delivered in 3–5 business days.<sup>*</sup></em>
+              <em>{s.heroH1em}<sup>*</sup></em>
             </h1>
           </div>
           <div className="intro-aside">
             <span className="section-index">TIER 1 / OLIVERSYS</span>
-            <p>
-              Up to 5 repositories, single-interview analysis. A 10–15 page signed
-              report plus a Go / Caution / No-Go recommendation. Designed for
-              seed and Series A investment committees where a red flag is a
-              term-sheet-blocker.
-            </p>
+            <p>{s.heroAside}</p>
             <div className="hero-artifact risk-register" aria-hidden="true">
               <span className="artifact-label">RED FLAG SCAN / TIER 1</span>
               <div><i>P-01</i><b>PIPELINE</b><em>13 SKILLS</em></div>
@@ -116,15 +72,8 @@ export default function ServiceRedFlagScan() {
               lineHeight: 1.6,
             }}
           >
-            <sup>*</sup>Applicable to an aggregate of up to 5 repositories with up to 200,000 lines of code total 
-            (excluding comments), 20,000 commits in the Git history, 500 aggregate dependencies 
-            (direct + transitive), and 3 primary languages, with a reproducible build on a clean 
-            machine completing within 15 minutes. 
-            <u>
-              <b>
-                Targets exceeding any of these thresholds are quoted separately after a scoping call.
-              </b>
-            </u>{" "}
+            <sup>*</sup>{s.slaNote}{" "}
+            <u><b>{s.slaWarning}</b></u>
           </p>
         </div>
       </section>
@@ -133,33 +82,23 @@ export default function ServiceRedFlagScan() {
       <section className="paper-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
           <div className="section-kicker-row">
-            <p className="eyebrow">What this engagement is</p>
-            <span>SCOPE / TWO PHASES</span>
+            <p className="eyebrow">{s.whatEyebrow}</p>
+            <span>{s.whatKicker}</span>
           </div>
           <div className="mandate-grid" style={{ marginTop: "2rem" }}>
             <div>
               <h1 style={{ fontSize: "clamp(2.3rem, 4.2vw, 4.7rem)", lineHeight: 1.05 }}>
-                Up to 5 repositories. Two phases. Every finding cites file and line.
+                {s.whatH1}
               </h1>
             </div>
             <div className="deliverable-list deliverable-list--no-icon">
               <div>
-                <strong>Phase 1 — Pipeline execution (day 1–2)</strong>
-                <p>
-                  A 13-skill analysis pipeline runs against the target repositories
-                  pinned to a specific commit hash. Every finding cites file and
-                  line. Findings are ranked by severity and linked to the buyer's
-                  stated concern.
-                </p>
+                <strong>{s.phase1Title}</strong>
+                <p>{s.phase1Copy}</p>
               </div>
               <div>
-                <strong>Phase 2 — Interview and synthesis (day 3–5)</strong>
-                <p>
-                  One 90-minute interview with the target's Founder or CTO, with
-                  questions calibrated to what the pipeline surfaced. Interview
-                  transcript is synthesised into a written narrative naming the
-                  specific technical risks against the deal thesis.
-                </p>
+                <strong>{s.phase2Title}</strong>
+                <p>{s.phase2Copy}</p>
               </div>
             </div>
           </div>
@@ -170,8 +109,8 @@ export default function ServiceRedFlagScan() {
       <section className="carbon-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
           <div className="section-kicker-row">
-            <p className="eyebrow ember">What is assessed</p>
-            <span>13-SKILL PIPELINE</span>
+            <p className="eyebrow ember">{s.assessedEyebrow}</p>
+            <span>{s.assessedKicker}</span>
           </div>
           <div
             style={{
@@ -213,10 +152,10 @@ export default function ServiceRedFlagScan() {
       <section className="paper-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
           <div className="section-kicker-row">
-            <p className="eyebrow">Estimated timeline</p>
+            <p className="eyebrow">{s.timelineEyebrow}</p>
             <span>
               <Clock size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }} />
-              3–5 BUSINESS DAYS<sup>*</sup>
+              {s.timelineKicker}<sup>*</sup>
             </span>
           </div>
           <div className="phase-list" style={{ marginTop: "2rem" }}>
@@ -235,7 +174,7 @@ export default function ServiceRedFlagScan() {
               fontWeight: 600,
             }}
           >
-            Delivery: signed 10–15 page PDF report plus supporting artefacts, delivered directly to the fund.
+            {s.delivery}
           </p>
           <p
             id="tier1-sla-note"
@@ -254,28 +193,28 @@ export default function ServiceRedFlagScan() {
       <section className="mist-section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
           <div className="section-kicker-row" style={{ color: "#000000" }}>
-            <p className="eyebrow" style={{ color: "#000000" }}>Interviews</p>
+            <p className="eyebrow" style={{ color: "#000000" }}>{s.interviewsEyebrow}</p>
             <span style={{ color: "#000000" }}>
               <Users size={14} style={{ display: "inline", verticalAlign: "middle", marginRight: "0.25rem" }} />
-              ONE 90-MINUTE SESSION
+              {s.interviewsKicker}
             </span>
           </div>
           <div style={{ maxWidth: "40rem", marginTop: "2rem" }}>
             <ul className="check-list">
               <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <span><strong style={{ color: "#000000" }}>Required role:</strong> target's Founder or Chief Technology Officer — someone who can speak to both architecture decisions and hiring plans.</span>
+                <span><strong style={{ color: "#000000" }}>{s.interviewRole}</strong> {s.interviewRoleDetail}</span>
               </li>
               <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <span><strong style={{ color: "#000000" }}>Format:</strong> video call, recorded with the interviewee's consent for note-taking accuracy.*</span>
+                <span><strong style={{ color: "#000000" }}>{s.interviewFormat}</strong> {s.interviewFormatDetail}*</span>
               </li>
               <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <span><strong style={{ color: "#000000" }}>Duration:</strong> 90 minutes, with questions generated from pipeline findings — not a generic checklist.</span>
+                <span><strong style={{ color: "#000000" }}>{s.interviewDuration}</strong> {s.interviewDurationDetail}</span>
               </li>
             </ul>
-          <sup>*</sup> On-site presence can be negotiated with expenses on behalf of the client.
+            <sup>*</sup> {s.interviewFormatNote}
           </div>
         </div>
       </section>
@@ -284,32 +223,23 @@ export default function ServiceRedFlagScan() {
       <section className="carbon-section">
         <div className="container deliverable-grid" style={{ paddingBlock: "4rem" }}>
           <div>
-            <p className="eyebrow ember">What reaches the fund</p>
-            <h2>A signed opinion — not a generated summary.</h2>
+            <p className="eyebrow ember">{s.whatReachesEyebrow}</p>
+            <h2>{s.whatReachesH2}</h2>
           </div>
           <div className="deliverable-list">
             <div>
               <span>
                 <FileText size={18} aria-hidden="true" />
               </span>
-              <strong>Go / Caution / No-Go recommendation</strong>
-              <p>
-                Distilled from the aggregate risk picture across all pipeline sections,
-                calibrated against the buyer's stated concern. The recommendation is the
-                analyst's opinion, informed by the pipeline — it is not automated.
-              </p>
+              <strong>{s.del1Title}</strong>
+              <p>{s.del1Copy}</p>
             </div>
             <div>
               <span>
                 <FileText size={18} aria-hidden="true" />
               </span>
-              <strong>Reproducible findings</strong>
-              <p>
-                Every report cites the exact rubric version, commit hash, and pinned
-                target commit. Any finding can be regenerated six months later by
-                checking out the engagement tag and re-running the pipeline. Foundation
-                for defending the report against a challenge.
-              </p>
+              <strong>{s.del2Title}</strong>
+              <p>{s.del2Copy}</p>
             </div>
           </div>
         </div>
@@ -326,38 +256,30 @@ export default function ServiceRedFlagScan() {
             }}
           >
             <div>
-              <p className="eyebrow">When Tier 1 fits</p>
-              <h2 style={{ marginBottom: "1rem" }}>Seed to Series A decisions with a technical thesis.</h2>
-              <p style={{ lineHeight: 1.7 }}>
-                The investment thesis is technical — product-market fit is understood, but
-                the buyer needs to know whether the code can deliver on the roadmap. The
-                fund lacks a technical partner able to spend a week on the target's
-                repository. The timeline is 5 business days or longer before the term
-                sheet is signed.
-              </p>
+              <p className="eyebrow">{s.tier1FitsEyebrow}</p>
+              <h2 style={{ marginBottom: "1rem" }}>{s.tier1FitsH2}</h2>
+              <p style={{ lineHeight: 1.7 }}>{s.tier1FitsCopy}</p>
             </div>
             <div>
-              <p className="eyebrow">When to consider Tier 2</p>
-              <h2 style={{ marginBottom: "1rem" }}>Some situations call for broader scope.</h2>
-              <p style={{ lineHeight: 1.7 }}>
-                The target has more than 5 repositories. The deal thesis depends on a
-                specific AI claim being verifiably true. The fund is committing
-                significantly more capital. The deal is a corporate acquisition rather
-                than a growth-equity round.
-              </p>
-              <Link href="/services/full-technical-due-diligence/" className="text-link" style={{ marginTop: "1.5rem", display: "inline-flex" }}>
-                See Tier 2 — Full Technical Due Diligence <ArrowRight size={17} />
+              <p className="eyebrow">{s.tier2EyebrowWhen}</p>
+              <h2 style={{ marginBottom: "1rem" }}>{s.tier2H2When}</h2>
+              <p style={{ lineHeight: 1.7 }}>{s.tier2CopyWhen}</p>
+              <Link href={lp("/services/full-technical-due-diligence/")} className="text-link" style={{ marginTop: "1.5rem", display: "inline-flex" }}>
+                {s.seeTier2} <ArrowRight size={17} />
               </Link>
+              <p style={{ marginTop: "0.75rem", fontSize: "1.1rem", opacity: 0.55, lineHeight: 1.6 }}>
+                <sup>*</sup> {s.tier2SlaNote}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       <CallSection
-        title="Scope a Red Flag Scan."
-        copy="Share the target, the thesis, and the decision date. Oliversys will confirm scope, intake, and turnaround within one business day."
+        title={s.callTitle}
+        copy={s.callCopy}
         context="a Tier 1 Red Flag Scan"
-        buttonText="Request an engagement scope call"
+        buttonText={s.callButton}
       />
     </div>
   );

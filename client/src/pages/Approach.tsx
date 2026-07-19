@@ -1,25 +1,38 @@
 /**
  * Forensic Ember approach page: a sequential case-file rhythm makes methodology
  * concrete while keeping every technical activity tied to a transaction decision.
+ * i18n: all user-visible strings use useLocale().t.approach.
  */
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import { CallSection, EvidenceArtifact, PageIntro } from "@/components/SharedSections";
-
-const phases = [
-  { n: "01", title: "Frame the decision", copy: "Align the scope to the transaction thesis, stage, material assumptions, and decision timeline. The review starts with what could change the deal—not a fixed checklist.", meta: "Thesis · Scope · Materiality" },
-  { n: "02", title: "Inspect the evidence", copy: "Review the product, architecture, codebase, engineering practices, security posture, data dependencies, team, and roadmap in the depth the mandate requires.", meta: "Documents · Systems · Interviews" },
-  { n: "03", title: "Challenge the plan", copy: "Test whether current technical reality can carry the commercial plan. Surface hidden dependencies, delivery constraints, and costs that may sit outside the model.", meta: "Capacity · Cost · Constraint" },
-  { n: "04", title: "Resolve the deal view", copy: "Deliver direct findings, transaction implications, and a prioritized post-close view. Debrief the deal team so uncertainty is explicit and decisions remain accountable.", meta: "Findings · Implications · Priorities" },
-];
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function Approach() {
+  const { t, localePath: lp } = useLocale();
+  const a = t.approach;
+
+  const phases = [
+    { n: "01", title: a.phase1Title, copy: a.phase1Copy, meta: a.phase1Meta },
+    { n: "02", title: a.phase2Title, copy: a.phase2Copy, meta: a.phase2Meta },
+    { n: "03", title: a.phase3Title, copy: a.phase3Copy, meta: a.phase3Meta },
+    { n: "04", title: a.phase4Title, copy: a.phase4Copy, meta: a.phase4Meta },
+  ];
+
+  const scopeItems = [
+    a.scope1, a.scope2, a.scope3, a.scope4,
+    a.scope5, a.scope6, a.scope7, a.scope8,
+  ];
+
   return (
     <>
-      <PageIntro eyebrow="Diligence approach" title="Follow the evidence to the" italic="decision." copy="An Oliversys review is scoped around materiality. Technical depth is not the endpoint; a defensible transaction view is." index="01" artifact="approach" />
+      <PageIntro eyebrow={a.introEyebrow} title={a.introTitle} italic={a.introItalic} copy={a.introCopy} index="01" artifact="approach" />
       <section className="approach-phases paper-section">
         <div className="container">
-          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}><p className="eyebrow">A decision-led review</p><span>MANDATE / 04 PHASES</span></div>
+          <div className="section-kicker-row" style={{ borderBottom: "none", paddingBottom: 0 }}>
+            <p className="eyebrow">{a.phasesEyebrow}</p>
+            <span>{a.phasesKicker}</span>
+          </div>
           <div className="phase-list">
             {phases.map((phase) => (
               <article key={phase.n}>
@@ -33,30 +46,36 @@ export default function Approach() {
       </section>
       <section className="scope-section mist-section">
         <div className="container scope-grid">
-          <div className="scope-image cut-corner"><EvidenceArtifact variant="network" /><span>FIG. 02 / EVIDENCE PATH</span></div>
+          <div className="scope-image cut-corner">
+            <EvidenceArtifact variant="network" />
+            <span>{a.figCaption}</span>
+          </div>
           <div>
-            <p className="eyebrow">Review surface</p>
-            <h2>Broad enough to catch the dependency. Focused enough to protect the timeline.</h2>
+            <p className="eyebrow">{a.scopeEyebrow}</p>
+            <h2>{a.scopeH2}</h2>
             <div className="scope-columns">
-              {[
-                "Product and roadmap realism", "Architecture and scalability", "Codebase and engineering health", "Security, data, and resilience", "Team capability and key-person risk", "Delivery model and technical cost", "Third-party and platform dependency", "Integration and post-close priorities",
-              ].map((item) => <div key={item}><Check size={16} />{item}</div>)}
+              {scopeItems.map((item) => (
+                <div key={item}><Check size={16} />{item}</div>
+              ))}
             </div>
           </div>
         </div>
       </section>
       <section className="deliverable-section carbon-section">
         <div className="container deliverable-grid">
-          <div><p className="eyebrow ember">What reaches the room</p><h2>A report built to be used, not filed.</h2></div>
-          <div className="deliverable-list deliverable-list--no-icon">
-            <div><strong>Executive deal view</strong><p>The most consequential technical facts, stated directly.</p></div>
-            <div><strong>Prioritized findings</strong><p>Severity, evidence, confidence, and practical implication.</p></div>
-            <div><strong>Action path</strong><p>Questions for the deal, protections to consider, and post-close priorities.</p></div>
+          <div>
+            <p className="eyebrow ember">{a.deliverableEyebrow}</p>
+            <h2>{a.deliverableH2}</h2>
           </div>
-          <Link href="/investors" className="text-link light">See the investor mandate <ArrowRight size={17} /></Link>
+          <div className="deliverable-list deliverable-list--no-icon">
+            <div><strong>{a.del1Title}</strong><p>{a.del1Copy}</p></div>
+            <div><strong>{a.del2Title}</strong><p>{a.del2Copy}</p></div>
+            <div><strong>{a.del3Title}</strong><p>{a.del3Copy}</p></div>
+          </div>
+          <Link href={lp("/investors")} className="text-link light">{a.seeInvestorMandate} <ArrowRight size={17} /></Link>
         </div>
       </section>
-      <CallSection context="a Software Due Diligence mandate" buttonText="Define the review scope" />
+      <CallSection context="a Software Due Diligence mandate" buttonText={a.callButton} />
     </>
   );
 }
