@@ -15,6 +15,7 @@ export default function About() {
             <p className="eyebrow">Why Oliversys</p>
             <h2>A clear technical view, built outside the momentum of the deal.</h2>
             <p className="lead-paragraph">Oliversys is a solo senior-engineer technical due diligence practice for Iberian venture capital and early-stage M&A, run by William Alves from Coimbra, Portugal, through a Portuguese Sociedade Unipessoal por Quotas. It exists to fill a market gap that traditional TDD firms cannot price for: a senior-engineer read on a target company's codebase, priced below €10k and delivered in hours to days, for the seed and Series A tickets (€500k–€3M) where the incumbent five-person, three-to-four-week, €25–80k engagement does not fit the round math.</p>
+            <br/>
             <p>Oliversys exists to keep that work independent. We examine what supports the thesis, what may constrain it, and what the deal team should do with the evidence.</p>
           </div>
         </div>

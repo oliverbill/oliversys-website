@@ -81,7 +81,7 @@ export default function ServiceFullTDD() {
         <div className="container page-intro-grid">
           <div>
             <p className="eyebrow ember">Tier 2 · Technical Due Diligence</p>
-            <h1>
+            <h1 style={{ lineHeight: 1.15 }}>
               Full Technical Due Diligence — end-to-end scope,{" "}
               <em>delivered in 7–10 business days.<sup>*</sup></em>
             </h1>
@@ -103,6 +103,29 @@ export default function ServiceFullTDD() {
           </div>
         </div>
       </section>
+      <section className="carbon-section" style={{ paddingBottom: "3rem" }}>
+        <div className="container">
+          <p
+            style={{
+              margin: 0,
+              maxWidth: "60rem",
+              fontSize: "0.8rem",
+              opacity: 0.55,
+              lineHeight: 1.6,
+            }}
+          >
+            <sup>*</sup> Applicable to an aggregate of up to 10 repositories,
+            500,000 lines of code total (excluding comments), 100,000 commits in
+            the Git history, 1,500 aggregate dependencies, and 5 primary
+            languages, with a reproducible build on a clean machine completing
+            within 30 minutes.{" "}
+            <b>
+              Targets exceeding any of these thresholds are quoted separately
+              after a scoping call.
+            </b>
+          </p>
+        </div>
+      </section>
 
       {/* What this is */}
       <section className="paper-section">
@@ -113,12 +136,15 @@ export default function ServiceFullTDD() {
           </div>
           <div className="mandate-grid" style={{ marginTop: "2rem" }}>
             <div>
-              <h2>Full scope. Multi-repository. Decision-ready for the Investment Committee.</h2>
+            <div>
+              <h1 style={{ fontSize: "clamp(2.3rem, 4.2vw, 4.7rem)", lineHeight: 1.05 }}>
+                Full scope. Multi-repository. Decision-ready for the Investment Committee.
+              </h1>
+            </div>
               <p style={{ marginTop: "1rem", lineHeight: 1.7 }}>
                 The Full Technical Due Diligence engagement runs the 13-skill pipeline
                 across every repository named in scope, pinned to specific commit hashes.
-                Multi-repo findings roll up into a single deliverable at the orchestrator
-                level. Two to three interviews across the target's engineering leadership
+                Two to three interviews across the target's engineering leadership
                 are distilled into a named-narrative section of the report. A full
                 architecture trace, AI-claims verification, and roadmap feasibility read
                 complete the picture.
@@ -262,7 +288,6 @@ export default function ServiceFullTDD() {
               lineHeight: 1.6,
             }}
           >
-            <sup>*</sup> Aplicável a um agregado de até 5 repositórios, 500 mil linhas de código (excluindo comentários), 100 mil commits no histórico Git, 1.500 dependências agregadas e 5 linguagens primárias, com build reproduzível em máquina limpa em até 30 minutos. Alvos com forma diferente são orçamentados separadamente após scoping call.
           </p>
         </div>
       </section>
@@ -333,7 +358,7 @@ export default function ServiceFullTDD() {
             ))}
           </div>
           <p style={{ marginTop: "1.5rem", fontSize: "1.31rem", opacity: 0.65 }}>
-            All interviews are conducted by video call, recorded with each interviewee's consent for note-taking accuracy.
+            All interviews are conducted by video call, recorded with each interviewee's consent for note-taking accuracy. On-site presence can be negotiated with expenses on behalf of the client.
           </p>
         </div>
       </section>
@@ -413,7 +438,7 @@ export default function ServiceFullTDD() {
                 See Tier 1 — Red Flag Scan <ArrowRight size={17} />
               </Link>
               <p style={{ marginTop: "0.75rem", fontSize: "1.1rem", opacity: 0.55, lineHeight: 1.6 }}>
-                <sup>*</sup> Condicionado a limites de repositório. Ver nota na página do Tier 1.
+                <sup>*</sup> Subject to repository limits. See the note on the Tier 1 page.
               </p>
             </div>
           </div>

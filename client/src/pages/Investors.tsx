@@ -29,6 +29,7 @@ export default function Investors() {
           <div>
             <p className="eyebrow ember">The Oliversys mandate</p>
             <h2>An extension of the deal team—without adding a permanent function.</h2>
+            <br/>
             <p>We interrogate the technical assumptions beneath the investment case and turn the result into a decision-ready view.</p>
             <ul className="check-list">
               <li><CheckCircle2 />Independent challenge to management’s technical narrative</li>

@@ -82,15 +82,16 @@ export default function ServiceRedFlagScan() {
         <div className="container page-intro-grid">
           <div>
             <p className="eyebrow ember">Tier 1 · Technical Due Diligence</p>
-            <h1>
-              Red Flag Scan — a pre-transaction technical read,{" "}
+            <h1 style={{ lineHeight: 1.15 }}>
+              Red Flag Scan — a pre-transaction technical read,
+              <br/>
               <em>delivered in 3–5 business days.<sup>*</sup></em>
             </h1>
           </div>
           <div className="intro-aside">
             <span className="section-index">TIER 1 / OLIVERSYS</span>
             <p>
-              Single-repository, single-interview analysis. A 10–15 page signed
+              Up to 5 repositories, single-interview analysis. A 10–15 page signed
               report plus a Go / Caution / No-Go recommendation. Designed for
               seed and Series A investment committees where a red flag is a
               term-sheet-blocker.
@@ -104,6 +105,29 @@ export default function ServiceRedFlagScan() {
           </div>
         </div>
       </section>
+      <section className="carbon-section" style={{ paddingBottom: "3rem" }}>
+        <div className="container">
+          <p
+            style={{
+              margin: 0,
+              maxWidth: "60rem",
+              fontSize: "0.8rem",
+              opacity: 0.55,
+              lineHeight: 1.6,
+            }}
+          >
+            <sup>*</sup>Applicable to an aggregate of up to 5 repositories with up to 200,000 lines of code total 
+            (excluding comments), 20,000 commits in the Git history, 500 aggregate dependencies 
+            (direct + transitive), and 3 primary languages, with a reproducible build on a clean 
+            machine completing within 15 minutes. 
+            <u>
+              <b>
+                Targets exceeding any of these thresholds are quoted separately after a scoping call.
+              </b>
+            </u>{" "}
+          </p>
+        </div>
+      </section>
 
       {/* What this is */}
       <section className="paper-section">
@@ -114,21 +138,15 @@ export default function ServiceRedFlagScan() {
           </div>
           <div className="mandate-grid" style={{ marginTop: "2rem" }}>
             <div>
-              <h2>Single repository. Two phases. Every finding cites file and line.</h2>
-              <p style={{ marginTop: "1rem", lineHeight: 1.7 }}>
-                A Red Flag Scan runs a 13-skill analysis pipeline against the target
-                repository pinned to a specific commit hash — so the report can be
-                re-run and defended six months later. One 90-minute interview with
-                the target's Founder or CTO follows, with questions calibrated to
-                what the pipeline surfaced. The analyst signs the report: the human
-                signature is part of the deliverable, not a formality.
-              </p>
+              <h1 style={{ fontSize: "clamp(2.3rem, 4.2vw, 4.7rem)", lineHeight: 1.05 }}>
+                Up to 5 repositories. Two phases. Every finding cites file and line.
+              </h1>
             </div>
             <div className="deliverable-list deliverable-list--no-icon">
               <div>
                 <strong>Phase 1 — Pipeline execution (day 1–2)</strong>
                 <p>
-                  A 13-skill analysis pipeline runs against the target repository
+                  A 13-skill analysis pipeline runs against the target repositories
                   pinned to a specific commit hash. Every finding cites file and
                   line. Findings are ranked by severity and linked to the buyer's
                   stated concern.
@@ -228,7 +246,6 @@ export default function ServiceRedFlagScan() {
               lineHeight: 1.6,
             }}
           >
-            <sup>*</sup> Aplicável a um repositório único com até 200 mil linhas de código (excluindo comentários), 20 mil commits no histórico Git, 500 dependências agregadas (directas + transitivas) e 4 linguagens primárias, com build reproduzível em máquina limpa em até 15 minutos. Alvos que excedam qualquer um destes limites são orçamentados separadamente após scoping call.
           </p>
         </div>
       </section>
@@ -251,13 +268,14 @@ export default function ServiceRedFlagScan() {
               </li>
               <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
-                <span><strong style={{ color: "#000000" }}>Format:</strong> video call, recorded with the interviewee's consent for note-taking accuracy.</span>
+                <span><strong style={{ color: "#000000" }}>Format:</strong> video call, recorded with the interviewee's consent for note-taking accuracy.*</span>
               </li>
               <li style={{ color: "#000000", borderTopColor: "#00000022" }}>
                 <CheckCircle2 />
                 <span><strong style={{ color: "#000000" }}>Duration:</strong> 90 minutes, with questions generated from pipeline findings — not a generic checklist.</span>
               </li>
             </ul>
+          <sup>*</sup> On-site presence can be negotiated with expenses on behalf of the client.
           </div>
         </div>
       </section>
@@ -322,7 +340,7 @@ export default function ServiceRedFlagScan() {
               <p className="eyebrow">When to consider Tier 2</p>
               <h2 style={{ marginBottom: "1rem" }}>Some situations call for broader scope.</h2>
               <p style={{ lineHeight: 1.7 }}>
-                The target has multiple repositories. The deal thesis depends on a
+                The target has more than 5 repositories. The deal thesis depends on a
                 specific AI claim being verifiably true. The fund is committing
                 significantly more capital. The deal is a corporate acquisition rather
                 than a growth-equity round.

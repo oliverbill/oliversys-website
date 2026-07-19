@@ -112,6 +112,7 @@ export default function Home() {
               <span className="audience-icon"><ScanSearch /></span>
               <p className="eyebrow">Venture capital</p>
               <h3>For principals and investment directors carrying the technical call.</h3>
+              <br/>
               <p>Bring an independent technical view to seed and Series A decisions without building an internal diligence function.</p>
               <Link href="/investors">For investors <ArrowRight size={18} /></Link>
             </article>
@@ -119,6 +120,7 @@ export default function Home() {
               <span className="audience-icon"><Scale /></span>
               <p className="eyebrow">Legal partnerships</p>
               <h3>For M&amp;A lawyers who need technical evidence to travel with the advice.</h3>
+              <br/>
               <p>Add a specialist technical workstream that complements legal diligence and keeps findings connected to transaction risk.</p>
               <Link href="/counsel">For deal counsel <ArrowRight size={18} /></Link>
             </article>
@@ -131,6 +133,7 @@ export default function Home() {
           <div className="evidence-copy">
             <p className="eyebrow">The output</p>
             <h2>Evidence that travels from technical room to decision room.</h2>
+            <br/>
             <p>Every review is organized around the decision in front of you. Findings are prioritized by severity, confidence, and deal relevance—not buried in a generic checklist.</p>
             <ul>
               <li><FileSearch size={17} /> Executive risk map</li>
