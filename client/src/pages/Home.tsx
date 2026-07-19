@@ -3,7 +3,7 @@
  * to evidence to action, with ember used only for consequential signals.
  * i18n: all user-visible strings use useLocale().t.home.
  */
-import { ArrowDown, ArrowRight, Check, FileSearch, Scale, ScanSearch } from "lucide-react";
+import { AlertTriangle, ArrowDown, ArrowRight, Check, FileSearch, Scale, ScanSearch, SearchCode } from "lucide-react";
 import { Link } from "wouter";
 import { BookCallLink } from "@/components/SiteLayout";
 import { CallSection, CrossLink, EvidenceArtifact } from "@/components/SharedSections";
@@ -123,6 +123,41 @@ export default function Home() {
               <br/>
               <p>{h.legalBody}</p>
               <Link href={lp("/counsel")}>{h.legalLink} <ArrowRight size={18} /></Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="services-section paper-section">
+        <div className="container">
+          <div className="section-kicker-row">
+            <p className="eyebrow">{h.servicesEyebrow}</p>
+            <span>{h.servicesKicker}</span>
+          </div>
+          <div className="services-grid">
+            <article>
+              <span className="audience-icon"><AlertTriangle /></span>
+              <p className="eyebrow">{h.spotCheckLabel}</p>
+              <h3>{h.spotCheckLabel}</h3>
+              <br/>
+              <p>{h.spotCheckDesc}</p>
+              <Link href={lp("/services/spot-check/")}>{h.spotCheckLink} <ArrowRight size={18} /></Link>
+            </article>
+            <article>
+              <span className="audience-icon"><ScanSearch /></span>
+              <p className="eyebrow">Tier 1</p>
+              <h3>{h.tier1Label}</h3>
+              <br/>
+              <p>{h.tier1Desc}</p>
+              <Link href={lp("/services/red-flag-scan/")}>{h.tier1Link} <ArrowRight size={18} /></Link>
+            </article>
+            <article>
+              <span className="audience-icon"><SearchCode /></span>
+              <p className="eyebrow">Tier 2</p>
+              <h3>{h.tier2Label}</h3>
+              <br/>
+              <p>{h.tier2Desc}</p>
+              <Link href={lp("/services/full-technical-due-diligence/")}>{h.tier2Link} <ArrowRight size={18} /></Link>
             </article>
           </div>
         </div>

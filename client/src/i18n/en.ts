@@ -155,6 +155,17 @@ export const en = {
     crossPartnerLabel: "Partner mandate",
     crossPartnerTitle: "For M\u0026A counsel",
     callButton: "Put the target under review",
+    servicesEyebrow: "The services",
+    servicesKicker: "03 / THREE TIERS",
+    spotCheckLabel: "4h Spot Check",
+    spotCheckDesc: "Repository-only triage. One page. Escalation signal within 4 hours \u2014 before you commit to a deeper engagement.",
+    spotCheckLink: "See the Spot Check",
+    tier1Label: "Red Flag Scan",
+    tier1Desc: "Up to 5 repositories. 13-skill pipeline. A signed Go\u202f/\u202fCaution\u202f/\u202fNo-Go in 3\u20135 business days.",
+    tier1Link: "See the Red Flag Scan",
+    tier2Label: "Full Technical Due Diligence",
+    tier2Desc: "Multi-repository. Architecture trace. Investment Committee readout. Delivered in 7\u201310 business days.",
+    tier2Link: "See the Full TDD",
   },
 
   // ─── Investors page ────────────────────────────────────────────────────────

@@ -150,6 +150,17 @@ export const pt: Translations = {
     crossPartnerLabel: "Mandato de parceria",
     crossPartnerTitle: "Para consultores de M\u0026A",
     callButton: "Colocar o alvo sob revisão",
+    servicesEyebrow: "Os serviços",
+    servicesKicker: "03 / TRÊS NÍVEIS",
+    spotCheckLabel: "Spot Check de 4h",
+    spotCheckDesc: "Triagem apenas do repositório. Uma página. Sinal de escalada em 4 horas \u2014 antes de se comprometer com uma análise mais aprofundada.",
+    spotCheckLink: "Ver o Spot Check",
+    tier1Label: "Red Flag Scan",
+    tier1Desc: "Até 5 repositórios. Pipeline de 13 competências. Go\u202f/\u202fCaution\u202f/\u202fNo-Go assinado em 3\u20135 dias úteis.",
+    tier1Link: "Ver o Red Flag Scan",
+    tier2Label: "Full Technical Due Diligence",
+    tier2Desc: "Multi-repositório. Rastreio de arquitetura. Apresentação ao Investment Committee. Entregue em 7\u201310 dias úteis.",
+    tier2Link: "Ver o Full TDD",
   },
 
   investors: {

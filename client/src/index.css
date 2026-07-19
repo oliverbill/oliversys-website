@@ -210,6 +210,15 @@
   .audience-grid a { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; color: #20211e; font-size: .77rem; font-weight: 700; text-decoration: none; }
   .audience-grid a:hover { color: #f05a32; }
 
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .services-grid article { min-height: 30rem; padding: 4rem 8% 3rem 0; border-right: 1px solid #bcb7ac; display: flex; flex-direction: column; align-items: flex-start; }
+  .services-grid article + article { padding-left: 8%; }
+  .services-grid article:last-child { border-right: 0; }
+  .services-grid h3 { max-width: 22rem; margin: 0; font-size: clamp(1.6rem, 2.2vw, 2.5rem); line-height: 1.08; }
+  .services-grid p:not(.eyebrow) { max-width: 28rem; color: #63645d; line-height: 1.7; }
+  .services-grid a { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; color: #20211e; font-size: .77rem; font-weight: 700; text-decoration: none; }
+  .services-grid a:hover { color: #f05a32; }
+
   .evidence-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; align-items: center; }
   .evidence-copy p:not(.eyebrow) { color: #5a5c55; line-height: 1.75; }
   .evidence-copy ul { padding: 0; margin: 2rem 0 0; list-style: none; }
@@ -459,9 +468,11 @@
   .hero h1 { font-size: clamp(3.15rem,15vw,4.7rem); }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-dossier { display: none; }
-  .exposure-section, .visual-argument, .audience-section, .evidence-section, .approach-phases, .scope-section, .deliverable-section, .investor-problem, .mandate-section, .questions-section, .counsel-value, .engagement-section, .counsel-use, .about-story, .principles-section, .position-section, .call-section { padding: 5.5rem 0; }
+  .exposure-section, .visual-argument, .audience-section, .services-section, .evidence-section, .approach-phases, .scope-section, .deliverable-section, .investor-problem, .mandate-section, .questions-section, .counsel-value, .engagement-section, .counsel-use, .about-story, .principles-section, .position-section, .call-section { padding: 5.5rem 0; }
   .exposure-grid { gap: 2.3rem; }
-  .risk-ledger, .audience-grid, .cross-grid, .engagement-flow { grid-template-columns: 1fr; }
+  .risk-ledger, .audience-grid, .services-grid, .cross-grid, .engagement-flow { grid-template-columns: 1fr; }
+  .services-grid article, .services-grid article + article { min-height: 26rem; padding: 3rem 0; border-right: 0; border-bottom: 1px solid #bcb7ac; }
+  .services-grid article:last-child { border-bottom: 0; }
   .risk-ledger > div, .risk-ledger > div + div { min-height: auto; padding: 1.4rem 0; border-right: 0; }
   .visual-frame, .visual-frame img, .evidence-image, .scope-image, .mandate-image, .about-image { min-height: 0; height: 25rem; }
   .audience-grid article, .audience-grid article + article { min-height: 28rem; padding: 3rem 0; border-right: 0; border-bottom: 1px solid #bcb7ac; }
