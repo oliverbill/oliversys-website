@@ -5,8 +5,16 @@
  * Loaded at build time via import.meta.glob + ?raw (Vite built-in).
  * Frontmatter parsed with a minimal YAML parser — no external dependency.
  *
+ * Locale support (from 2026-07-19):
+ *   - Canonical (EN): YYYY-MM-DD-slug.md
+ *   - PT-PT:          YYYY-MM-DD-slug.pt.md
+ *   - ES:             YYYY-MM-DD-slug.es.md
+ *
+ * getArticleBySlug(slug, locale?) returns the locale variant if it exists,
+ * falling back to EN canonical. Existing EN-only posts always return EN.
+ *
  * To add or update an article:
- *   1. Edit (or add) the .md file in client/src/content/blog/
+ *   1. Edit (or add) the .md file(s) in client/src/content/blog/
  *   2. Re-run `pnpm build` (or `pnpm dev`) — changes pick up automatically.
  */
 
@@ -80,7 +88,22 @@ function parseFrontmatter(raw: string): { data: Record<string, unknown>; content
 // zero runtime I/O, fully static, works on GitHub Pages.
 // ---------------------------------------------------------------------------
 
+/** EN canonical files: YYYY-MM-DD-slug.md (no locale suffix) */
 const mdModules = import.meta.glob("../content/blog/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+/** PT-PT locale files: YYYY-MM-DD-slug.pt.md */
+const mdModulesPt = import.meta.glob("../content/blog/*.pt.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+/** ES locale files: YYYY-MM-DD-slug.es.md */
+const mdModulesEs = import.meta.glob("../content/blog/*.es.md", {
   query: "?raw",
   import: "default",
   eager: true,
@@ -88,9 +111,17 @@ const mdModules = import.meta.glob("../content/blog/*.md", {
 
 function slugFromPath(path: string): string {
   // path looks like: ../content/blog/2026-05-26-bus-factor-in-5-minutes.md
+  // or:              ../content/blog/2026-05-26-bus-factor-in-5-minutes.pt.md
   const filename = path.split("/").pop() ?? path;
-  // Strip leading date prefix (YYYY-MM-DD-) if present
-  return filename.replace(/\.md$/, "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  // Strip locale suffix (.pt.md or .es.md) and leading date prefix (YYYY-MM-DD-)
+  return filename
+    .replace(/\.(pt|es)\.md$/, "")
+    .replace(/\.md$/, "")
+    .replace(/^\d{4}-\d{2}-\d{2}-/, "");
+}
+
+function isLocaleFile(path: string): boolean {
+  return /\.(pt|es)\.md$/.test(path);
 }
 
 function stripTrailingCta(content: string): string {
@@ -119,12 +150,45 @@ function parseArticle(path: string, raw: string): Article {
   };
 }
 
-/** Articles in reverse-chronological order (newest first) */
+/** EN canonical articles in reverse-chronological order (newest first) */
 export const articles: Article[] = Object.entries(mdModules)
+  .filter(([path]) => !isLocaleFile(path))
   .map(([path, raw]) => parseArticle(path, raw))
   .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 
-export function getArticleBySlug(slug: string): Article | undefined {
+// ---------------------------------------------------------------------------
+// Locale variant maps: slug → Article for PT and ES
+// Falls back gracefully — if a slug has no PT/ES file, the EN canonical is used.
+// ---------------------------------------------------------------------------
+
+const ptArticlesBySlug: Map<string, Article> = new Map(
+  Object.entries(mdModulesPt).map(([path, raw]) => {
+    const article = parseArticle(path, raw);
+    return [article.slug, article];
+  })
+);
+
+const esArticlesBySlug: Map<string, Article> = new Map(
+  Object.entries(mdModulesEs).map(([path, raw]) => {
+    const article = parseArticle(path, raw);
+    return [article.slug, article];
+  })
+);
+
+/**
+ * Look up an article by slug, returning the locale variant if available.
+ * Falls back to EN canonical for any locale that lacks a variant file.
+ *
+ * @param slug    - URL slug (without date prefix), e.g. "bus-factor-in-5-minutes"
+ * @param locale  - "en" | "pt" | "es" (default: "en")
+ */
+export function getArticleBySlug(slug: string, locale: "en" | "pt" | "es" = "en"): Article | undefined {
+  if (locale === "pt") {
+    return ptArticlesBySlug.get(slug) ?? articles.find((a) => a.slug === slug);
+  }
+  if (locale === "es") {
+    return esArticlesBySlug.get(slug) ?? articles.find((a) => a.slug === slug);
+  }
   return articles.find((a) => a.slug === slug);
 }
 
