@@ -215,6 +215,7 @@ const STATIC_PAGES = [
   { path: "/investors", priority: "0.9", changefreq: "monthly" },
   { path: "/counsel", priority: "0.9", changefreq: "monthly" },
   { path: "/approach", priority: "0.9", changefreq: "monthly" },
+  { path: "/services/spot-check/", priority: "0.9", changefreq: "monthly" },
   { path: "/services/red-flag-scan/", priority: "0.9", changefreq: "monthly" },
   { path: "/services/full-technical-due-diligence/", priority: "0.9", changefreq: "monthly" },
   { path: "/about", priority: "0.8", changefreq: "monthly" },
@@ -400,6 +401,7 @@ function vitePluginRss(): Plugin {
  * wrong HTTP status for the two contractual service URLs.
  */
 const SPA_STATIC_PATHS = [
+  "services/spot-check",
   "services/red-flag-scan",
   "services/full-technical-due-diligence",
   // Locale-prefixed equivalents — GitHub Pages needs explicit index.html for HTTP 200.
@@ -409,6 +411,7 @@ const SPA_STATIC_PATHS = [
   "pt/counsel",
   "pt/about",
   "pt/blog",
+  "pt/services/spot-check",
   "pt/services/red-flag-scan",
   "pt/services/full-technical-due-diligence",
   "es",
@@ -417,6 +420,7 @@ const SPA_STATIC_PATHS = [
   "es/counsel",
   "es/about",
   "es/blog",
+  "es/services/spot-check",
   "es/services/red-flag-scan",
   "es/services/full-technical-due-diligence",
 ];

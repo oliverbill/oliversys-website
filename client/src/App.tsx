@@ -19,6 +19,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ServiceRedFlagScan from "./pages/ServiceRedFlagScan";
 import ServiceFullTDD from "./pages/ServiceFullTDD";
+import ServiceSpotCheck from "./pages/ServiceSpotCheck";
 import SiteLayout from "./components/SiteLayout";
 import { LocaleProvider } from "./i18n";
 
@@ -31,6 +32,8 @@ const ROUTES = [
   { path: "/about", component: About },
   { path: "/blog", component: Blog },
   { path: "/blog/:slug", component: BlogPost },
+  { path: "/services/spot-check", component: ServiceSpotCheck },
+  { path: "/services/spot-check/", component: ServiceSpotCheck },
   { path: "/services/red-flag-scan", component: ServiceRedFlagScan },
   { path: "/services/red-flag-scan/", component: ServiceRedFlagScan },
   { path: "/services/full-technical-due-diligence", component: ServiceFullTDD },

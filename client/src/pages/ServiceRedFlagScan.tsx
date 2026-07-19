@@ -1,8 +1,9 @@
 /**
  * Forensic Ember service page — Tier 1: Red Flag Scan.
  * Audience: seed / Series A investment committee members and principals arriving
- * from a spot-check report link. Answers what they get, how long it takes, who
- * must be available, and why to trust this over a friend-of-fund CTO on a call.
+ * from a spot-check report link or direct nav. Answers what they get, how long
+ * it takes, who must be available, and why to trust this over a friend-of-fund
+ * CTO on a call. Back-link to Spot Check added for entry-point buyers.
  * i18n: all user-visible strings use useLocale().t.tier1.
  */
 import { ArrowRight, CheckCircle2, Clock, FileText, Users } from "lucide-react";
@@ -259,6 +260,9 @@ export default function ServiceRedFlagScan() {
               <p className="eyebrow">{s.tier1FitsEyebrow}</p>
               <h2 style={{ marginBottom: "1rem" }}>{s.tier1FitsH2}</h2>
               <p style={{ lineHeight: 1.7 }}>{s.tier1FitsCopy}</p>
+              <Link href={lp("/services/spot-check/")} className="text-link" style={{ marginTop: "1.5rem", display: "inline-flex", fontSize: "1.2rem", opacity: 0.75 }}>
+                {s.spotCheckBackLink}
+              </Link>
             </div>
             <div>
               <p className="eyebrow">{s.tier2EyebrowWhen}</p>

@@ -304,7 +304,7 @@ export function BookCallLink({
 }
 
 // Items grouped under the "Services" dropdown in the desktop nav.
-const SERVICE_BARE_PATHS = ["/services/red-flag-scan/", "/services/full-technical-due-diligence/"];
+const SERVICE_BARE_PATHS = ["/services/spot-check/", "/services/red-flag-scan/", "/services/full-technical-due-diligence/"];
 
 function ServicesDropdown({ barePath }: { barePath: string }) {
   const { t, localePath: lp } = useLocale();
@@ -332,6 +332,7 @@ function ServicesDropdown({ barePath }: { barePath: string }) {
   useEffect(() => setDropOpen(false), [barePath]);
 
   const serviceNavItems = [
+    { label: t.nav.spotCheck, href: lp("/services/spot-check/") },
     { label: t.nav.redFlagScan, href: lp("/services/red-flag-scan/") },
     { label: t.nav.fullTDD, href: lp("/services/full-technical-due-diligence/") },
   ];
@@ -355,7 +356,8 @@ function ServicesDropdown({ barePath }: { barePath: string }) {
               key={item.href}
               href={item.href}
               role="menuitem"
-              className={barePath === "/services/red-flag-scan/" && item.href.includes("red-flag") ? "active" :
+              className={barePath === "/services/spot-check/" && item.href.includes("spot-check") ? "active" :
+                         barePath === "/services/red-flag-scan/" && item.href.includes("red-flag") ? "active" :
                          barePath === "/services/full-technical-due-diligence/" && item.href.includes("full") ? "active" : ""}
             >
               {item.label}
@@ -424,6 +426,7 @@ function Header() {
     { label: t.nav.approach, href: lp("/approach") },
     { label: t.nav.forInvestors, href: lp("/investors") },
     { label: t.nav.forCounsel, href: lp("/counsel") },
+    { label: t.nav.spotCheck, href: lp("/services/spot-check/") },
     { label: t.nav.redFlagScan, href: lp("/services/red-flag-scan/") },
     { label: t.nav.fullTDD, href: lp("/services/full-technical-due-diligence/") },
     { label: t.nav.about, href: lp("/about") },
@@ -490,6 +493,7 @@ function Footer() {
           <Link href={lp("/investors")}>{t.footer.ventureInvestors}</Link>
           <Link href={lp("/counsel")}>{t.footer.maCounsel}</Link>
           <Link href={lp("/approach")}>{t.footer.diligenceApproach}</Link>
+          <Link href={lp("/services/spot-check/")}>{t.footer.spotCheckFull}</Link>
           <Link href={lp("/services/red-flag-scan/")}>{t.footer.redFlagScanFull}</Link>
           <Link href={lp("/services/full-technical-due-diligence/")}>{t.footer.fullTDDFull}</Link>
           <Link href={lp("/blog")}>{t.nav.blog}</Link>

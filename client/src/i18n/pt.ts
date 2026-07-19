@@ -18,6 +18,7 @@ export const pt: Translations = {
     approach: "Abordagem",
     forInvestors: "Para investidores",
     forCounsel: "Para jurídico",
+    spotCheck: "Spot Check de 4h",
     redFlagScan: "Red Flag Scan",
     fullTDD: "Full TDD",
     about: "Sobre",
@@ -69,6 +70,7 @@ export const pt: Translations = {
     ventureInvestors: "Investidores de capital de risco",
     maCounsel: "Consultores jurídicos de M&A",
     diligenceApproach: "Abordagem de due diligence",
+    spotCheckFull: "Spot Check de 4h",
     redFlagScanFull: "Red Flag Scan (Tier 1)",
     fullTDDFull: "Full TDD (Tier 2)",
     copyright: "\u00a9 {year} Oliversys. Confidencial por predefinição.",
@@ -408,6 +410,7 @@ export const pt: Translations = {
       "O alvo tem mais de 5 repositórios. A tese da operação depende de uma afirmação específica sobre IA ser verificavelmente verdadeira. O fundo está a comprometer capital significativamente maior. A operação é uma aquisição corporativa em vez de uma ronda de growth equity.",
     seeTier2: "Ver Tier 2 \u2014 Full Technical Due Diligence",
     tier2SlaNote: "Sujeito a limites de repositório. Ver nota na página do Tier 1.",
+    spotCheckBackLink: "Ainda em dúvida? Comece com o Spot Check de 4h \u2192",
     callTitle: "Definir o âmbito de um Red Flag Scan.",
     callCopy:
       "Partilhe o alvo, a tese e a data de decisão. A Oliversys confirmará âmbito, intake e prazo de entrega em um dia útil.",
@@ -520,6 +523,95 @@ export const pt: Translations = {
     callCopy:
       "Partilhe o alvo, o número de repositórios, a tese da operação e a data de decisão. A Oliversys confirmará âmbito, intake e prazo de entrega em um dia útil.",
     callButton: "Solicitar uma scoping call",
+  },
+
+  spotCheck: {
+    heroEyebrow: "Spot Check \u00b7 Triagem de Repositório",
+    heroH1a: "4h Spot Check \u2014 triagem exclusiva de repositório,",
+    heroH1em: "entregue em 4 horas.",
+    heroAside:
+      "Repositório único. Sem entrevistas. Sem avaliação de arquitetura. Um relatório de uma página \u2014 \u201cTechnical Evidence Readiness \u2014 Spot-Check\u201d \u2014 com um sinal de escalonamento e as principais questões a resolver. Preço: \u20ac500. Decida se deve encomendar um Red Flag Scan ou Full Technical Due Diligence antes de avançar para um compromisso mais aprofundado.",
+    boundaryEyebrow: "O que este relatório é \u2014 e o que não é",
+    boundaryBody:
+      "Este é um spot-check exclusivo de repositório. Identifica sinais imediatos a partir de evidências estáticas no repositório-alvo: vulnerabilidades de dependências, credenciais no repositório, exposição de categorias de licenças e padrões de segurança ao nível do código. Indica se as evidências do repositório são suficientes para uma revisão mais aprofundada.",
+    boundaryNote:
+      "Este relatório não conclui sobre: product-market fit, arquitetura de negócio, organização da equipa, afirmações sobre inteligência artificial ou modelos, direitos sobre dados, escalabilidade, fiabilidade operacional ou adequação geral ao investimento. O sinal na última página é uma recomendação de escalonamento \u2014 não uma recomendação transacional.",
+    whatEyebrow: "O que é este compromisso",
+    whatKicker: "\u00c2MBITO / REPOSITÓRIO ÚNICO",
+    whatH1: "Um repositório. Uma passagem do analista. Um sinal de escalonamento.",
+    step1Title: "Passo 1 \u2014 Análise do repositório (horas 0\u20133)",
+    step1Copy:
+      "Um subconjunto focado do pipeline de análise de 13 competências corre contra o repositório-alvo fixado num commit hash específico. Categorias avaliadas: vulnerabilidades de dependências, credenciais, exposição de licenças e padrões de segurança estáticos. Cada conclusão cita ficheiro e linha.",
+    step2Title: "Passo 2 \u2014 Passagem do analista e relatório (horas 3\u20134)",
+    step2Copy:
+      "O analista lê todas as conclusões de alta gravidade, valida positivos e elabora o relatório de uma página \u201cTechnical Evidence Readiness \u2014 Spot-Check\u201d. O sinal de escalonamento é o julgamento do analista \u2014 não é automatizado.",
+    inScopeEyebrow: "O que é avaliado",
+    inScopeKicker: "CATEGORIAS INCLUÍDAS",
+    inScope1Label: "Vulnerabilidades de dependências",
+    inScope1Detail:
+      "Vulnerabilidades conhecidas via Trivy contra uma base de dados atualizada nas últimas 48 horas. Más configurações e itens mais exploráveis assinalados.",
+    inScope2Label: "Credenciais e segredos",
+    inScope2Detail:
+      "Análise de padrões via Gitleaks \u2014 positivos verificados distinguidos de exemplos de documentação e tokens expirados.",
+    inScope3Label: "Exposição de licenças",
+    inScope3Detail:
+      "Software Bill of Materials via Syft. Classificação em categorias permissiva / copyleft fraco / copyleft forte / comercialmente restrita. Landmines de licenças virais identificadas.",
+    inScope4Label: "Padrões de segurança estáticos",
+    inScope4Detail:
+      "Semgrep contra um conjunto de regras adequado à linguagem. Classes comuns de injeção, anti-padrões de autenticação e uso incorreto de criptografia.",
+    inScope5Label: "Indicadores de saúde do repositório",
+    inScope5Detail:
+      "Atividade de commits, mix de linguagens dominante, linhas de código aproximadas e indicadores estruturais de topo \u2014 contexto suficiente para o analista delimitar a confiança.",
+    outScopeEyebrow: "O que não é coberto",
+    outScopeKicker: "FORA DO \u00c2MBITO NESTE TIER",
+    outScope1: "Entrevistas com a equipa do alvo \u2014 sem entrevistas neste tier.",
+    outScope2: "Rastreamento de arquitetura ou avaliação de produto.",
+    outScope3: "Execução de cobertura de testes ou análise aprofundada de manutenibilidade.",
+    outScope4: "Verificação de afirmações sobre inteligência artificial.",
+    outScope5: "Escalabilidade, prontidão operacional ou viabilidade do roadmap.",
+    outScopeNote:
+      "Qualquer um dos itens acima requer um Tier 1 Red Flag Scan (3\u20135 dias) ou um Tier 2 Full Technical Due Diligence (7\u201310 dias).",
+    timelineEyebrow: "Cronograma estimado",
+    timelineKicker: "4 HORAS A PARTIR DO ACESSO AO REPOSITÓRIO",
+    tl0Day: "Hora 0",
+    tl0Action:
+      "Acesso ao repositório fornecido. Intake de campo único: preocupação principal (opcional, mas melhora o foco). Commit hash fixado.",
+    tl1Day: "Horas 0\u20133",
+    tl1Action:
+      "Execução do pipeline de análise: vulnerabilidades de dependências, credenciais, exposição de licenças, padrões de segurança estáticos. Cada conclusão cita ficheiro, linha e commit hash.",
+    tl2Day: "Hora 3",
+    tl2Action:
+      "O analista lê todas as conclusões. Positivos de alta gravidade validados. Sinal de escalonamento determinado.",
+    tl3Day: "Hora 4",
+    tl3Action:
+      "Relatório elaborado e entregue: \u201cTechnical Evidence Readiness \u2014 Spot-Check\u201d \u2014 uma página, assinado pelo analista, com as principais questões e o sinal de escalonamento.",
+    delivery:
+      "Entrega: relatório PDF assinado de uma página, entregue diretamente ao comprador dentro de 4 horas após o acesso ao repositório.",
+    delEyebrow: "O que chega ao comprador",
+    delH2: "Uma página. Três sinais. Assinado pelo analista.",
+    del1Title: "Relatório \u201cTechnical Evidence Readiness \u2014 Spot-Check\u201d",
+    del1Copy:
+      "Um relatório de uma página em Markdown e PDF cobrindo as categorias avaliadas, as principais questões a resolver e o bloco de prontidão de evidências. O título do relatório torna o seu âmbito inequívoco \u2014 os compradores não o podem confundir com uma due diligence completa.",
+    del2Title: "Sinal de escalonamento",
+    del2Copy:
+      "Um de três resultados: \u201cSem problemas identificados\u201d / \u201cEsclarecimento necessário\u201d / \u201cProblemas encontrados \u2014 Revisão completa recomendada.\u201d Este é um sinal de escalonamento. Não recomenda a favor ou contra uma transação.",
+    del3Title: "Principais questões a resolver",
+    del3Copy:
+      "As conclusões que o analista considera mais consequentes, formuladas como perguntas para o comprador. Tornam-se o briefing inicial para um compromisso Tier 1 ou Tier 2, caso seja encomendado.",
+    whenFitsEyebrow: "Quando o Spot Check é adequado",
+    whenFitsH2: "Uma leitura rápida antes de comprometer-se com um compromisso mais aprofundado.",
+    whenFitsCopy:
+      "Precisa de decidir em horas se um repositório justifica encomendar um Red Flag Scan ou Full Technical Due Diligence. O alvo é um repositório único. Quer uma visão independente antes de uma entrevista com o fundador ou Diretor Técnico. Precisa de algo rápido o suficiente para informar uma primeira reunião ou uma conversa sobre o term sheet.",
+    escalateEyebrow: "Próximos passos se forem encontrados problemas",
+    escalateH2: "O Spot Check é o início da escada, não o topo.",
+    escalateCopy:
+      "Se o sinal de escalonamento for \u201cEsclarecimento necessário\u201d ou \u201cProblemas encontrados \u2014 Revisão completa recomendada\u201d, a lista de principais questões do Spot Check torna-se o briefing para o próximo compromisso. O Red Flag Scan adiciona entrevistas, profundidade completa do pipeline nas 13 competências e uma recomendação Avançar / Cautela / Não Avançar. O Full Technical Due Diligence adiciona rastreamento de arquitetura, verificação de afirmações sobre inteligência artificial e um readout para o Comité de Investimento.",
+    seeRedFlagScan: "Ver Tier 1 \u2014 Red Flag Scan (3\u20135 dias)",
+    seeFullTDD: "Ver Tier 2 \u2014 Full Technical Due Diligence (7\u201310 dias)",
+    callTitle: "Marcar um Spot Check de 4h.",
+    callCopy:
+      "Partilhe o repositório, o commit que pretende rever e a sua preocupação principal (opcional). A Oliversys confirmará o acesso e entregará dentro de 4 horas.",
+    callButton: "Marcar spot check de 4h",
   },
 
   blog: {
