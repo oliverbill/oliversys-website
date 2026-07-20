@@ -6,7 +6,7 @@ publishDate: 2026-07-14
 author: William
 tags: [git, forensics, technical-due-diligence, codebase-history, human-judgment]
 canonicalTopic: what-codebase-history-catches
-linkedinCompanion: content/complete-posts/w30-tue-what-codebase-history-catches.md
+linkedinCompanion: content/linkedin-posted/w30-tue-what-codebase-history-catches.md
 ---
 
 # What the Git-Forensics Agent Catches, and What Doesn't

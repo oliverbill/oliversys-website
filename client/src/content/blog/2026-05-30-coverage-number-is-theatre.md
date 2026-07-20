@@ -6,7 +6,7 @@ publishDate: 2026-05-30
 author: William
 tags: [testing, coverage, technical-due-diligence, code-quality, assertions]
 canonicalTopic: coverage-number-is-theatre
-linkedinCompanion: content/complete-posts/w30-wed-coverage-number-is-theatre.md
+linkedinCompanion: content/linkedin-posted/w30-wed-coverage-number-is-theatre.md
 ---
 
 # Test Coverage as a Metric Is Broken

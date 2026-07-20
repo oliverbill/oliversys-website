@@ -6,7 +6,7 @@ publishDate: 2026-07-07
 author: William
 tags: [iberian-vc, seed-funding, technical-due-diligence, market-gap, portugal-spain]
 canonicalTopic: iberian-seed-tech-dd-skipped
-linkedinCompanion: content/complete-posts/w29-thu-iberian-seed-tech-dd-skipped.md
+linkedinCompanion: content/linkedin-posted/w29-thu-iberian-seed-tech-dd-skipped.md
 ---
 
 # Why Iberian Seed Funds Skip Tech Diligence

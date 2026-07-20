@@ -6,7 +6,7 @@ publishDate: 2026-05-26
 author: William
 tags: [git, bus-factor, technical-due-diligence, contributor-risk, codebase-health]
 canonicalTopic: bus-factor-in-5-minutes
-linkedinCompanion: content/complete-posts/w29-tue-bus-factor-in-5-minutes.md
+linkedinCompanion: content/linkedin-posted/w29-tue-bus-factor-in-5-minutes.md
 ---
 
 # Bus Factor in Five Minutes

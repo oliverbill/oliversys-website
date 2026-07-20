@@ -6,7 +6,7 @@ publishDate: 2026-07-04
 author: William
 tags: [ai-washing, llm, technical-due-diligence, ai-verification, cto-interview]
 canonicalTopic: 3-questions-that-expose-ai-washing
-linkedinCompanion: content/complete-posts/w30-thu-3-questions-that-expose-ai-washing.md
+linkedinCompanion: content/linkedin-posted/w30-thu-3-questions-that-expose-ai-washing.md
 ---
 
 # Three Questions That Expose AI-Washing in Ten Minutes
