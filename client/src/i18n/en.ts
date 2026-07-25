@@ -164,6 +164,20 @@ export const en = {
     crossPartnerLabel: "Partner mandate",
     crossPartnerTitle: "For M\u0026A counsel",
     callButton: "Get a view of the target",
+    reproEyebrow: "How the finding is defended",
+    reproH2: "Every deliverable ships with the evidence the buyer can verify.",
+    reproPreamble:
+      "Every technical due diligence report on the market is either a platform output — SonarQube, Snyk, CodeScene, CAST Highlight — or a boutique opinion in a Portable Document Format. The platform outputs carry proprietary scores the buyer cannot inspect. The boutique opinions carry the analyst's reputation, nothing more. Neither gives the buyer something an independent engineer can re-run and check. Oliversys is the exception.",
+    reproItem1Title: "Grading criteria published, not proprietary",
+    reproItem1Copy:
+      "The criteria used to grade every finding are version-tagged and written in plain English. If the report says a dependency chain is high-severity, the buyer can read exactly what threshold triggered that rating — not a black-box composite score.",
+    reproItem2Title: "Every finding cites its exact source",
+    reproItem2Copy:
+      "Each finding in the report names the tool that surfaced it, the version of that tool, the command that was run, the source file, and the line number. The buyer's own engineer can open the repository, run the same command against the same version, and confirm or dispute the number.",
+    reproItem3Title: "No server required to verify",
+    reproItem3Copy:
+      "There is no cloud account to create, no per-project onboarding, no proprietary database to query. The buyer's engineer needs a laptop, the repository, and the same open-source tools listed in the report. If the finding holds up on re-run, it is defensible in the investment-committee room without a follow-up call.",
+    reproStamp: "VERSIONED / CITABLE / REPLICABLE",
     servicesEyebrow: "The services",
     servicesKicker: "03 / THREE LEVELS",
     spotCheckLabel: "4h Spot Check",

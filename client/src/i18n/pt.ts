@@ -152,6 +152,20 @@ export const pt: Translations = {
     crossPartnerLabel: "Mandato de parceria",
     crossPartnerTitle: "Para consultores de M\u0026A",
     callButton: "Obter uma visão do alvo",
+    reproEyebrow: "Como o resultado é defendido",
+    reproH2: "Cada entregável inclui a evidência que o comprador pode verificar.",
+    reproPreamble:
+      "Cada relatório de due diligence técnica no mercado é ou um resultado de plataforma — SonarQube, Snyk, CodeScene, CAST Highlight — ou uma opinião de uma boutique em formato Portable Document Format. Os resultados das plataformas apresentam pontuações proprietárias que o comprador não pode inspecionar. As opiniões das boutiques assentam na reputação do analista, e nada mais. Nenhum deles fornece ao comprador algo que um engenheiro independente possa reproduzir e verificar. A Oliversys é a exceção.",
+    reproItem1Title: "Critérios de avaliação publicados, não proprietários",
+    reproItem1Copy:
+      "Os critérios utilizados para classificar cada conclusão são marcados com versão e escritos em linguagem simples. Se o relatório indicar que uma cadeia de dependências é de alta gravidade, o comprador pode ler exatamente qual o limiar que desencadeou essa classificação — não uma pontuação composta opaca.",
+    reproItem2Title: "Cada conclusão cita a sua fonte exata",
+    reproItem2Copy:
+      "Cada conclusão no relatório identifica a ferramenta que a detetou, a versão dessa ferramenta, o comando executado, o ficheiro de origem e o número de linha. O engenheiro do comprador pode abrir o repositório, executar o mesmo comando contra a mesma versão e confirmar ou contestar o valor.",
+    reproItem3Title: "Nenhum servidor necessário para verificar",
+    reproItem3Copy:
+      "Não é necessário criar uma conta na nuvem, não há integração por projeto, nem base de dados proprietária a consultar. O engenheiro do comprador precisa de um portátil, do repositório e das mesmas ferramentas de código aberto listadas no relatório. Se a conclusão se confirmar na re-execução, é defensável na sala do comité de investimento sem uma chamada adicional.",
+    reproStamp: "VERSIONADO / CITÁVEL / REPRODUZÍVEL",
     servicesEyebrow: "Os serviços",
     servicesKicker: "03 / TRÊS NÍVEIS",
     spotCheckLabel: "Spot Check de 4h",
