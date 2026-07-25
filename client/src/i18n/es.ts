@@ -153,6 +153,20 @@ export const es: Translations = {
     crossPartnerLabel: "Mandato de asociación",
     crossPartnerTitle: "Para asesores de M\u0026A",
     callButton: "Obtener una visión del objetivo",
+    reproEyebrow: "Cómo se defiende el hallazgo",
+    reproH2: "Cada entregable incluye la evidencia que el comprador puede verificar.",
+    reproPreamble:
+      "Cada informe de due diligence técnica en el mercado es o bien un resultado de plataforma — SonarQube, Snyk, CodeScene, CAST Highlight — o bien una opinión de una boutique en formato Portable Document Format. Los resultados de las plataformas presentan puntuaciones propietarias que el comprador no puede inspeccionar. Las opiniones de las boutiques se sustentan en la reputación del analista, y nada más. Ninguno de los dos ofrece al comprador algo que un ingeniero independiente pueda volver a ejecutar y comprobar. Oliversys es la excepción.",
+    reproItem1Title: "Criterios de evaluación publicados, no propietarios",
+    reproItem1Copy:
+      "Los criterios utilizados para calificar cada hallazgo están etiquetados por versión y escritos en lenguaje claro. Si el informe indica que una cadena de dependencias es de alta gravedad, el comprador puede leer exactamente qué umbral activó esa calificación — no una puntuación compuesta opaca.",
+    reproItem2Title: "Cada hallazgo cita su fuente exacta",
+    reproItem2Copy:
+      "Cada hallazgo del informe identifica la herramienta que lo detectó, la versión de esa herramienta, el comando ejecutado, el archivo de origen y el número de línea. El ingeniero del comprador puede abrir el repositorio, ejecutar el mismo comando contra la misma versión y confirmar o rebatir el dato.",
+    reproItem3Title: "No se requiere servidor para verificar",
+    reproItem3Copy:
+      "No hay que crear una cuenta en la nube, no hay integración por proyecto ni base de datos propietaria que consultar. El ingeniero del comprador necesita un portátil, el repositorio y las mismas herramientas de código abierto listadas en el informe. Si el hallazgo se confirma al volver a ejecutarlo, es defendible en la sala del comité de inversión sin necesidad de una llamada adicional.",
+    reproStamp: "VERSIONADO / CITABLE / REPLICABLE",
     servicesEyebrow: "Los servicios",
     servicesKicker: "03 / TRES NIVELES",
     spotCheckLabel: "Spot Check de 4h",

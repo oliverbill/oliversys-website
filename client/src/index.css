@@ -219,6 +219,22 @@
   .services-grid a { display: inline-flex; align-items: center; gap: .6rem; margin-top: auto; color: #20211e; font-size: .77rem; font-weight: 700; text-decoration: none; }
   .services-grid a:hover { color: #f05a32; }
 
+  /* ── Reproducibility wedge ────────────────────────────────────── */
+  .repro-wedge { padding: 8rem 0; border-top: 1px solid #c9c3b7; border-bottom: 1px solid #c9c3b7; }
+  .repro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem 9%; }
+  .repro-heading h2 { margin: 0; font-size: clamp(2.3rem, 4.2vw, 4.7rem); line-height: 1.02; }
+  .repro-preamble { padding-top: 2.3rem; }
+  .repro-preamble .lead-paragraph { color: #2c2e29; font-size: 1.05rem; line-height: 1.8; }
+  .repro-items { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #b9b4a8; }
+  .repro-item { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0 .6rem; padding: 2rem 2rem 2rem 0; border-right: 1px solid #c7c2b6; align-content: start; }
+  .repro-item + .repro-item { padding-left: 2rem; }
+  .repro-item:last-child { border-right: 0; }
+  .repro-index { color: #f05a32; font-size: .6rem; font-weight: 700; padding-top: .32rem; }
+  .repro-item strong { display: block; margin-bottom: .65rem; font-size: .92rem; font-weight: 700; line-height: 1.3; }
+  .repro-item p { grid-column: 2; margin: 0; color: #66675f; font-size: .84rem; line-height: 1.7; }
+  .repro-stamp-row { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-top: 1.5rem; border-top: 1px solid #b9b4a8; }
+  .repro-stamp { font-size: .55rem; letter-spacing: .13em; color: #9a988f; text-transform: uppercase; }
+
   .evidence-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; align-items: center; }
   .evidence-copy p:not(.eyebrow) { color: #5a5c55; line-height: 1.75; }
   .evidence-copy ul { padding: 0; margin: 2rem 0 0; list-style: none; }
@@ -448,6 +464,10 @@
   .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
   .hero-dossier { max-width: 26rem; }
   .scroll-cue { display: none; }
+  .repro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .repro-items { grid-template-columns: 1fr; }
+  .repro-item, .repro-item + .repro-item { padding: 1.6rem 0; border-right: 0; border-bottom: 1px solid #c7c2b6; }
+  .repro-item:last-child { border-bottom: 0; }
   .exposure-grid, .visual-grid, .evidence-grid, .page-intro-grid, .scope-grid, .deliverable-grid, .investor-problem-grid, .mandate-grid, .counsel-value-grid, .counsel-use-grid, .about-story-grid, .position-grid, .call-grid { grid-template-columns: 1fr; gap: 3.5rem; }
   .blog-index-grid { grid-template-columns: 1fr; }
   .question-grid, .principles-grid { grid-template-columns: repeat(2,1fr); }
@@ -468,7 +488,7 @@
   .hero h1 { font-size: clamp(3.15rem,15vw,4.7rem); }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-dossier { display: none; }
-  .exposure-section, .visual-argument, .audience-section, .services-section, .evidence-section, .approach-phases, .scope-section, .deliverable-section, .investor-problem, .mandate-section, .questions-section, .counsel-value, .engagement-section, .counsel-use, .about-story, .principles-section, .position-section, .call-section { padding: 5.5rem 0; }
+  .exposure-section, .visual-argument, .repro-wedge, .audience-section, .services-section, .evidence-section, .approach-phases, .scope-section, .deliverable-section, .investor-problem, .mandate-section, .questions-section, .counsel-value, .engagement-section, .counsel-use, .about-story, .principles-section, .position-section, .call-section { padding: 5.5rem 0; }
   .exposure-grid { gap: 2.3rem; }
   .risk-ledger, .audience-grid, .services-grid, .cross-grid, .engagement-flow { grid-template-columns: 1fr; }
   .services-grid article, .services-grid article + article { min-height: 26rem; padding: 3rem 0; border-right: 0; border-bottom: 1px solid #bcb7ac; }
