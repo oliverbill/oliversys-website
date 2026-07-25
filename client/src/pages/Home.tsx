@@ -101,6 +101,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="repro-wedge paper-section">
+        <div className="container repro-grid">
+          <div className="repro-heading">
+            <p className="eyebrow">{h.reproEyebrow}</p>
+            <h2>{h.reproH2}</h2>
+          </div>
+          <div className="repro-preamble">
+            <p className="lead-paragraph">{h.reproPreamble}</p>
+          </div>
+          <div className="repro-items">
+            <div className="repro-item">
+              <span className="repro-index">01</span>
+              <div>
+                <strong>{h.reproItem1Title}</strong>
+                <p>{h.reproItem1Copy}</p>
+              </div>
+            </div>
+            <div className="repro-item">
+              <span className="repro-index">02</span>
+              <div>
+                <strong>{h.reproItem2Title}</strong>
+                <p>{h.reproItem2Copy}</p>
+              </div>
+            </div>
+            <div className="repro-item">
+              <span className="repro-index">03</span>
+              <div>
+                <strong>{h.reproItem3Title}</strong>
+                <p>{h.reproItem3Copy}</p>
+              </div>
+            </div>
+          </div>
+          <div className="repro-stamp-row">
+            <span className="repro-stamp">{h.reproStamp}</span>
+          </div>
+        </div>
+      </section>
+
       <section className="audience-section paper-section">
         <div className="container">
           <div className="section-kicker-row">
