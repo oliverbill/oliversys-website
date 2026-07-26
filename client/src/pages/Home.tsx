@@ -3,7 +3,7 @@
  * to evidence to action, with ember used only for consequential signals.
  * i18n: all user-visible strings use useLocale().t.home.
  */
-import { AlertTriangle, ArrowDown, ArrowRight, Check, FileSearch, Scale, ScanSearch, SearchCode } from "lucide-react";
+import { ArrowDown, ArrowRight, Check, FileSearch, Scale, ScanSearch } from "lucide-react";
 import { Link } from "wouter";
 import { BookCallLink } from "@/components/SiteLayout";
 import { CallSection, CrossLink, EvidenceArtifact } from "@/components/SharedSections";
@@ -174,7 +174,6 @@ export default function Home() {
           </div>
           <div className="services-grid">
             <article>
-              <span className="audience-icon"><AlertTriangle /></span>
               <p className="eyebrow">{h.spotCheckLabel}</p>
               <h3>{h.spotCheckLabel}</h3>
               <br/>
@@ -182,7 +181,6 @@ export default function Home() {
               <Link href={lp("/services/spot-check/")}>{h.spotCheckLink} <ArrowRight size={18} /></Link>
             </article>
             <article>
-              <span className="audience-icon"><ScanSearch /></span>
               <p className="eyebrow">Tier 1</p>
               <h3>{h.tier1Label}</h3>
               <br/>
@@ -190,7 +188,6 @@ export default function Home() {
               <Link href={lp("/services/red-flag-scan/")}>{h.tier1Link} <ArrowRight size={18} /></Link>
             </article>
             <article>
-              <span className="audience-icon"><SearchCode /></span>
               <p className="eyebrow">Tier 2</p>
               <h3>{h.tier2Label}</h3>
               <br/>
