@@ -175,7 +175,7 @@ export const pt: Translations = {
     tier1Desc: "Até 5 repositórios. Uma entrevista de 90 minutos com o fundador ou responsável técnico. Go\u202f/\u202fCaution\u202f/\u202fNo-Go assinado em 3\u20135 dias úteis.",
     tier1Link: "Ver o Red Flag Scan",
     tier2Label: "Full Technical Due Diligence",
-    tier2Desc: "Âmbito completo de todos os repositórios. Revisão de arquitetura. Deck de apresentação ao Investment Committee. Entregue em 7\u201310 dias úteis.",
+    tier2Desc: "Âmbito completo de até 10 repositórios. Revisão de arquitetura. Deck de apresentação ao Investment Committee. Entregue em 7\u201310 dias úteis.",
     tier2Link: "Ver o Full TDD",
   },
 
