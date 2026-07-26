@@ -187,7 +187,7 @@ export const en = {
     tier1Desc: "Up to 5 repositories. A 90-minute interview with the founder or technical lead. A signed Go\u202f/\u202fCaution\u202f/\u202fNo-Go in 3\u20135 business days.",
     tier1Link: "See the Red Flag Scan",
     tier2Label: "Full Technical Due Diligence",
-    tier2Desc: "Full scope across every repository. Architecture review. Investment Committee readout deck. Delivered in 7\u201310 business days.",
+    tier2Desc: "Full scope across up to 10 repositories. Architecture review. Investment Committee readout deck. Delivered in 7\u201310 business days.",
     tier2Link: "See the Full TDD",
   },
 
