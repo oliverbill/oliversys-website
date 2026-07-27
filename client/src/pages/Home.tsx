@@ -64,6 +64,7 @@ export default function Home() {
             <p className="lead-paragraph">
               {h.exposureLead}
             </p>
+            <br/>
             <p>
               {h.exposureBody}
             </p>
@@ -75,7 +76,7 @@ export default function Home() {
               [h.riskExposure, h.riskExposureCopy],
             ] as [string, string][]).map(([label, copy], i) => (
               <div key={label}>
-                <span>0{i + 1}</span><strong>{label}</strong><p>{copy}</p>
+                <span></span><strong>{label}</strong><p>{copy}</p>
               </div>
             ))}
           </div>

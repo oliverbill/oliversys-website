@@ -180,7 +180,7 @@ export const en = {
     reproStamp: "VERSIONED / CITABLE / REPLICABLE",
     servicesEyebrow: "The services",
     servicesKicker: "03 / THREE LEVELS",
-    spotCheckLabel: "4h Spot Check",
+    spotCheckLabel: "Spot-Check Tier",
     spotCheckDesc: "A fast read of one software repository. One page. An escalation signal in 4 hours \u2014 before you commit to a full review.",
     spotCheckLink: "See the Spot Check",
     tier1Label: "Red Flag Scan",
