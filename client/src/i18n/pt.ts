@@ -578,7 +578,7 @@ export const pt: Translations = {
       "Vulnerabilidades de segurança conhecidas no software de terceiros de que o produto depende, verificadas contra uma base de dados atualizada. Os problemas mais exploráveis são identificados.",
     inScope2Label: "Credenciais acidentalmente expostas",
     inScope2Detail:
-      "Uma verificação de palavras-passe, chaves de acesso ou outras credenciais sensíveis que possam ter sido acidentalmente incluídas no repositório. Conclusões verificadas distinguidas de falsos positivos.",
+      "Uma verificação baseada em padrões de palavras-passe, chaves de acesso ou outras credenciais sensíveis incluídas no repositório. Cada credencial candidata é reportada com a localização no ficheiro e a janela de exposição — nunca autenticada contra o serviço em produção; essa fronteira está indicada no relatório, não escondida.",
     inScope3Label: "Exposição de licenças de código aberto",
     inScope3Detail:
       "Um inventário completo de cada componente de terceiros de que o software depende, classificado por se a licença permite uso comercial. Qualquer licença que possa restringir como o produto é vendido ou exigir a divulgação do código-fonte é identificada.",
