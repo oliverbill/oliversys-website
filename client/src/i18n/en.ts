@@ -591,7 +591,7 @@ export const en = {
       "Known security vulnerabilities in the third-party software the product depends on, checked against an up-to-date database. The most exploitable issues called out.",
     inScope2Label: "Accidentally exposed credentials",
     inScope2Detail:
-      "A check for passwords, access keys, or other sensitive credentials that may have been accidentally committed to the repository. Verified findings distinguished from false positives.",
+      "A pattern-based check for passwords, access keys, or other sensitive credentials committed to the repository. Each candidate is reported with its file location and exposure window — never authenticated against the live service; that boundary is stated in the report, not hidden.",
     inScope3Label: "Open-source licence exposure",
     inScope3Detail:
       "A complete inventory of every third-party component the software depends on, classified by whether the licence permits commercial use. Any licences that could restrict how the product is sold or require releasing the source code are named.",
